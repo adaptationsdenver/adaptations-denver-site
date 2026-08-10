@@ -17,7 +17,7 @@
   --color-paper-90: color-mix(in oklch, var(--color-paper) 92%, var(--color-ink));
 
   /* Accent candidates — same L/C in oklch, hue varies. Pick one for --color-accent. */
-  --color-accent-red: oklch(58% 0.19 25);
+  --color-accent-red: #C4472A;
   --color-accent-amber: oklch(58% 0.19 65);
   --color-accent-cobalt: oklch(58% 0.19 255);
 
@@ -240,6 +240,19 @@
   section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
   .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  @media (max-width:760px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
 </style>
 </head>
 
@@ -263,6 +276,8 @@
   <p style="font:var(--text-body-lg);max-width:560px;color:var(--text-on-inverse-secondary);margin:0;">Pick a time that works for you below.</p>
   <p style="font:var(--text-body-md);max-width:560px;color:var(--text-on-inverse-secondary);margin:0;">If none of the available times works for you, email me at <a href="mailto:brian@adaptationsdenver.com" style="color:inherit;text-decoration:underline;">brian@adaptationsdenver.com</a> and I will find a time that works.</p>
 </section>
+
+<div class="flourish-h"></div>
 
 <section style="padding:80px var(--container-pad);display:flex;flex-direction:column;gap:20px;">
   <!-- Calendly inline widget begin -->

@@ -17,7 +17,7 @@
   --color-paper-90: color-mix(in oklch, var(--color-paper) 92%, var(--color-ink));
 
   /* Accent candidates — same L/C in oklch, hue varies. Pick one for --color-accent. */
-  --color-accent-red: oklch(58% 0.19 25);
+  --color-accent-red: #C4472A;
   --color-accent-amber: oklch(58% 0.19 65);
   --color-accent-cobalt: oklch(58% 0.19 255);
 
@@ -240,6 +240,19 @@
   section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
   .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  @media (max-width:760px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
 </style>
 </head>
 
@@ -265,13 +278,13 @@
 
 <section style="padding:80px var(--container-pad);display:flex;flex-direction:column;gap:28px;">
   <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
-    <div style="max-width:420px;display:flex;flex-direction:column;gap:12px;">
-      <span class="tag tag-accent">Validated</span>
-      <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Evidence-based methods, zero pretense. Room to wander, as long as we're headed somewhere.</p>
+    <div class="flourish-c" style="max-width:420px;">
+      <span style="font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-ink);">Validated</span>
+      <p style="font:var(--text-body-md);color:var(--text-secondary);margin:6px 0 0;">Evidence-based methods, zero pretense. Room to wander, as long as we're headed somewhere.</p>
     </div>
-    <div style="max-width:420px;display:flex;flex-direction:column;gap:12px;">
-      <span class="tag tag-default">Direct</span>
-      <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">No "safe space" language, no soft landings. We talk straight, and we expect the same back.</p>
+    <div class="flourish-c" style="max-width:420px;">
+      <span style="font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-ink);">Direct</span>
+      <p style="font:var(--text-body-md);color:var(--text-secondary);margin:6px 0 0;">No "safe space" language, no soft landings. We talk straight, and we expect the same back.</p>
     </div>
   </div>
   <blockquote style="margin:0;padding:0 0 0 24px;border-left:4px solid var(--color-accent);font:var(--text-display-md);font-family:var(--font-display);font-size:32px;text-transform:uppercase;color:var(--text-primary);max-width:800px;">
@@ -280,13 +293,30 @@
 </section>
 
 <section style="padding:0 var(--container-pad) 90px;display:flex;flex-direction:column;gap:32px;">
-  <span class="eyebrow">Methods we use</span>
-  <section class="grid3" style="grid-template-columns:repeat(3,1fr);max-width:1100px;">
-    <div class="card card-paper"><span class="eyebrow" style="color:var(--color-accent);">ACT</span><h3>Acceptance &amp; Commitment</h3><p>Make room for what's hard, and act on what matters anyway.</p></div>
-    <div class="card card-ink"><span class="eyebrow" style="color:var(--color-accent);">CBT</span><h3>Cognitive Behavioral</h3><p>Take apart the thought patterns that keep you stuck, piece by piece.</p></div>
-    <div class="card card-paper"><span class="eyebrow" style="color:var(--color-accent);">MI</span><h3>Motivational Interviewing</h3><p>Plus mindfulness — practical tools, not textbook theory.</p></div>
+  <div class="flourish-c"><span class="eyebrow">Methods we use</span></div>
+  <section class="grid3" style="max-width:1100px;">
+    <div class="service-card card-paper" style="display:flex;flex-direction:column;gap:8px;">
+      <span class="flourish-g">01</span>
+      <span class="eyebrow" style="font-size:12px;">ACT</span>
+      <h3 style="font-family:var(--font-display);font-weight:900;font-size:19px;text-transform:uppercase;color:var(--text-primary);margin:0;">Acceptance &amp; Commitment</h3>
+      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-secondary);margin:0;">Make room for what's hard, and act on what matters anyway.</p>
+    </div>
+    <div class="service-card card-ink" style="display:flex;flex-direction:column;gap:8px;">
+      <span class="flourish-g on-ink">02</span>
+      <span class="eyebrow" style="font-size:12px;">CBT</span>
+      <h3 style="font-family:var(--font-display);font-weight:900;font-size:19px;text-transform:uppercase;color:var(--text-on-inverse);margin:0;">Cognitive Behavioral</h3>
+      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-on-inverse-secondary);margin:0;">Take apart the thought patterns that keep you stuck, piece by piece.</p>
+    </div>
+    <div class="service-card card-paper" style="display:flex;flex-direction:column;gap:8px;">
+      <span class="flourish-g">03</span>
+      <span class="eyebrow" style="font-size:12px;">MI</span>
+      <h3 style="font-family:var(--font-display);font-weight:900;font-size:19px;text-transform:uppercase;color:var(--text-primary);margin:0;">Motivational Interviewing</h3>
+      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-secondary);margin:0;">Plus mindfulness — practical tools, not textbook theory.</p>
+    </div>
   </section>
 </section>
+
+<div class="flourish-h"></div>
 
 <section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
   <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;">Over being overwhelmed?</h2>
