@@ -130,7 +130,7 @@
   .tag{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);display:inline-block;}
   .tag-accent{background:var(--color-accent);color:var(--color-accent-ink);}
   .tag-default{background:var(--color-ink-15);color:var(--text-primary);}
-  nav{display:flex;align-items:center;justify-content:space-between;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
   .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
   .navlinks{display:flex;align-items:center;gap:32px;}
   .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
@@ -138,45 +138,67 @@
   section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
   .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  .hero-copy{flex:1;min-width:280px;padding-right:var(--container-pad);padding-bottom:70px;}
+  .hero-illustration{position:absolute;right:0;bottom:0;width:clamp(160px,32vw,480px);height:auto;pointer-events:none;}
+  @media (max-width:1050px){.hero-illustration{display:none;}}
+  @media (max-width:1400px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html" class="wordmark" style="color:inherit;text-decoration:none;">Adaptations Denver</a>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
   <div class="navlinks">
     <a href="approach.html">Approach</a>
     <a href="individual-therapy.html">Individual Therapy</a>
     <a href="group-therapy.html" style="opacity:1;font-weight:800;">Group Therapy</a>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
     <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
-    <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a consultation</a>
+    <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
   </div>
 </nav>
 
-<section style="background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 90px;display:flex;flex-direction:column;gap:28px;">
-  <span class="eyebrow">Group Therapy</span>
-  <h1 style="font:var(--text-display-xl);font-family:var(--font-display);text-transform:uppercase;margin:0;max-width:960px;">Say it here first.</h1>
-  <p style="font:var(--text-body-lg);max-width:560px;color:var(--text-on-inverse-secondary);margin:0;">Say the thing you'd never say alone. Other men, same struggle.</p>
+<section style="background:var(--color-ink);color:var(--text-on-inverse);padding:clamp(60px,10vw,90px) 0 0 var(--container-pad);display:flex;gap:40px;align-items:center;position:relative;overflow:hidden;min-height:520px;">
+  <div class="hero-copy" style="display:flex;flex-direction:column;gap:24px;">
+    <span class="eyebrow">Group Therapy</span>
+    <h1 style="font-family:var(--font-display);font-weight:900;font-size:clamp(32px,6vw,52px);line-height:1.0;text-transform:uppercase;margin:0;max-width:760px;">Say it here first.</h1>
+    <p style="font:var(--text-body-lg);max-width:560px;color:var(--text-on-inverse-secondary);margin:0;">Other men. Same struggle. No stigma.</p>
+  </div>
+  <img src="assets/graphics/group-therapy-hero.png" alt="" class="hero-illustration">
 </section>
 
 <section style="padding:80px var(--container-pad);display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
-  <div style="max-width:620px;display:flex;flex-direction:column;gap:20px;">
+  <div class="flourish-c" style="max-width:620px;display:flex;flex-direction:column;gap:20px;">
     <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;">What to expect</h2>
-    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">[Placeholder] Group sessions bring together a small, consistent group of men working through similar territory — anxiety, life transitions, anger, relationships, substance use. It's structured, but it's not a lecture. You'll hear how other guys are handling what you're handling, and you'll get pushed on your own stuff too.</p>
-    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">[Placeholder] Groups meet weekly for a set number of weeks per cohort. New members join between cohorts after a brief intake call.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Group sessions bring together a small, consistent group of men working through similar territory — anxiety, life transitions, anger, relationships, substance use. It's structured, but it's not a lecture. You'll hear how other guys are handling what you're handling, and you'll get pushed on your own stuff too.</p>
   </div>
   <div class="card card-ink" style="min-width:260px;">
     <span class="eyebrow" style="color:var(--color-accent);">Rate</span>
     <h3>$50 / session</h3>
-    <p>[Placeholder] Group session, per meeting. Contact for current cohort availability.</p>
+    <p>Group session, per meeting. Contact for current cohort availability.</p>
   </div>
 </section>
 
+<div class="flourish-h"></div>
+
 <section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
   <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;">Ready to join a group?</h2>
-  <a href="book.html" class="btn btn-inverse">Book a consultation</a>
+  <a href="book.html" class="btn btn-inverse">Book a free consultation</a>
 </section>
 
 <footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
@@ -187,5 +209,5 @@
   </div>
 </footer>
 
-<a href="book.html" class="btn btn-primary floating-cta">Book a consultation</a>
+<a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
 </body></html>

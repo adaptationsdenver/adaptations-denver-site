@@ -130,7 +130,7 @@
   .tag{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);display:inline-block;}
   .tag-accent{background:var(--color-accent);color:var(--color-accent-ink);}
   .tag-default{background:var(--color-ink-15);color:var(--text-primary);}
-  nav{display:flex;align-items:center;justify-content:space-between;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
   .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
   .navlinks{display:flex;align-items:center;gap:32px;}
   .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
@@ -138,29 +138,46 @@
   section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
   .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  @media (max-width:1400px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html" class="wordmark" style="color:inherit;text-decoration:none;">Adaptations Denver</a>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
   <div class="navlinks">
     <a href="approach.html">Approach</a>
     <a href="individual-therapy.html">Individual Therapy</a>
     <a href="group-therapy.html">Group Therapy</a>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
     <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
-    <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a consultation</a>
+    <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
   </div>
 </nav>
 
 <section style="background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 90px;display:flex;flex-direction:column;gap:28px;">
-  <span class="eyebrow">Book a consultation</span>
-  <h1 style="font:var(--text-display-xl);font-family:var(--font-display);text-transform:uppercase;margin:0;max-width:960px;">Let's get started.</h1>
+  <span class="eyebrow">Book a free consultation</span>
+  <h1 style="font:var(--text-display-xl);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">Let's get started.</h1>
   <p style="font:var(--text-body-lg);max-width:560px;color:var(--text-on-inverse-secondary);margin:0;">Pick a time that works for you below.</p>
   <p style="font:var(--text-body-md);max-width:560px;color:var(--text-on-inverse-secondary);margin:0;">If none of the available times works for you, email me at <a href="mailto:brian@adaptationsdenver.com" style="color:inherit;text-decoration:underline;">brian@adaptationsdenver.com</a> and I will find a time that works.</p>
 </section>
+
+<div class="flourish-h"></div>
 
 <section style="padding:80px var(--container-pad);display:flex;flex-direction:column;gap:20px;">
   <!-- Calendly inline widget begin -->

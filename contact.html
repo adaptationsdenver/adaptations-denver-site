@@ -122,7 +122,7 @@
   .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
   .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:13px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
   .placeholder{background:repeating-linear-gradient(45deg, var(--color-ink-15), var(--color-ink-15) 10px, transparent 10px, transparent 20px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-secondary);text-align:center;}
-  .card{padding:28px;display:flex;flex-direction:column;gap:14px;}
+  .card{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0;}
   .card-paper{background:var(--surface-card);color:var(--text-primary);border:1px solid var(--border-default);}
   .card-ink{background:var(--surface-inverse);color:var(--text-on-inverse);}
   .card h3{font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;margin:0;line-height:1.1;}
@@ -130,42 +130,57 @@
   .tag{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);display:inline-block;}
   .tag-accent{background:var(--color-accent);color:var(--color-accent-ink);}
   .tag-default{background:var(--color-ink-15);color:var(--text-primary);}
-  nav{display:flex;align-items:center;justify-content:space-between;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
   .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
   .navlinks{display:flex;align-items:center;gap:32px;}
   .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
   .navlinks button{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;background:var(--color-accent);color:var(--color-accent-ink);border:none;border-radius:var(--radius-sm);padding:10px 20px;cursor:pointer;}
-  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-width:0;}
   @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
   .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  @media (max-width:1400px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html" class="wordmark" style="color:inherit;text-decoration:none;">Adaptations Denver</a>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
   <div class="navlinks">
     <a href="approach.html">Approach</a>
     <a href="individual-therapy.html">Individual Therapy</a>
     <a href="group-therapy.html">Group Therapy</a>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
     <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
     <a href="contact.html" style="opacity:1;font-weight:800;">Contact</a>
-    <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a consultation</a>
+    <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
   </div>
 </nav>
 
 <section style="background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 90px;display:flex;flex-direction:column;gap:28px;">
   <span class="eyebrow">Contact</span>
-  <h1 style="font:var(--text-display-xl);font-family:var(--font-display);text-transform:uppercase;margin:0;max-width:960px;">Get in touch.</h1>
+  <h1 style="font:var(--text-display-xl);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">Get in touch.</h1>
   <p style="font:var(--text-body-lg);max-width:560px;color:var(--text-on-inverse-secondary);margin:0;">Big Change Counseling, LLC · Denver, CO</p>
 </section>
 
 <section style="padding:80px var(--container-pad);display:flex;flex-direction:column;gap:32px;">
-  <section class="grid3" style="grid-template-columns:repeat(3,1fr);max-width:1100px;">
+  <section class="grid3" style="max-width:1100px;">
     <div class="card card-paper">
       <span class="eyebrow" style="color:var(--color-accent);">Email</span>
-      <h3><a href="mailto:brian@adaptationsdenver.com" style="color:inherit;">brian@adaptationsdenver.com</a></h3>
+      <h3 style="overflow-wrap:break-word;"><a href="mailto:brian@adaptationsdenver.com" style="color:inherit;">brian@adaptationsdenver.com</a></h3>
     </div>
     <div class="card card-paper">
       <span class="eyebrow" style="color:var(--color-accent);">Phone</span>
@@ -176,8 +191,10 @@
       <h3>Denver, CO 80205</h3>
     </div>
   </section>
-  <a href="book.html" class="btn btn-primary" style="align-self:flex-start;">Book a consultation</a>
+  <a href="book.html" class="btn btn-primary" style="align-self:flex-start;">Book a free consultation</a>
 </section>
+
+<div class="flourish-h"></div>
 
 <footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
   <div class="wordmark" style="color:var(--text-on-inverse);">Adaptations Denver</div>
@@ -187,5 +204,5 @@
   </div>
 </footer>
 
-<a href="book.html" class="btn btn-primary floating-cta">Book a consultation</a>
+<a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
 </body></html>

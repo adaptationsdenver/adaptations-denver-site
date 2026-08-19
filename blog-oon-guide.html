@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<title>The OON Guide: How to Use Your Insurance Benefits at a Private-Pay Therapy Practice — Adaptations Denver</title>
+
+<style>:root {
+  /* Base neutrals — from brand hex */
+  --color-ink: #1A1C1E;
+  --color-paper: #F7F5F2;
+
+  /* Neutral ramp, mixed from the two bases */
+  --color-ink-90: color-mix(in oklch, var(--color-ink) 90%, var(--color-paper));
+  --color-ink-70: color-mix(in oklch, var(--color-ink) 70%, var(--color-paper));
+  --color-ink-50: color-mix(in oklch, var(--color-ink) 50%, var(--color-paper));
+  --color-ink-30: color-mix(in oklch, var(--color-ink) 30%, var(--color-paper));
+  --color-ink-15: color-mix(in oklch, var(--color-ink) 15%, var(--color-paper));
+  --color-paper-90: color-mix(in oklch, var(--color-paper) 92%, var(--color-ink));
+
+  /* Accent candidates — same L/C in oklch, hue varies. Pick one for --color-accent. */
+  --color-accent-red: #C4472A;
+  --color-accent-amber: oklch(58% 0.19 65);
+  --color-accent-cobalt: oklch(58% 0.19 255);
+
+  /* Active accent (default: red — Supreme/Vice-coded). Swap this one line to change brand-wide. */
+  --color-accent: var(--color-accent-red);
+  --color-accent-ink: #FFFFFF; /* text/icon color on top of accent */
+
+  /* Semantic aliases */
+  --surface-page: var(--color-paper);
+  --surface-inverse: var(--color-ink);
+  --surface-card: var(--color-paper-90);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-70);
+  --text-on-inverse: var(--color-paper);
+  --text-on-inverse-secondary: var(--color-paper-90);
+  --border-default: var(--color-ink-15);
+  --border-strong: var(--color-ink-30);
+  --link-color: var(--color-accent);
+  --link-color-hover: color-mix(in oklch, var(--color-accent) 85%, var(--color-ink));
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-Black.otf") format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-BlackItalic.otf") format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Wide';
+  src: url("fonts/PPMonumentWide-Regular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: url("fonts/PPNeueMachina-PlainRegular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --font-display: 'PP Monument Extended', 'Arial Black', sans-serif;
+  --font-wide: 'PP Monument Wide', 'Arial Narrow', sans-serif;
+  --font-body: 'PP Neue Machina', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Display scale — headlines, only weight available is 900/Black */
+  --text-display-xl: 900 clamp(48px, 7vw, 120px)/0.98 var(--font-display);
+  --text-display-lg: 900 clamp(36px, 5vw, 72px)/1.0 var(--font-display);
+  --text-display-md: 900 clamp(28px, 3.2vw, 44px)/1.05 var(--font-display);
+
+  /* Wide/eyebrow treatment — real PP Monument Wide cut */
+  --text-wide-label: 400 13px/1.2 var(--font-wide);
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.18em;
+
+  /* Body scale */
+  --text-body-lg: 500 20px/1.5 var(--font-body);
+  --text-body-md: 500 17px/1.55 var(--font-body);
+  --text-body-sm: 500 14px/1.5 var(--font-body);
+  --text-label: 600 13px/1.2 var(--font-body);
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 0 var(--border-default);
+  --container-max: 1240px;
+  --container-pad: clamp(20px, 5vw, 64px);
+}
+
+</style>
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--color-paper);}
+  a{color:var(--link-color);text-decoration:none;}
+  a:hover{color:var(--link-color-hover);}
+  .btn{font-family:var(--font-body);font-weight:600;letter-spacing:0.02em;text-transform:uppercase;border:1px solid transparent;border-radius:var(--radius-sm);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;font-size:15px;}
+  .btn-primary{background:var(--color-accent);color:var(--color-accent-ink);}
+  .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
+  .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:13px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
+  .placeholder{background:repeating-linear-gradient(45deg, var(--color-ink-15), var(--color-ink-15) 10px, transparent 10px, transparent 20px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-secondary);text-align:center;}
+  .card{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .card-paper{background:var(--surface-card);color:var(--text-primary);border:1px solid var(--border-default);}
+  .card-ink{background:var(--surface-inverse);color:var(--text-on-inverse);}
+  .card h3{font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;margin:0;line-height:1.1;}
+  .card p{font-family:var(--font-body);font-size:15px;line-height:1.5;margin:0;opacity:0.85;}
+  .tag{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);display:inline-block;}
+  .tag-accent{background:var(--color-accent);color:var(--color-accent-ink);}
+  .tag-default{background:var(--color-ink-15);color:var(--text-primary);}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
+  .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
+  .navlinks{display:flex;align-items:center;gap:32px;}
+  .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .navlinks button{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;background:var(--color-accent);color:var(--color-accent-ink);border:none;border-radius:var(--radius-sm);padding:10px 20px;cursor:pointer;}
+  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-width:0;}
+  @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
+  .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  @media (max-width:1400px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;min-width:0;}
+  .blog-card{display:flex;flex-direction:column;border:2px solid var(--color-ink);background:var(--color-paper);text-decoration:none;color:inherit;min-width:0;}
+  .blog-card:hover{color:inherit;}
+  .blog-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;}
+</style>
+</head>
+
+<body>
+<nav>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
+  <div class="navlinks">
+    <a href="approach.html">Approach</a>
+    <a href="individual-therapy.html">Individual Therapy</a>
+    <a href="group-therapy.html">Group Therapy</a>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
+    <a href="about.html">About</a>
+    <a href="blog.html" style="opacity:1;font-weight:800;">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
+  </div>
+</nav>
+
+<section style="background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 60px;display:flex;flex-direction:column;gap:20px;">
+  <a href="blog.html" class="eyebrow" style="display:inline-block;">&larr; Blog</a>
+  <h1 style="font:var(--text-display-lg);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;max-width:900px;">The OON Guide: How to Use Your Insurance Benefits at a Private-Pay Therapy Practice</h1>
+  <p style="font:var(--text-body-lg);max-width:640px;color:var(--text-on-inverse-secondary);margin:0;">Out-of-network health insurance and how to use your benefits at a private-pay psychotherapy practice.</p>
+  <p style="font:var(--text-body-sm);color:var(--text-on-inverse-secondary);opacity:0.7;margin:0;">May 21, 2026 &middot; Brian Mulligan, LPCC, CAT</p>
+</section>
+
+<section style="padding:56px var(--container-pad) 0;display:flex;justify-content:center;">
+  <img src="assets/blog/blog-oon-guide-hero.jpg" alt="The OON Guide: How to Use Your Insurance Benefits at a Private-Pay Therapy Practice" style="width:100%;max-width:820px;height:auto;display:block;border:2px solid var(--color-ink);">
+</section>
+
+<section style="padding:36px var(--container-pad) 90px;display:flex;justify-content:center;">
+  <div style="max-width:720px;width:100%;display:flex;flex-direction:column;gap:20px;">
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">You finally found a therapist who sounds right. The specialty matches what you're dealing with. The vibe of the website doesn't make you want to close the tab. You go to book a consultation, and you see: private pay only.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The mental math starts up immediately. "Can I actually afford this?"</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Here's what most people don't know: not taking insurance doesn't automatically mean you're paying full price with nothing in return. If you have a PPO or out-of-network (OON) benefits on your health insurance plan, there's a good chance you can submit your therapy costs and get a chunk of that money back. The mechanism for this is something called a superbill, and once you understand how it works, the whole thing is a lot less intimidating than it sounds.</p>
+    <h3 style="font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;color:var(--text-primary);margin:16px 0 0;">Why Some Therapists Don't Take Insurance</h3>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">It's worth understanding the "why" before anything else, because it's not arbitrary.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">When a therapist joins an insurance network, they're signing a contract that typically pays them well below their standard rate. They're also agreeing to a significant administrative burden: prior authorizations, billing codes, claims management, delayed reimbursements, and ongoing paperwork. On top of that, insurance companies require a formal diagnosis to authorize treatment, which goes into your permanent medical record.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Many therapists opt out of that arrangement to keep their practice sustainable and to keep a third party out of your care. That's the tradeoff. But it doesn't mean you're cut off from your insurance benefits entirely.</p>
+    <h3 style="font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;color:var(--text-primary);margin:16px 0 0;">What Is a Superbill?</h3>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">A superbill is an itemized receipt that contains everything your insurance company needs to process a reimbursement claim. It's more detailed than a standard receipt. Mine will include my name, credentials, and NPI number (a unique provider ID required for insurance purposes), your name and date of birth, the date and type of each session, a CPT code (a standardized billing code for the service, like 90837 for a 53-minute individual therapy session), an ICD-10 diagnosis code (a standardized code for your clinical diagnosis), and the amount you paid.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">One thing to be aware of on that diagnosis code: in order to generate a superbill, I do need to assign you a formal diagnosis. This becomes part of your insurance record. For some people, that's a non-issue. For others, especially those in certain careers or looking at life insurance down the road, it's worth thinking about. If you have questions about that, bring it up. It's a legitimate thing to consider.</p>
+    <h3 style="font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;color:var(--text-primary);margin:16px 0 0;">How the Reimbursement Actually Works</h3>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Here's the basic loop: you pay me at the time of service, I give you a superbill, you send it to your insurance company, and they reimburse you directly. Most insurers let you submit claims through their online member portal (usually under something like "Submit a Claim" or "Reimbursement Center" once you're logged in), or by mailing a completed claim form along with the superbill to the claims address on the back of your insurance card. If you'd rather skip the DIY process, apps like Reimbursify let you photograph the superbill and handle the submission for you. However you do it, the reimbursement check (or direct deposit, depending on your plan) comes back to you, not to me. The amount you get back depends on your specific plan. A few things shape it.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">First, your out-of-network deductible. Most plans with OON benefits have a separate deductible for out-of-network care. You'll need to meet that before reimbursements start. This resets every year, so timing matters.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Second, your coinsurance rate. Once the deductible is met, your insurer will typically cover a percentage of what they call their "allowed amount" (their internal benchmark for what a session should cost in your area). That reimbursement rate is usually somewhere between 50 and 80 percent, depending on your plan. The allowed amount may be less than what you actually paid me, so what you get back is a percentage of their number, not mine.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Third, your out-of-pocket maximum. Once you've spent enough on covered services across the year, your insurance may start covering 100 percent. OON costs count toward your OON out-of-pocket maximum, which is tracked separately from your in-network one.</p>
+    <h3 style="font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;color:var(--text-primary);margin:16px 0 0;">How to Actually Do This</h3>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Step one: call your insurance before your first session. Flip your card over, call the member services number, and ask these specific questions: Do I have out-of-network mental health benefits? What is my OON deductible, and how much have I met? What is my coinsurance rate for OON mental health services? How do I submit a claim? Write down what they tell you, and if possible, note the rep's name and call reference number. Insurance companies have been known to give inconsistent answers, and documentation protects you.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Step two: request a superbill. I generate these monthly, so just let me know and I'll get one to you at the end of each month.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Step three: submit your claim. Your insurer will typically let you submit through their online member portal, by mail, or sometimes through a third-party app. Apps like Reimbursify are worth knowing about: you photograph the superbill and they handle the submission, which takes a lot of the friction out of the process.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Step four: read your Explanation of Benefits (EOB). After your claim is processed, you'll get a document that breaks down what was submitted, what the allowed amount was, how much went toward your deductible, and what they're reimbursing you. If the claim is denied, the EOB will tell you why, and you have the right to appeal. Denials often happen for administrative reasons (missing information, wrong form) and can be resolved.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Step five: get paid. Your insurer will either mail you a check or deposit directly, depending on how your plan is set up.</p>
+    <h3 style="font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;color:var(--text-primary);margin:16px 0 0;">A Few Things Worth Knowing</h3>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Most insurers have a timely filing deadline, often 90 to 180 days from the date of service. Don't let superbills pile up for half a year. Submit consistently, and keep copies of everything.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Also worth knowing: therapy is typically a qualified medical expense, which means you can use HSA or FSA funds to cover your sessions. If you have a health savings account or flexible spending account, this can make a real difference in what you're actually paying out of pocket.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">And if cost is still a barrier after all of that, it's always worth having a direct conversation about it. A lot of private-pay therapists, myself included, offer sliding scale fees for clients who need them.</p>
+    <h3 style="font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;color:var(--text-primary);margin:16px 0 0;">Is It Worth the Hassle?</h3>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">For a lot of people, yes. The process takes some setup, but once you've done it once, it becomes routine. More importantly, OON benefits let you choose the therapist who is actually right for you rather than whoever is in-network, accepting new clients, and available. That matters more than most people give it credit for.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">If you have questions about how this works at Adaptations Denver, or if you want to talk through whether private-pay therapy makes sense for your situation, reach out.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">You shouldn't have to choose between good care and your financial reality. Let's figure out if we can make this work.</p>
+  </div>
+</section>
+
+<div class="flourish-h"></div>
+
+<section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+  <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;max-width:560px;">Let's figure out if we can make this work.</h2>
+  <a href="book.html" class="btn btn-inverse">Book a free consult</a>
+</section>
+
+<footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
+  <div class="wordmark" style="color:var(--text-on-inverse);">Adaptations Denver</div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:right;">
+    <div>Denver, CO · hello@adaptationsdenver.com · (720) 515-2706</div>
+    <div style="opacity:0.6;font-size:12px;">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
+  </div>
+</footer>
+
+<a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
+</body></html>

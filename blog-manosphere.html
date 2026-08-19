@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<title>"Inside the Manosphere": What Louis Theroux Got Wrong — Adaptations Denver</title>
+
+<style>:root {
+  /* Base neutrals — from brand hex */
+  --color-ink: #1A1C1E;
+  --color-paper: #F7F5F2;
+
+  /* Neutral ramp, mixed from the two bases */
+  --color-ink-90: color-mix(in oklch, var(--color-ink) 90%, var(--color-paper));
+  --color-ink-70: color-mix(in oklch, var(--color-ink) 70%, var(--color-paper));
+  --color-ink-50: color-mix(in oklch, var(--color-ink) 50%, var(--color-paper));
+  --color-ink-30: color-mix(in oklch, var(--color-ink) 30%, var(--color-paper));
+  --color-ink-15: color-mix(in oklch, var(--color-ink) 15%, var(--color-paper));
+  --color-paper-90: color-mix(in oklch, var(--color-paper) 92%, var(--color-ink));
+
+  /* Accent candidates — same L/C in oklch, hue varies. Pick one for --color-accent. */
+  --color-accent-red: #C4472A;
+  --color-accent-amber: oklch(58% 0.19 65);
+  --color-accent-cobalt: oklch(58% 0.19 255);
+
+  /* Active accent (default: red — Supreme/Vice-coded). Swap this one line to change brand-wide. */
+  --color-accent: var(--color-accent-red);
+  --color-accent-ink: #FFFFFF; /* text/icon color on top of accent */
+
+  /* Semantic aliases */
+  --surface-page: var(--color-paper);
+  --surface-inverse: var(--color-ink);
+  --surface-card: var(--color-paper-90);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-70);
+  --text-on-inverse: var(--color-paper);
+  --text-on-inverse-secondary: var(--color-paper-90);
+  --border-default: var(--color-ink-15);
+  --border-strong: var(--color-ink-30);
+  --link-color: var(--color-accent);
+  --link-color-hover: color-mix(in oklch, var(--color-accent) 85%, var(--color-ink));
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-Black.otf") format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-BlackItalic.otf") format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Wide';
+  src: url("fonts/PPMonumentWide-Regular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: url("fonts/PPNeueMachina-PlainRegular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --font-display: 'PP Monument Extended', 'Arial Black', sans-serif;
+  --font-wide: 'PP Monument Wide', 'Arial Narrow', sans-serif;
+  --font-body: 'PP Neue Machina', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Display scale — headlines, only weight available is 900/Black */
+  --text-display-xl: 900 clamp(48px, 7vw, 120px)/0.98 var(--font-display);
+  --text-display-lg: 900 clamp(36px, 5vw, 72px)/1.0 var(--font-display);
+  --text-display-md: 900 clamp(28px, 3.2vw, 44px)/1.05 var(--font-display);
+
+  /* Wide/eyebrow treatment — real PP Monument Wide cut */
+  --text-wide-label: 400 13px/1.2 var(--font-wide);
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.18em;
+
+  /* Body scale */
+  --text-body-lg: 500 20px/1.5 var(--font-body);
+  --text-body-md: 500 17px/1.55 var(--font-body);
+  --text-body-sm: 500 14px/1.5 var(--font-body);
+  --text-label: 600 13px/1.2 var(--font-body);
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 0 var(--border-default);
+  --container-max: 1240px;
+  --container-pad: clamp(20px, 5vw, 64px);
+}
+
+</style>
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--color-paper);}
+  a{color:var(--link-color);text-decoration:none;}
+  a:hover{color:var(--link-color-hover);}
+  .btn{font-family:var(--font-body);font-weight:600;letter-spacing:0.02em;text-transform:uppercase;border:1px solid transparent;border-radius:var(--radius-sm);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;font-size:15px;}
+  .btn-primary{background:var(--color-accent);color:var(--color-accent-ink);}
+  .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
+  .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:13px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
+  .placeholder{background:repeating-linear-gradient(45deg, var(--color-ink-15), var(--color-ink-15) 10px, transparent 10px, transparent 20px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-secondary);text-align:center;}
+  .card{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .card-paper{background:var(--surface-card);color:var(--text-primary);border:1px solid var(--border-default);}
+  .card-ink{background:var(--surface-inverse);color:var(--text-on-inverse);}
+  .card h3{font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;margin:0;line-height:1.1;}
+  .card p{font-family:var(--font-body);font-size:15px;line-height:1.5;margin:0;opacity:0.85;}
+  .tag{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);display:inline-block;}
+  .tag-accent{background:var(--color-accent);color:var(--color-accent-ink);}
+  .tag-default{background:var(--color-ink-15);color:var(--text-primary);}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
+  .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
+  .navlinks{display:flex;align-items:center;gap:32px;}
+  .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .navlinks button{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;background:var(--color-accent);color:var(--color-accent-ink);border:none;border-radius:var(--radius-sm);padding:10px 20px;cursor:pointer;}
+  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-width:0;}
+  @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
+  .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  @media (max-width:1400px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;min-width:0;}
+  .blog-card{display:flex;flex-direction:column;border:2px solid var(--color-ink);background:var(--color-paper);text-decoration:none;color:inherit;min-width:0;}
+  .blog-card:hover{color:inherit;}
+  .blog-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;}
+</style>
+</head>
+
+<body>
+<nav>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
+  <div class="navlinks">
+    <a href="approach.html">Approach</a>
+    <a href="individual-therapy.html">Individual Therapy</a>
+    <a href="group-therapy.html">Group Therapy</a>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
+    <a href="about.html">About</a>
+    <a href="blog.html" style="opacity:1;font-weight:800;">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
+  </div>
+</nav>
+
+<section style="background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 60px;display:flex;flex-direction:column;gap:20px;">
+  <a href="blog.html" class="eyebrow" style="display:inline-block;">&larr; Blog</a>
+  <h1 style="font:var(--text-display-lg);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;max-width:900px;">"Inside the Manosphere": What Louis Theroux Got Wrong</h1>
+  <p style="font:var(--text-body-lg);max-width:640px;color:var(--text-on-inverse-secondary);margin:0;">Louis Theroux's new Netflix documentary on the Manosphere gets a lot right about the problem, and almost nothing right about the solution.</p>
+  <p style="font:var(--text-body-sm);color:var(--text-on-inverse-secondary);opacity:0.7;margin:0;">April 2, 2026 &middot; Brian Mulligan, LPCC, CAT</p>
+</section>
+
+<section style="padding:56px var(--container-pad) 0;display:flex;justify-content:center;">
+  <img src="assets/blog/blog-manosphere-hero.jpg" alt="&quot;Inside the Manosphere&quot;: What Louis Theroux Got Wrong" style="width:100%;max-width:820px;height:auto;display:block;border:2px solid var(--color-ink);">
+</section>
+
+<section style="padding:36px var(--container-pad) 90px;display:flex;justify-content:center;">
+  <div style="max-width:720px;width:100%;display:flex;flex-direction:column;gap:20px;">
+    <img src="assets/blog/blog-manosphere-body-1.jpg" alt="Inside the Manosphere" style="width:100%;height:auto;display:block;margin:8px 0;border:2px solid var(--color-ink);">
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Last weekend I watched the documentary "Louis Theroux: Inside The Manosphere", a new documentary on Netflix. In the film, Louis interviews famous male social media influencers, known for their controversial content and opinions about masculinity. This was the first time I'd ever seen or heard of Louis Theroux, and after watching the doc and looking up some of his past work, I came to a better understanding of the name behind the title.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">One of Louis Theroux's most appealing qualities is his willingness to put himself and a camera in close proximity to disreputable figures and maintain an earnest, playful attitude in the midst of highly distressing interactions. It's not overtly a "gotcha" or "takedown" style of interviewing - it's more subtle than that, and can be uniquely endearing. However, at several points throughout "Inside the Manosphere", I also found it to be very off-putting. I think the documentary - an 'exposé' of toxic masculinity and its contemporary progenitors - will likely do more harm than good. Let's peel back the layers and look into why.</p>
+    <img src="assets/blog/blog-manosphere-body-2.jpg" alt="Inside the Manosphere" style="width:100%;height:auto;display:block;margin:8px 0;border:2px solid var(--color-ink);">
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">What is the "Manosphere"? In short, it's a loose circle of online influencers and figures who generate content that promotes a very clear idea of what it means to be a man. To the Manosphere, the ideal man is rich, muscular, confident, entrepreneurial, independent, and has lots of sex with lots of different women. He is also domineering over women (and other men), must command that women be subservient to him, must not be gay, and must never be weak, vulnerable, or humiliated.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Most of these ideas about masculinity are bad ideas. Does that even need to be explained? I didn't think so, but maybe I'm not the target audience, because the documentary seems to signal the viewer just how bad they are over and over again. There's some discussion of the impact of trauma, absent fathers, the attention economy, and a symbiotic relationship between the Manosphere and other sociocultural ecosystems (like OnlyFans models), but not nearly enough.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The majority of the documentary depicts these male influencers doing and saying things that are offensive and wrong, in front of Louis Theroux. Tonally, it's a different viewing experience than watching the influencers' actual content, given that we as viewers are watching it from the perspective of a 'shedding light' on the subculture, but the content itself is no different than what you would see on their respective social media channels. There's not a lot of push-back from Louis on the misogynistic and homophobic rantings of these influencers, which, to be fair, given their highly aggressive posturing, I can understand. But the biggest problem is that the documentary offers no alternative to the model of masculinity promoted by these influencers.</p>
+    <img src="assets/blog/blog-manosphere-body-3.jpg" alt="Inside the Manosphere" style="width:100%;height:auto;display:block;margin:8px 0;border:2px solid var(--color-ink);">
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">When men were boys, we needed figures to look up to. Young men and boys still need this, and will continue to need this, as long as there are young men and boys on this earth. Men also need belonging, safety, and acceptance. This is an ineluctable fact of life. We are human, which means we are dependent on other people. By definition, that makes us vulnerable. Yet nearly every contemporary depiction of masculinity rejects this human need.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">We are given two choices. First, the "Titan": comic book superheroes who are literally beyond human, or CEOs whose value is measured solely by dominance over others. In this model, if Captain America turns back into a skinny wimp or Tony Stark loses his fortune, their value vanishes. They are only "real men" as long as they are exceptional. On the other end of the spectrum is the "Sitcom Dad." This is a man who loves his family but is also a pathetic idiot who lives in permanent fear of disappointing his wife. While honorable in his own way, he is not exactly aspirational. No kid grows up wanting to be Phil Dunphy. The worst thing a man can be is weak (read: vulnerable), and the second-worst thing a man can be is feminine (read: having feelings).</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">It is irresponsible to place the burden of blame for these conceptions of masculinity on just one group. It's not the influencers' fault that modern masculinity is fucked up. It's also not Iron Man's fault, or Donald Trump's fault, or third-wave feminism's fault. And even if there was proof that there was someone to blame, pointing the finger doesn't help. In fact, the subjects in this documentary - for all their misconceptions, their repulsive speech, and even their hideous violent behavior - are victims of a social failing that emerged long before any of them were born. Some of them even speak on these cultural insights with unexpected incisiveness.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">At this point, I risk sounding like an apologist. In some ways perhaps I am. I remember what it was like to be called a "pussy" in front of other boys, and then turning around and using those words on someone else. Better to be the one dishing it out than the one taking it, I remember thinking at the time. These little signals, the coded messages men receive across the life span, teach us that if we do not appear strong, smart, competent, productive, righteous and wealthy, then we will be castigated and humiliated. And, ultimately, abandoned. The online "communities" these influencers rely on for basic human needs - for acceptance, for recognition, and for value, however contrived - also come with rigid demands that echo those in the broader culture:</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Don't be weak. Don't be poor. Don't be emotional. Don't be stupid. Be a man.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Louis Theroux appeared to be grappling with these implications in real-time during moments of the documentary. He'd look at his subjects, speechless and stunned, as if to imply that there was nothing he could say to break through to their humanity. If one views a Manosphere influencer's on-camera persona as a defense against appearing stupid or weak, then perhaps the most threatening thing you can do to them is point your own camera in their face and start asking them personal questions. Any therapist knows that if you challenge and reject someone's narrative - someone's identity - too strong and too soon, you can expect backlash. Right now, the threat these influencers in the documentary appeared to detect when Louis asked them questions has been, in a way, totally validated. The internet is abuzz about Inside the Manosphere, and everyone is in agreement: all those awful men are pathetic, hideous losers.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">So, reader, at this point you might be wondering, "If pointing a camera at these young men and showing everyone what's wrong with them isn't helpful, then what is?" Well, we need to show men it's okay to be human, and we need to make it realistic and achievable. We need to not abandon men when they screw up or act out. We need to teach men what it is to love and be loved, and to still feel empowered, capable, and strong. We need to model standards that make sense. That isn't accomplished solely through judgment and criticism. That's accomplished through providing better options. Ones that are actually attractive, and aren't boring. If the Manosphere is what men are drawn toward, we can't just tell them they're wrong - we also need to show them what's right, and explain why.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">It's almost impossible to imagine what this looks like, beyond just a vague wish, and that's because American culture hasn't really seen it. At least, not for a long time. As our culture evolves, so do our ideas about what's acceptable and good. So, while it may be impossible to predict what positive masculinity will look like in the next few decades, we need to start contributing something now. We can reject these influencers' bad ideas and shout from the rooftops that men should not be like that (accusatorially pointing a finger) - but if we aren't coming to the table with a better option, then boys and men will find whatever fills that void.</p>
+    <img src="assets/blog/blog-manosphere-body-4.jpg" alt="Inside the Manosphere" style="width:100%;height:auto;display:block;margin:8px 0;border:2px solid var(--color-ink);">
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Men need to be vulnerable. They also need to feel strong. They need belonging, understanding, and a shared mission. While "Inside the Manosphere" acknowledges some of these human needs and the myriad forces that draw men to communities like the Manosphere, simply showing us something that's repulsive has no real social value. It actually reinforces damaging and reductive ideas, encapsulated in statements like 'men are pigs', which only serve to keep men stuck, without any outlet for masculine expression. Ironically, at some level, the Manosphere understands this - they've felt rejected and devalued by "the system", and so they carved out a community where they could reenact their attachment wounds in a way that makes them feel like they have power, like they have a voice in the conversation. Louis Theroux understands that the Manosphere is waiting with open arms for all boys and men who feel like their masculinity isn't welcome anywhere else - men who feel like they don't matter. I just wish that he made more of an effort to tell the men watching that they do matter, and that people care.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">We don't need more cameras pointed at the wreckage. We need a model of masculinity that is both vulnerable and strong - one that is realistic, attractive, and actually works.</p>
+  </div>
+</section>
+
+<div class="flourish-h"></div>
+
+<section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+  <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;max-width:560px;">Ready for a different model of masculinity?</h2>
+  <a href="book.html" class="btn btn-inverse">Book a free consult</a>
+</section>
+
+<footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
+  <div class="wordmark" style="color:var(--text-on-inverse);">Adaptations Denver</div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:right;">
+    <div>Denver, CO · hello@adaptationsdenver.com · (720) 515-2706</div>
+    <div style="opacity:0.6;font-size:12px;">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
+  </div>
+</footer>
+
+<a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
+</body></html>

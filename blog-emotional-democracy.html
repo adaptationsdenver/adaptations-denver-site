@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 <meta charset="utf-8">
-<title>Adaptations Denver</title>
+<title>On Fostering Emotional Democracy — Adaptations Denver</title>
 
 <style>:root {
   /* Base neutrals — from brand hex */
@@ -122,7 +122,7 @@
   .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
   .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:13px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
   .placeholder{background:repeating-linear-gradient(45deg, var(--color-ink-15), var(--color-ink-15) 10px, transparent 10px, transparent 20px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-secondary);text-align:center;}
-  .card{padding:28px;display:flex;flex-direction:column;gap:14px;}
+  .card{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0;}
   .card-paper{background:var(--surface-card);color:var(--text-primary);border:1px solid var(--border-default);}
   .card-ink{background:var(--surface-inverse);color:var(--text-on-inverse);}
   .card h3{font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;margin:0;line-height:1.1;}
@@ -135,11 +135,11 @@
   .navlinks{display:flex;align-items:center;gap:32px;}
   .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
   .navlinks button{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;background:var(--color-accent);color:var(--color-accent-ink);border:none;border-radius:var(--radius-sm);padding:10px 20px;cursor:pointer;}
-  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-width:0;}
   @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
   .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
 
-  /* Homepage refresh (design/homepage-refresh handoff) — flourish system + square-corner override, scoped to this page */
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
   .btn{border-radius:0;}
   .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
   .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
@@ -147,15 +147,18 @@
   .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
   .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
   .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
-  .hero-copy{flex:1;min-width:280px;padding-right:var(--container-pad);padding-bottom:70px;}
-  .hero-illustration{position:absolute;right:0;bottom:0;width:clamp(160px,32vw,480px);height:auto;pointer-events:none;}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
   .service-card{position:relative;padding:26px;}
-  @media (max-width:560px){.hero-illustration{display:none;}}
   @media (max-width:1400px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;min-width:0;}
+  .blog-card{display:flex;flex-direction:column;border:2px solid var(--color-ink);background:var(--color-paper);text-decoration:none;color:inherit;min-width:0;}
+  .blog-card:hover{color:inherit;}
+  .blog-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;}
 </style>
 </head>
-<body>
 
+<body>
 <nav>
   <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
   <div class="navlinks">
@@ -164,95 +167,53 @@
     <a href="group-therapy.html">Group Therapy</a>
     <a href="consultation-speaking.html">Consultation + Speaking</a>
     <a href="about.html">About</a>
-    <a href="blog.html">Blog</a>
+    <a href="blog.html" style="opacity:1;font-weight:800;">Blog</a>
     <a href="contact.html">Contact</a>
     <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
   </div>
 </nav>
 
-<section style="background:var(--color-ink);color:var(--text-on-inverse);padding:clamp(60px,10vw,90px) 0 0 var(--container-pad);display:flex;gap:40px;align-items:center;position:relative;overflow:hidden;">
-  <div class="hero-copy" style="display:flex;flex-direction:column;gap:24px;">
-    <span class="eyebrow">Therapy for men · Denver, CO</span>
-    <h1 style="font-family:var(--font-display);font-weight:900;font-size:clamp(32px,6vw,52px);line-height:1.0;text-transform:uppercase;color:var(--text-on-inverse);margin:0;max-width:760px;">Talking with purpose.</h1>
-    <p style="font:500 17px/1.5 var(--font-body);color:var(--text-on-inverse-secondary);margin:0;max-width:520px;">Therapy for men who seem to manage everything, except themselves.<br><br>Ready to make a change?</p>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="book.html" class="btn btn-primary">Book a free consultation</a>
-      <a href="approach.html" class="btn btn-outline">See how it works</a>
-    </div>
-  </div>
-  <img src="assets/graphics/sisyphus-hero-right.png" alt="" class="hero-illustration">
+<section style="background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 60px;display:flex;flex-direction:column;gap:20px;">
+  <a href="blog.html" class="eyebrow" style="display:inline-block;">&larr; Blog</a>
+  <h1 style="font:var(--text-display-lg);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;max-width:900px;">On Fostering Emotional Democracy</h1>
+  <p style="font:var(--text-body-lg);max-width:640px;color:var(--text-on-inverse-secondary);margin:0;">A paradigm shift in how we think about our feelings: all emotions have a place.</p>
+  <p style="font:var(--text-body-sm);color:var(--text-on-inverse-secondary);opacity:0.7;margin:0;">September 1, 2025 &middot; Brian Mulligan, LPCC, CAT</p>
 </section>
 
-<section style="padding:clamp(48px,8vw,64px) var(--container-pad);display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
-  <div style="display:flex;flex-direction:column;gap:12px;max-width:280px;">
-    <img src="assets/photos/founder-portrait-new.jpg" alt="Founder portrait" style="width:100%;max-width:280px;height:auto;display:block;">
-    <div style="font:700 14px var(--font-body);color:var(--text-primary);">Brian Mulligan, LPCC, CAT, Owner</div>
-    <a href="about.html" class="btn btn-primary" style="padding:8px 16px;font-size:12px;align-self:flex-start;">Meet Brian</a>
-  </div>
-  <div class="flourish-c" style="flex:1;min-width:280px;max-width:600px;display:flex;flex-direction:column;gap:16px;">
-    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(24px,3.5vw,30px);text-transform:uppercase;color:var(--text-primary);margin:0;">Not the last resort.<br>The next level.</h2>
-    <p style="font:500 15px/1.55 var(--font-body);color:var(--text-secondary);margin:0;">Most guys wait until it's a crisis. I think most guys have it backwards. Because it's a lot easier to stay fit than to get fit. And delaying action only compounds the damage.</p>
-    <p style="font:500 15px/1.55 var(--font-body);color:var(--text-secondary);margin:0;">It's one thing to clear a hurdle. It's another to know how to stop building them in the first place. See how proactive - instead of reactive - psychotherapy can help you accelerate your growth, conquer challenges, and increase self-mastery.</p>
-    <a href="approach.html" class="btn btn-primary" style="align-self:flex-start;padding:10px 20px;font-size:13px;">Learn about the proactive approach</a>
-  </div>
+<section style="padding:56px var(--container-pad) 0;display:flex;justify-content:center;">
+  <img src="assets/blog/blog-emotional-democracy-hero.jpg" alt="On Fostering Emotional Democracy" style="width:100%;max-width:820px;height:auto;display:block;border:2px solid var(--color-ink);">
 </section>
 
-<section style="padding:0 var(--container-pad) 72px;display:flex;flex-direction:column;gap:28px;">
-  <div class="flourish-c">
-    <span class="eyebrow">Offerings</span>
+<section style="padding:36px var(--container-pad) 90px;display:flex;justify-content:center;">
+  <div style="max-width:720px;width:100%;display:flex;flex-direction:column;gap:20px;">
+    <img src="assets/blog/blog-emotional-democracy-hero.jpg" alt="On Fostering Emotional Democracy" style="width:100%;height:auto;display:block;margin:8px 0;border:2px solid var(--color-ink);">
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">In our culture, we're taught to chase happiness. From motivational quotes on social media to a booming self-help industry, the message is clear: sadness, anger, and anxiety are things to be avoided, fixed, or medicated away. We are often praised for being "positive" and told to "look on the bright side," creating a powerful but often unspoken pressure to be happy all the time. But what if this widespread emotional expectation is actually preventing us from living a full and meaningful life?</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">This relentless pursuit of positivity creates a significant problem: it makes us feel that something is wrong with us when we inevitably experience difficult emotions. We add layers of shame, guilt, and self-blame on top of our already uncomfortable feelings. We think, "I shouldn't be so anxious," or "I need to snap out of this funk." This judgment intensifies the pain, trapping us in a cycle where the very act of trying to avoid negative emotions makes them more overwhelming.</p>
+    <h3 style="font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;color:var(--text-primary);margin:16px 0 0;">The Wisdom of the Uncomfortable</h3>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">What if we reframed our perspective? Instead of seeing negative emotions as problems to be solved, what if we saw them as valuable pieces of information? From this viewpoint, anger isn't a flaw; it's a signal that a boundary has been crossed or an injustice has occurred. Anxiety isn't a weakness; it's a message from your nervous system that something feels threatening or uncertain. Even sadness can be a profound indicator that we've lost something important to us.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">These emotions are not roadblocks on our journey to happiness; they are a built-in guidance system. They point us toward what we value, what we need, and where we might be out of alignment. By learning to listen to them without judgment, we can gain deep insights into our lives and ourselves. They are like a compass, turning us inward and pointing toward the parts of ourselves that need attention and care.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Consider the feeling of frustration. When you feel stuck and frustrated, that emotion is telling you that a current approach isn't working. Instead of seeing the frustration as a negative, you can use it as a prompt to get curious about the situation. You might ask yourself: What is this feeling telling me? What needs attention or a different approach? This shift in perspective allows the emotion to be a catalyst for change rather than a reason for self-criticism.</p>
+    <h3 style="font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;color:var(--text-primary);margin:16px 0 0;">A Different Way Forward</h3>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Embracing the full spectrum of your emotions isn't about becoming a pessimistic person or seeking out pain. It's about becoming a complete person—someone who can experience the full range of human feeling without shame. This process of listening to our difficult emotions, without judgment or layers of self-blame, is what allows us to integrate them healthily. It's how we find the wisdom in the uncomfortable. When we sit with our pain, we can begin to understand its purpose, and in that understanding, we can find a path to personal growth and deeper, more authentic relationships. It's about letting the light and the shadow coexist within you, trusting that both have something to teach you.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">This kind of work—this gentle inquiry into our own emotional lives—can be challenging to do alone. Navigating the depths of our most difficult feelings and understanding their messages often requires a dedicated space and a trusted guide. This is precisely the kind of work that therapy is for. A therapeutic relationship provides a safe, non-judgmental container where you can explore your emotional landscape, allowing you to process and integrate your feelings in a way that promotes your goals, your growth, and your relationships.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">If you are ready to begin that journey of a different kind of relationship with your emotions, feel free to reach out today to schedule a consultation.</p>
   </div>
-  <section class="grid3" style="max-width:1100px;">
-    <a href="individual-therapy.html" class="service-card" style="background:var(--color-paper);border:2px solid var(--color-ink);color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:8px;">
-      <span class="flourish-g">01</span>
-      <span class="eyebrow" style="font-size:12px;text-align:right;">Individual</span>
-      <h3 style="font-family:var(--font-display);font-weight:900;font-size:19px;text-transform:uppercase;color:var(--text-primary);margin:0;">One-On-One</h3>
-      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-secondary);margin:0;">Weekly, focused, built around your actual life.</p>
-    </a>
-    <a href="group-therapy.html" class="service-card" style="background:var(--color-ink);color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:8px;">
-      <span class="flourish-g on-ink">02</span>
-      <span class="eyebrow" style="font-size:12px;text-align:right;">Group</span>
-      <h3 style="font-family:var(--font-display);font-weight:900;font-size:19px;text-transform:uppercase;color:var(--text-on-inverse);margin:0;">Men's Group Work</h3>
-      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-on-inverse-secondary);margin:0;">Other men, same mission. The power of the group helps men get what they want.</p>
-    </a>
-    <a href="consultation-speaking.html" class="service-card" style="background:var(--color-paper);border:2px solid var(--color-ink);color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:8px;">
-      <span class="flourish-g">03</span>
-      <span class="eyebrow" style="font-size:12px;text-align:right;">Speaking</span>
-      <h3 style="font-family:var(--font-display);font-weight:900;font-size:19px;text-transform:uppercase;color:var(--text-primary);margin:0;">Consulting &amp; Talks</h3>
-      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-secondary);margin:0;">Lunch-and-learns, corporate talks, team-building and coworking intensives. Evidence-backed concepts and strategies that can help your business function.</p>
-    </a>
-  </section>
-</section>
-
-<section style="padding:0 var(--container-pad) 72px;display:flex;flex-direction:column;gap:28px;">
-  <blockquote style="margin:0;padding:0 0 0 24px;border-left:4px solid var(--color-accent);font-family:var(--font-display);font-weight:900;font-size:clamp(22px,3.5vw,28px);text-transform:uppercase;color:var(--text-primary);max-width:760px;">
-    Competence is not the same as capacity.
-  </blockquote>
-  <p style="font:500 15px/1.55 var(--font-body);color:var(--text-secondary);margin:0;max-width:700px;">Sure, you get things done. But nobody enjoys just "hanging on" or "powering through", day after day. So why would you settle for it?</p>
-  <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
-    <div class="flourish-c" style="max-width:400px;">
-      <span style="font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-ink);">Validated</span>
-      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-secondary);margin:6px 0 0;">No TikTok quick-fix "hacks". Evidence-based methods, zero pretense. Room to wander, as long as we're headed somewhere.</p>
-    </div>
-    <div class="flourish-c" style="max-width:400px;">
-      <span style="font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-ink);">Direct</span>
-      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-secondary);margin:6px 0 0;">No psychobabble. No hiding behind "therapyspeak". I tell you what I think, starting with the first session. Because your time is valuable.</p>
-    </div>
-  </div>
-  <a href="approach.html" style="font:600 13px var(--font-body);letter-spacing:0.02em;text-transform:uppercase;color:var(--color-accent);">More on my approach →</a>
 </section>
 
 <div class="flourish-h"></div>
 
-<section style="background:var(--color-accent);color:#fff;padding:clamp(40px,8vw,56px) var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
-  <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(22px,3.5vw,28px);text-transform:uppercase;color:#fff;margin:0;">Over being overwhelmed?</h2>
+<section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+  <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;max-width:560px;">Ready to make peace with how you feel?</h2>
   <a href="book.html" class="btn btn-inverse">Book a free consult</a>
 </section>
 
-<footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:40px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;">
+<footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
   <div class="wordmark" style="color:var(--text-on-inverse);">Adaptations Denver</div>
-  <div>Denver, CO · brian@adaptationsdenver.com · (720) 515-2706</div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:right;">
+    <div>Denver, CO · hello@adaptationsdenver.com · (720) 515-2706</div>
+    <div style="opacity:0.6;font-size:12px;">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
+  </div>
 </footer>
-<div style="background:var(--color-ink);color:var(--text-on-inverse-secondary);opacity:0.5;font:13px var(--font-body);padding:12px var(--container-pad);">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
 
 <a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
 </body></html>

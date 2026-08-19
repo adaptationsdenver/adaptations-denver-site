@@ -130,7 +130,7 @@
   .tag{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);display:inline-block;}
   .tag-accent{background:var(--color-accent);color:var(--color-accent-ink);}
   .tag-default{background:var(--color-ink-15);color:var(--text-primary);}
-  nav{display:flex;align-items:center;justify-content:space-between;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
   .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
   .navlinks{display:flex;align-items:center;gap:32px;}
   .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
@@ -138,68 +138,81 @@
   section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
   .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  @media (max-width:1400px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html" class="wordmark" style="color:inherit;text-decoration:none;">Adaptations Denver</a>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
   <div class="navlinks">
     <a href="approach.html">Approach</a>
     <a href="individual-therapy.html">Individual Therapy</a>
     <a href="group-therapy.html">Group Therapy</a>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
     <a href="about.html" style="opacity:1;font-weight:800;">About</a>
+    <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
-    <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a consultation</a>
+    <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
   </div>
 </nav>
 
 <section style="background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 90px;display:flex;flex-direction:column;gap:28px;">
   <span class="eyebrow">About Brian</span>
-  <h1 style="font:var(--text-display-xl);font-family:var(--font-display);text-transform:uppercase;margin:0;max-width:960px;">Hello and welcome. Now watch this drive.</h1>
-  <img src="assets/photos/golf-drive.jpg" alt="Brian Mulligan teeing off on a golf course" style="width:100%;max-width:700px;height:auto;display:block;">
-  <p style="font:var(--text-body-lg);max-width:620px;color:var(--text-on-inverse-secondary);margin:0;">I'm Brian, a Licensed Professional Counselor Candidate and Certified Addiction Technician in Colorado, and a bad golfer (that shot went in the water). I focus on working with adult men who contend with anxiety, depression, life transitions, career dissatisfaction, anger, and substance use concerns.</p>
-  <p style="font:var(--text-body-lg);max-width:620px;color:var(--text-on-inverse-secondary);margin:0;">When people talk about "holding space", I don't know what that means. If someone just wants to talk, they can do that with a friend, family member, or coworker for free. What I focus on is helping people make meaningful change in their lives, because that is what they are investing in. I work hard for my clients because your time is valuable, and therapy should produce results.</p>
-  <p style="font:var(--text-body-lg);max-width:620px;color:var(--text-on-inverse-secondary);margin:0;">Let's take all this space we're holding and do something with it.</p>
+  <h1 style="font:var(--text-display-xl);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">Hello and welcome.<br>Now watch this drive.</h1>
+  <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
+    <img src="assets/photos/golf-drive.jpg" alt="Brian Mulligan teeing off on a golf course" style="flex:3 1 400px;max-width:750px;width:100%;height:auto;display:block;">
+    <div style="flex:2 1 300px;min-width:280px;display:flex;flex-direction:column;gap:20px;">
+      <p style="font:var(--text-body-lg);color:var(--text-on-inverse-secondary);margin:0;">I'm Brian, a Licensed Professional Counselor Candidate and Certified Addiction Technician in Colorado, and a bad golfer (that shot went in the water). I focus on working with adult men who contend with anxiety, depression, life transitions, career dissatisfaction, anger, and substance use concerns.</p>
+      <p style="font:var(--text-body-lg);color:var(--text-on-inverse-secondary);margin:0;">When people talk about "holding space", I don't know what that means. If someone just wants to talk, they can do that with a friend, family member, or coworker for free. What I focus on is helping people make meaningful change in their lives, because that is what they are investing in. I work hard for my clients because your time is valuable, and therapy should produce results.</p>
+      <p style="font:var(--text-body-lg);color:var(--text-on-inverse-secondary);margin:0;">Let's take all this space we're holding and do something with it.</p>
+    </div>
+  </div>
 </section>
 
 <section style="padding:80px var(--container-pad);display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
-  <div style="display:flex;flex-direction:column;gap:14px;flex-shrink:0;">
-    <img src="assets/photos/founder-portrait.png" alt="Brian Mulligan portrait" style="width:360px;height:440px;object-fit:cover;">
+  <div style="flex:1 1 380px;min-width:280px;display:flex;flex-direction:column;gap:14px;">
+    <img src="assets/photos/founder-portrait.png" alt="Brian Mulligan portrait" style="width:100%;max-width:480px;height:auto;display:block;">
     <div style="font:var(--text-body-lg);font-weight:700;color:var(--text-primary);">Brian Mulligan, LPCC, CAT, Owner</div>
   </div>
-  <div style="max-width:560px;display:flex;flex-direction:column;gap:20px;">
-    <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;">Six years in advertising.<br>Then a change.</h2>
-    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Six years in award-winning advertising preceded Brian's mental health career. He personally overcame crippling anxiety and panic attacks through therapeutic work — which is part of why he does this work now. He started in residential addiction treatment; today his clients are typically busy professionals juggling multiple roles at once.</p>
-    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Outside the office: reading, working out, golf, and Denver sports. A lifelong learner, still passionate about the craft of psychotherapy.</p>
+  <div style="flex:1.4 1 450px;min-width:280px;max-width:620px;display:flex;flex-direction:column;gap:20px;">
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">I spent six years writing commercials for ad agencies before I found this work, and that experience still shows up in how I think: fast, direct, allergic to filler. I use evidence-based methods, including Acceptance and Commitment Therapy (ACT), Cognitive Behavioral Therapy (CBT), Motivational Interviewing (MI), and mindfulness, but I don't run therapy off a script. Nobody's path looks the same, so nobody gets a manual.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">I also know what it's like to be the guy who looks fine and isn't. I dealt with real anxiety and panic attacks earlier in my life, the kind that show up no matter how many campaigns you've sold. Working through that with a therapist of my own is part of why I do this work today, and part of why I don't buy the idea that insight alone fixes anything. You can understand exactly why you're anxious and still be anxious. Real change takes more than a diagnosis.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">I started my career in residential addiction treatment. Today, most of my clients are busy professionals, lawyers, executives, business owners, guys managing more than anyone around them realizes.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Outside the office: reading, working out, a golf handicap I'd rather not discuss, and Denver sports. I take the work seriously. I don't take myself too seriously.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">I'm looking forward to meeting you.</p>
+    <p style="font:var(--text-body-md);font-weight:700;color:var(--text-primary);margin:0;">Brian Mulligan, LPCC, CAT</p>
   </div>
 </section>
 
 <section style="padding:0 var(--container-pad) 90px;display:flex;flex-direction:column;gap:28px;">
   <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
-    <div style="max-width:420px;display:flex;flex-direction:column;gap:12px;">
-      <span class="tag tag-accent">No hand-holding</span>
-      <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Casual conversation is free, available anytime from friends and family. Therapy should produce something you couldn't get from a bar stool.</p>
+    <div class="flourish-c" style="max-width:420px;">
+      <span style="font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-ink);">No hand-holding</span>
+      <p style="font:var(--text-body-md);color:var(--text-secondary);margin:6px 0 0;">Casual conversation is free, available anytime from friends and family. Therapy should produce something you couldn't get from a bar stool.</p>
     </div>
-    <div style="max-width:420px;display:flex;flex-direction:column;gap:12px;">
-      <span class="tag tag-default">Individualized</span>
-      <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Non-manualized treatment that recognizes your path is your own — evidence-based, never one-size-fits-all.</p>
+    <div class="flourish-c" style="max-width:420px;">
+      <span style="font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-ink);">Individualized</span>
+      <p style="font:var(--text-body-md);color:var(--text-secondary);margin:6px 0 0;">Non-manualized treatment that recognizes your path is your own — evidence-based, never one-size-fits-all.</p>
     </div>
   </div>
 </section>
 
-<section style="padding:0 var(--container-pad) 90px;display:flex;flex-direction:column;gap:32px;">
-  <span class="eyebrow">Methods</span>
-  <section class="grid3" style="grid-template-columns:repeat(3,1fr);max-width:1100px;">
-    <div class="card card-paper"><span class="eyebrow" style="color:var(--color-accent);">ACT</span><h3>Acceptance &amp; Commitment</h3><p>Make room for what's hard, and act on what matters anyway.</p></div>
-    <div class="card card-ink"><span class="eyebrow" style="color:var(--color-accent);">CBT</span><h3>Cognitive Behavioral</h3><p>Take apart the thought patterns that keep you stuck, piece by piece.</p></div>
-    <div class="card card-paper"><span class="eyebrow" style="color:var(--color-accent);">MI</span><h3>Motivational Interviewing</h3><p>Plus mindfulness — practical tools, not textbook theory.</p></div>
-  </section>
-</section>
-
 <section style="padding:0 var(--container-pad) 90px;display:flex;flex-direction:column;gap:20px;">
-  <span class="eyebrow">Credentials</span>
+  <div class="flourish-c"><span class="eyebrow">Credentials</span></div>
   <div style="display:flex;flex-direction:column;gap:8px;font:var(--text-body-md);color:var(--text-secondary);">
     <div>MA Counseling — Regis University</div>
     <div>BA Psychology — University of Colorado Boulder</div>
@@ -208,9 +221,11 @@
   </div>
 </section>
 
+<div class="flourish-h"></div>
+
 <section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
   <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;">Ready to do the work?</h2>
-  <a href="book.html" class="btn btn-inverse">Book a consultation</a>
+  <a href="book.html" class="btn btn-inverse">Book a free consultation</a>
 </section>
 
 <footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
@@ -221,5 +236,5 @@
   </div>
 </footer>
 
-<a href="book.html" class="btn btn-primary floating-cta">Book a consultation</a>
+<a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
 </body></html>

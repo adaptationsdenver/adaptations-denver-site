@@ -139,7 +139,7 @@
   @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
   .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
 
-  /* Homepage refresh (design/homepage-refresh handoff) — flourish system + square-corner override, scoped to this page */
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
   .btn{border-radius:0;}
   .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
   .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
@@ -147,13 +147,17 @@
   .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
   .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
   .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
   .hero-copy{flex:1;min-width:280px;padding-right:var(--container-pad);padding-bottom:70px;}
   .hero-illustration{position:absolute;right:0;bottom:0;width:clamp(160px,32vw,480px);height:auto;pointer-events:none;}
-  .service-card{position:relative;padding:26px;}
-  @media (max-width:560px){.hero-illustration{display:none;}}
+  @media (max-width:1050px){.hero-illustration{display:none;}}
   @media (max-width:1400px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
 </style>
 </head>
+
+
 <body>
 
 <nav>
@@ -162,7 +166,7 @@
     <a href="approach.html">Approach</a>
     <a href="individual-therapy.html">Individual Therapy</a>
     <a href="group-therapy.html">Group Therapy</a>
-    <a href="consultation-speaking.html">Consultation + Speaking</a>
+    <a href="consultation-speaking.html" style="opacity:1;font-weight:800;">Consultation + Speaking</a>
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
@@ -172,87 +176,40 @@
 
 <section style="background:var(--color-ink);color:var(--text-on-inverse);padding:clamp(60px,10vw,90px) 0 0 var(--container-pad);display:flex;gap:40px;align-items:center;position:relative;overflow:hidden;">
   <div class="hero-copy" style="display:flex;flex-direction:column;gap:24px;">
-    <span class="eyebrow">Therapy for men · Denver, CO</span>
-    <h1 style="font-family:var(--font-display);font-weight:900;font-size:clamp(32px,6vw,52px);line-height:1.0;text-transform:uppercase;color:var(--text-on-inverse);margin:0;max-width:760px;">Talking with purpose.</h1>
-    <p style="font:500 17px/1.5 var(--font-body);color:var(--text-on-inverse-secondary);margin:0;max-width:520px;">Therapy for men who seem to manage everything, except themselves.<br><br>Ready to make a change?</p>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="book.html" class="btn btn-primary">Book a free consultation</a>
-      <a href="approach.html" class="btn btn-outline">See how it works</a>
-    </div>
+    <span class="eyebrow">Consultation + Speaking</span>
+    <h1 style="font-family:var(--font-display);font-weight:900;font-size:clamp(32px,6vw,52px);line-height:1.0;text-transform:uppercase;margin:0;max-width:760px;">Bring the work to your team.</h1>
+    <p style="font:var(--text-body-lg);max-width:560px;color:var(--text-on-inverse-secondary);margin:0;">Lunch-and-learns, corporate talks, team-building and coworking intensives. Evidence-backed concepts and strategies that can help your business function.</p>
   </div>
-  <img src="assets/graphics/sisyphus-hero-right.png" alt="" class="hero-illustration">
+  <img src="assets/graphics/consultation-speaking-hero.png" alt="" class="hero-illustration">
 </section>
 
-<section style="padding:clamp(48px,8vw,64px) var(--container-pad);display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
-  <div style="display:flex;flex-direction:column;gap:12px;max-width:280px;">
-    <img src="assets/photos/founder-portrait-new.jpg" alt="Founder portrait" style="width:100%;max-width:280px;height:auto;display:block;">
-    <div style="font:700 14px var(--font-body);color:var(--text-primary);">Brian Mulligan, LPCC, CAT, Owner</div>
-    <a href="about.html" class="btn btn-primary" style="padding:8px 16px;font-size:12px;align-self:flex-start;">Meet Brian</a>
+<section style="padding:80px var(--container-pad);display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
+  <div class="flourish-c" style="max-width:620px;display:flex;flex-direction:column;gap:20px;">
+    <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;">What to expect</h2>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Sessions are built around your team's actual needs — lunch-and-learns, keynote talks, team-building workshops, or coworking intensives. Same evidence-based approach as the therapy work, adapted for a room instead of one person.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Format, length, and topic are customized per engagement. Available in person in Denver or virtually.</p>
   </div>
-  <div class="flourish-c" style="flex:1;min-width:280px;max-width:600px;display:flex;flex-direction:column;gap:16px;">
-    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(24px,3.5vw,30px);text-transform:uppercase;color:var(--text-primary);margin:0;">Not the last resort.<br>The next level.</h2>
-    <p style="font:500 15px/1.55 var(--font-body);color:var(--text-secondary);margin:0;">Most guys wait until it's a crisis. I think most guys have it backwards. Because it's a lot easier to stay fit than to get fit. And delaying action only compounds the damage.</p>
-    <p style="font:500 15px/1.55 var(--font-body);color:var(--text-secondary);margin:0;">It's one thing to clear a hurdle. It's another to know how to stop building them in the first place. See how proactive - instead of reactive - psychotherapy can help you accelerate your growth, conquer challenges, and increase self-mastery.</p>
-    <a href="approach.html" class="btn btn-primary" style="align-self:flex-start;padding:10px 20px;font-size:13px;">Learn about the proactive approach</a>
+  <div class="card card-paper" style="min-width:260px;">
+    <span class="eyebrow" style="color:var(--color-accent);">Rate</span>
+    <h3>Custom quote</h3>
+    <p>Pricing depends on format and length. Contact to discuss your event.</p>
   </div>
-</section>
-
-<section style="padding:0 var(--container-pad) 72px;display:flex;flex-direction:column;gap:28px;">
-  <div class="flourish-c">
-    <span class="eyebrow">Offerings</span>
-  </div>
-  <section class="grid3" style="max-width:1100px;">
-    <a href="individual-therapy.html" class="service-card" style="background:var(--color-paper);border:2px solid var(--color-ink);color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:8px;">
-      <span class="flourish-g">01</span>
-      <span class="eyebrow" style="font-size:12px;text-align:right;">Individual</span>
-      <h3 style="font-family:var(--font-display);font-weight:900;font-size:19px;text-transform:uppercase;color:var(--text-primary);margin:0;">One-On-One</h3>
-      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-secondary);margin:0;">Weekly, focused, built around your actual life.</p>
-    </a>
-    <a href="group-therapy.html" class="service-card" style="background:var(--color-ink);color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:8px;">
-      <span class="flourish-g on-ink">02</span>
-      <span class="eyebrow" style="font-size:12px;text-align:right;">Group</span>
-      <h3 style="font-family:var(--font-display);font-weight:900;font-size:19px;text-transform:uppercase;color:var(--text-on-inverse);margin:0;">Men's Group Work</h3>
-      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-on-inverse-secondary);margin:0;">Other men, same mission. The power of the group helps men get what they want.</p>
-    </a>
-    <a href="consultation-speaking.html" class="service-card" style="background:var(--color-paper);border:2px solid var(--color-ink);color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:8px;">
-      <span class="flourish-g">03</span>
-      <span class="eyebrow" style="font-size:12px;text-align:right;">Speaking</span>
-      <h3 style="font-family:var(--font-display);font-weight:900;font-size:19px;text-transform:uppercase;color:var(--text-primary);margin:0;">Consulting &amp; Talks</h3>
-      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-secondary);margin:0;">Lunch-and-learns, corporate talks, team-building and coworking intensives. Evidence-backed concepts and strategies that can help your business function.</p>
-    </a>
-  </section>
-</section>
-
-<section style="padding:0 var(--container-pad) 72px;display:flex;flex-direction:column;gap:28px;">
-  <blockquote style="margin:0;padding:0 0 0 24px;border-left:4px solid var(--color-accent);font-family:var(--font-display);font-weight:900;font-size:clamp(22px,3.5vw,28px);text-transform:uppercase;color:var(--text-primary);max-width:760px;">
-    Competence is not the same as capacity.
-  </blockquote>
-  <p style="font:500 15px/1.55 var(--font-body);color:var(--text-secondary);margin:0;max-width:700px;">Sure, you get things done. But nobody enjoys just "hanging on" or "powering through", day after day. So why would you settle for it?</p>
-  <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
-    <div class="flourish-c" style="max-width:400px;">
-      <span style="font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-ink);">Validated</span>
-      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-secondary);margin:6px 0 0;">No TikTok quick-fix "hacks". Evidence-based methods, zero pretense. Room to wander, as long as we're headed somewhere.</p>
-    </div>
-    <div class="flourish-c" style="max-width:400px;">
-      <span style="font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-ink);">Direct</span>
-      <p style="font:500 14px/1.5 var(--font-body);color:var(--text-secondary);margin:6px 0 0;">No psychobabble. No hiding behind "therapyspeak". I tell you what I think, starting with the first session. Because your time is valuable.</p>
-    </div>
-  </div>
-  <a href="approach.html" style="font:600 13px var(--font-body);letter-spacing:0.02em;text-transform:uppercase;color:var(--color-accent);">More on my approach →</a>
 </section>
 
 <div class="flourish-h"></div>
 
-<section style="background:var(--color-accent);color:#fff;padding:clamp(40px,8vw,56px) var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
-  <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(22px,3.5vw,28px);text-transform:uppercase;color:#fff;margin:0;">Over being overwhelmed?</h2>
-  <a href="book.html" class="btn btn-inverse">Book a free consult</a>
+<section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+  <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;">Ready to book a talk?</h2>
+  <a href="book.html" class="btn btn-inverse">Book a free consultation</a>
 </section>
 
-<footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:40px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;">
+<footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
   <div class="wordmark" style="color:var(--text-on-inverse);">Adaptations Denver</div>
-  <div>Denver, CO · brian@adaptationsdenver.com · (720) 515-2706</div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:right;">
+    <div>Denver, CO · hello@adaptationsdenver.com · (720) 515-2706</div>
+    <div style="opacity:0.6;font-size:12px;">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
+  </div>
 </footer>
-<div style="background:var(--color-ink);color:var(--text-on-inverse-secondary);opacity:0.5;font:13px var(--font-body);padding:12px var(--container-pad);">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
 
 <a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
 </body></html>
