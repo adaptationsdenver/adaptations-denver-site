@@ -122,7 +122,7 @@
   .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
   .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:13px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
   .placeholder{background:repeating-linear-gradient(45deg, var(--color-ink-15), var(--color-ink-15) 10px, transparent 10px, transparent 20px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-secondary);text-align:center;}
-  .card{padding:28px;display:flex;flex-direction:column;gap:14px;}
+  .card{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0;}
   .card-paper{background:var(--surface-card);color:var(--text-primary);border:1px solid var(--border-default);}
   .card-ink{background:var(--surface-inverse);color:var(--text-on-inverse);}
   .card h3{font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;margin:0;line-height:1.1;}
@@ -135,7 +135,7 @@
   .navlinks{display:flex;align-items:center;gap:32px;}
   .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
   .navlinks button{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;background:var(--color-accent);color:var(--color-accent-ink);border:none;border-radius:var(--radius-sm);padding:10px 20px;cursor:pointer;}
-  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-width:0;}
   @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
   .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
 
@@ -150,7 +150,7 @@
   .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
   .card-ink{background:var(--color-ink);border:none;}
   .service-card{position:relative;padding:26px;}
-  @media (max-width:760px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
+  @media (max-width:1320px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
 </style>
 </head>
 
@@ -171,7 +171,7 @@
 
 <section style="background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 90px;display:flex;flex-direction:column;gap:28px;">
   <span class="eyebrow">Contact</span>
-  <h1 style="font:var(--text-display-xl);font-family:var(--font-display);text-transform:uppercase;margin:0;max-width:960px;">Get in touch.</h1>
+  <h1 style="font:var(--text-display-xl);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">Get in touch.</h1>
   <p style="font:var(--text-body-lg);max-width:560px;color:var(--text-on-inverse-secondary);margin:0;">Big Change Counseling, LLC · Denver, CO</p>
 </section>
 
@@ -179,7 +179,7 @@
   <section class="grid3" style="max-width:1100px;">
     <div class="card card-paper">
       <span class="eyebrow" style="color:var(--color-accent);">Email</span>
-      <h3><a href="mailto:brian@adaptationsdenver.com" style="color:inherit;">brian@adaptationsdenver.com</a></h3>
+      <h3 style="overflow-wrap:break-word;"><a href="mailto:brian@adaptationsdenver.com" style="color:inherit;">brian@adaptationsdenver.com</a></h3>
     </div>
     <div class="card card-paper">
       <span class="eyebrow" style="color:var(--color-accent);">Phone</span>
