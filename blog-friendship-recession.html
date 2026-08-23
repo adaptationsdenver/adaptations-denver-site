@@ -10,6 +10,20 @@
   gtag('config', 'G-75XE9KFDSC');
 </script>
 
+<!-- GA4: track mailto and tel link clicks -->
+<script>
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a');
+  if (!link) return;
+  const href = link.getAttribute('href') || '';
+  if (href.startsWith('mailto:')) {
+    gtag('event', 'mailto_click', { link_url: href });
+  } else if (href.startsWith('tel:')) {
+    gtag('event', 'tel_click', { link_url: href });
+  }
+});
+</script>
+
 <meta charset="utf-8">
 <title>The Friendship Recession: Why Your "Golf Buddies" Are Not Enough — Adaptations Denver</title>
 
