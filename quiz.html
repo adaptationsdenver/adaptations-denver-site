@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75XE9KFDSC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-75XE9KFDSC');
+</script>
+
+<!-- GA4: track mailto and tel link clicks -->
+<script>
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a');
+  if (!link) return;
+  const href = link.getAttribute('href') || '';
+  if (href.startsWith('mailto:')) {
+    gtag('event', 'mailto_click', { link_url: href });
+  } else if (href.startsWith('tel:')) {
+    gtag('event', 'tel_click', { link_url: href });
+  }
+});
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Men's Mental Health Check | Adaptations Denver</title>
+<style>
+  @font-face {
+    font-family: 'PP Monument Extended';
+    src: url("fonts/PPMonumentExtended-Black.otf") format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'PP Neue Machina';
+    src: url("fonts/PPNeueMachina-PlainRegular.otf") format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  :root {
+    --ink: #1A1C1E;
+    --paper: #F7F5F2;
+    --accent: #C4472A;
+    --accent-soft: #C4472A1a;
+    --line: #1A1C1E22;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-family: 'PP Neue Machina', -apple-system, sans-serif; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 48px 24px 80px; min-height: 100vh; display: flex; flex-direction: column; }
+  .eyebrow { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+  h1 { font-family: 'PP Monument Extended', 'PP Neue Machina', sans-serif; font-weight: 700; font-size: clamp(28px, 5vw, 40px); line-height: 1.1; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .sub { font-size: 16px; color: var(--ink); opacity: 0.72; margin: 0 0 40px; max-width: 46ch; }
+
+  .progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+  .progress-num { font-family: 'PP Monument Extended', sans-serif; font-size: 13px; letter-spacing: 0.08em; white-space: nowrap; }
+  .progress-track { flex: 1; height: 3px; background: var(--line); position: relative; }
+  .progress-fill { position: absolute; top: 0; left: 0; height: 100%; background: var(--accent); transition: width 0.35s ease; }
+
+  .card { display: none; flex-direction: column; gap: 18px; animation: fadeIn 0.3s ease; }
+  .card.active { display: flex; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  .question { font-family: 'PP Monument Extended', sans-serif; font-size: clamp(21px, 4vw, 26px); line-height: 1.25; margin: 0; }
+
+  .scale-row { display: flex; gap: 8px; margin-top: 4px; }
+  .scale-btn {
+    flex: 1; aspect-ratio: 1 / 1; border: 1.5px solid var(--line); background: transparent; color: var(--ink);
+    border-radius: 8px; font-family: 'PP Monument Extended', sans-serif; font-size: 18px; cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .scale-btn:hover, .scale-btn:focus-visible { border-color: var(--accent); background: var(--accent-soft); outline: none; }
+  .scale-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .scale-labels { display: flex; justify-content: space-between; font-size: 12px; opacity: 0.6; margin-top: 2px; }
+
+  #result-screen { display: none; flex-direction: column; gap: 22px; animation: fadeIn 0.4s ease; }
+  #result-screen.active { display: flex; }
+
+  .meter-wrap { margin: 4px 0; }
+  .meter-labels { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; opacity: 0.55; margin-bottom: 8px; }
+  .meter-track { height: 10px; border-radius: 6px; background: var(--line); overflow: hidden; }
+  .meter-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1); border-radius: 6px; }
+
+  .archetype-tag { font-family: 'PP Monument Extended', sans-serif; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin: 0; }
+  .result-headline { font-family: 'PP Monument Extended', sans-serif; font-size: clamp(25px, 5vw, 32px); line-height: 1.18; margin: 0; }
+  .result-body { font-size: 16px; line-height: 1.65; opacity: 0.9; margin: 0; }
+
+  .option-block { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 4px; }
+  .option-title { font-family: 'PP Monument Extended', sans-serif; font-size: 16px; margin: 0 0 6px; }
+  .option-desc { font-size: 15px; line-height: 1.55; opacity: 0.85; margin: 0 0 14px; }
+
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .cta-btn { display: inline-block; background: var(--accent); color: var(--paper); text-decoration: none; font-family: 'PP Neue Machina', sans-serif; font-weight: 600; font-size: 15px; padding: 15px 24px; border-radius: 6px; text-align: center; border: none; cursor: pointer; }
+  .cta-btn:hover { opacity: 0.9; }
+  .cta-btn.secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+
+  .restart-link { background: none; border: none; color: var(--ink); opacity: 0.5; font-family: 'PP Neue Machina', sans-serif; font-size: 14px; text-decoration: underline; cursor: pointer; padding: 0; width: fit-content; margin-top: 4px; }
+
+  .email-block { margin-top: 4px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .email-block p { font-size: 14px; opacity: 0.7; margin: 0 0 14px; }
+  /* Replace with real MailerLite embedded form code. Keep id="lead-magnet-form" for GA4 tracking. */
+  .placeholder-form { display: flex; gap: 10px; flex-wrap: wrap; }
+  .placeholder-form input[type="email"] { flex: 1; min-width: 200px; padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 6px; font-family: 'PP Neue Machina', sans-serif; font-size: 15px; background: white; color: var(--ink); }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div id="quiz-flow">
+    <div class="eyebrow">The Men's Mental Health Check</div>
+    <h1>What are you actually carrying?</h1>
+    <p class="sub">12 quick statements. Rate how true each one is for you, 1 to 5. No email required to see your result.</p>
+
+    <div class="progress-row">
+      <span class="progress-num" id="progress-num">01 / 12</span>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:8.3%"></div></div>
+    </div>
+
+    <div class="card active" data-q="0"><h2 class="question">When something's bothering me, my first move is to push it down and keep moving.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+    <div class="card" data-q="1"><h2 class="question">I'd rather handle a hard week with a drink, a workout, or just staying busy than actually talk about it.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+    <div class="card" data-q="2"><h2 class="question">Asking for help feels like admitting I couldn't handle it myself.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+    <div class="card" data-q="3"><h2 class="question">My temper is usually the first sign that something else is actually going on underneath.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+    <div class="card" data-q="4"><h2 class="question">When I fall short of my own standards, I go quiet and pull away rather than get angry.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+    <div class="card" data-q="5"><h2 class="question">There's a version of me I actively keep people from seeing.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+    <div class="card" data-q="6"><h2 class="question">I'm harder on myself than I'd ever be on someone else in the same situation.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+    <div class="card" data-q="7"><h2 class="question">I measure a lot of my worth by how well things are going, and it's hard to separate the two.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+    <div class="card" data-q="8"><h2 class="question">My closest relationships get less of me than my job does, and I know it.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+    <div class="card" data-q="9"><h2 class="question">I can go a long stretch without really telling anyone how I'm actually doing.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+    <div class="card" data-q="10"><h2 class="question">When I care about someone, showing it out loud doesn't come easy.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+    <div class="card" data-q="11"><h2 class="question">Slowing down feels riskier to me than staying busy.</h2><div class="scale-row"></div><div class="scale-labels"><span>Not me at all</span><span>Exactly me</span></div></div>
+  </div>
+
+  <div id="result-screen">
+    <div class="meter-wrap">
+      <div class="meter-labels"><span>Grounded</span><span>Tightrope</span><span>Iron Mask</span></div>
+      <div class="meter-track"><div class="meter-fill" id="meter-fill"></div></div>
+    </div>
+
+    <p class="archetype-tag" id="archetype-tag"></p>
+    <h2 class="result-headline" id="result-headline"></h2>
+    <p class="result-body" id="result-body"></p>
+
+    <div id="option-blocks"></div>
+
+    <button class="restart-link" id="restart-btn">Take it again</button>
+
+    <div class="email-block">
+      <p>Want occasional straight-talk emails on men's mental health? No spam, unsubscribe anytime.</p>
+      <form class="placeholder-form" id="lead-magnet-form">
+        <input type="email" placeholder="you@email.com" required>
+        <button type="submit" class="cta-btn" style="padding:13px 20px;">Sign up</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+    const row = card.querySelector('.scale-row');
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'scale-btn';
+      btn.textContent = i;
+      btn.dataset.val = i;
+      row.appendChild(btn);
+    }
+  });
+
+  const cards = Array.from(document.querySelectorAll('.card'));
+  const progressNum = document.getElementById('progress-num');
+  const progressFill = document.getElementById('progress-fill');
+  const quizFlow = document.getElementById('quiz-flow');
+  const resultScreen = document.getElementById('result-screen');
+  const meterFill = document.getElementById('meter-fill');
+  const archetypeTag = document.getElementById('archetype-tag');
+  const resultHeadline = document.getElementById('result-headline');
+  const resultBody = document.getElementById('result-body');
+  const optionBlocks = document.getElementById('option-blocks');
+  const restartBtn = document.getElementById('restart-btn');
+  const leadForm = document.getElementById('lead-magnet-form');
+
+  let answers = [];
+
+  function showCard(index) {
+    cards.forEach(c => c.classList.remove('active'));
+    cards[index].classList.add('active');
+    progressNum.textContent = `${String(index + 1).padStart(2, '0')} / 12`;
+    progressFill.style.width = `${((index + 1) / cards.length) * 100}%`;
+  }
+
+  cards.forEach((card, index) => {
+    card.querySelectorAll('.scale-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        answers[index] = parseInt(btn.dataset.val, 10);
+        if (index < cards.length - 1) {
+          showCard(index + 1);
+        } else {
+          showResult();
+        }
+      });
+    });
+  });
+
+  function ctaButton(label, secondary) {
+    const a = document.createElement('a');
+    a.className = 'cta-btn' + (secondary ? ' secondary' : '');
+    a.textContent = label;
+    return a;
+  }
+
+  function showResult() {
+    const total = answers.reduce((a, b) => a + b, 0);
+    const pct = ((total - 12) / (60 - 12)) * 100;
+    meterFill.style.width = `${pct}%`;
+
+    optionBlocks.innerHTML = '';
+    const ctaRow = document.createElement('div');
+    ctaRow.className = 'cta-row';
+
+    if (total <= 27) {
+      archetypeTag.textContent = 'Your result: The Grounded Man';
+      resultHeadline.textContent = "You've clearly already done real work here.";
+      resultBody.textContent = "Your answers don't show much sign of buried anger, harsh self-judgment, or numbing yourself just to get through the week. That's not luck, it's usually the result of already having put in real work, the kind that leaves a man actually grounded instead of just holding it together. The next move probably isn't individual therapy to fix something broken. It's group. A room of other men who are also further along tends to deepen what you've already built: sharper self-awareness, better relationships, and your own version of what healthy masculinity actually looks like, not somebody else's checklist for it. Groundedness like this tends to spread when it's around other people, not just sit still on its own.";
+
+      const block = document.createElement('div');
+      block.className = 'option-block';
+      block.innerHTML = `<p class="option-title">Group Therapy</p><p class="option-desc">Deepen what you've already built alongside other men doing the same work.</p>`;
+      optionBlocks.appendChild(block);
+
+      const btn = ctaButton('Ask about the group');
+      btn.href = '/book.html?interest=group';
+      ctaRow.appendChild(btn);
+
+    } else if (total <= 42) {
+      archetypeTag.textContent = 'Your result: The Tightrope Walker';
+      resultHeadline.textContent = "Here's what your answers show.";
+      resultBody.textContent = "You've got real self-awareness in some areas and real blind spots in others, and right now you're walking a line: upright, functional, mostly balanced, but it's taking real effort to stay there. For some guys, that shows up as a short fuse. For others, it's quieter: harsh self-judgment, a sense of not measuring up, or just going numb instead of getting angry. Either way, some of what you're carrying, you handle. Some of it, you push down and route around, through work, through staying busy, through keeping people at a manageable distance. Staying balanced isn't the same as being steady, and that's a common place to land, and a workable one.";
+
+      const ind = document.createElement('div');
+      ind.className = 'option-block';
+      ind.innerHTML = `<p class="option-title">Individual Therapy</p><p class="option-desc">If what you're carrying feels specific, tied to one relationship, one loss, one decision you keep circling, or something you're ashamed of and not ready to say in front of other people yet, individual therapy gives you focused, undivided attention on exactly that, without needing to keep your balance in front of anyone else first.</p>`;
+      const grp = document.createElement('div');
+      grp.className = 'option-block';
+      grp.innerHTML = `<p class="option-title">Group Therapy</p><p class="option-desc">If what's actually driving this is feeling alone in it, like the people around you don't really get it, group work often moves faster than expected. You're not just talking about what's going on, you're practicing being known by other men carrying the same weight, which tends to make the line a lot easier to walk.</p>`;
+      optionBlocks.appendChild(ind);
+      optionBlocks.appendChild(grp);
+
+      const btn1 = ctaButton('Book an individual consultation');
+      btn1.href = '/book.html?interest=individual';
+      const btn2 = ctaButton('Ask about the group', true);
+      btn2.href = '/book.html?interest=group';
+      ctaRow.appendChild(btn1);
+      ctaRow.appendChild(btn2);
+
+    } else {
+      archetypeTag.textContent = 'Your result: The Iron Mask';
+      resultHeadline.textContent = 'Your answers show a clear, consistent pattern.';
+      resultBody.textContent = "Across most of these questions, you described pushing feelings down and routing them somewhere else, sometimes as anger, sometimes as harsh self-judgment or a quiet sense that you don't measure up, and often through staying busy or numbing out instead of dealing with what's underneath. What's built up looks a lot like armor: it's been doing its job, keeping you upright and functional, but it's also sealed off real distance in your closest relationships, more than you'd probably like. This isn't a character flaw. It's a mask you've gotten very good at wearing, and it can come off. Based on these results, I recommend a combination of individual and group therapy.";
+
+      const ind = document.createElement('div');
+      ind.className = 'option-block';
+      ind.innerHTML = `<p class="option-title">Individual Therapy</p><p class="option-desc">Individual therapy gives you focused attention on what's underneath the iron, the anger, the self-judgment, and the numbing, the specific weight you're carrying that you haven't said out loud to anyone yet.</p>`;
+      const grp = document.createElement('div');
+      grp.className = 'option-block';
+      grp.innerHTML = `<p class="option-title">Group Therapy</p><p class="option-desc">Group therapy addresses the isolation directly, including the part of shame that convinces you you're the only one wearing a mask like this. It gives you practice being known by other men instead of managing around them, which individual work alone doesn't fully reach.</p>`;
+      optionBlocks.appendChild(ind);
+      optionBlocks.appendChild(grp);
+
+      const btn1 = ctaButton('Book an individual consultation');
+      btn1.href = '/book.html?interest=individual';
+      const btn2 = ctaButton('Ask about the group', true);
+      btn2.href = '/book.html?interest=group';
+      ctaRow.appendChild(btn1);
+      ctaRow.appendChild(btn2);
+    }
+
+    optionBlocks.appendChild(ctaRow);
+    quizFlow.style.display = 'none';
+    resultScreen.classList.add('active');
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'quiz_complete', { quiz_name: 'mens_mental_health_check', total_score: total });
+    }
+  }
+
+  restartBtn.addEventListener('click', () => {
+    answers = [];
+    resultScreen.classList.remove('active');
+    quizFlow.style.display = 'block';
+    showCard(0);
+  });
+
+  leadForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', { source: 'mens_mental_health_check' });
+    }
+    leadForm.innerHTML = "<p style='opacity:0.75;'>Thanks, you're on the list.</p>";
+  });
+
+  showCard(0);
+</script>
+</body>
+</html>
