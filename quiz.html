@@ -52,6 +52,13 @@ document.addEventListener('click', function(e) {
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-family: 'PP Neue Machina', -apple-system, sans-serif; }
+
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 24px; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .navlinks { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .navlinks a { font-family: 'PP Neue Machina', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .nav-book-btn { font-family: 'PP Neue Machina', sans-serif; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.02em; background: var(--accent); color: var(--paper); border: none; padding: 10px 20px; border-radius: 6px; text-decoration: none; display: inline-block; }
+  @media (max-width: 900px) { nav { flex-wrap: wrap; row-gap: 10px; } }
+
   .wrap { max-width: 640px; margin: 0 auto; padding: 48px 24px 80px; min-height: 100vh; display: flex; flex-direction: column; }
   .eyebrow { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
   h1 { font-family: 'PP Monument Extended', 'PP Neue Machina', sans-serif; font-weight: 700; font-size: clamp(28px, 5vw, 40px); line-height: 1.1; margin: 0 0 8px; letter-spacing: -0.01em; }
@@ -81,12 +88,10 @@ document.addEventListener('click', function(e) {
   #result-screen { display: none; flex-direction: column; gap: 22px; animation: fadeIn 0.4s ease; }
   #result-screen.active { display: flex; }
 
-  .meter-wrap { margin: 4px 0; }
-  .meter-labels { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; opacity: 0.55; margin-bottom: 8px; }
-  .meter-track { height: 10px; border-radius: 6px; background: var(--line); overflow: hidden; }
-  .meter-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1); border-radius: 6px; }
-
-  .archetype-tag { font-family: 'PP Monument Extended', sans-serif; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin: 0; }
+  .result-hero { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .archetype-image { width: 110px; height: 110px; border-radius: 10px; flex-shrink: 0; display: block; }
+  .archetype-eyebrow { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 600; display: block; margin: 0 0 4px; }
+  .archetype-headline { font-family: 'PP Monument Extended', sans-serif; font-weight: 900; font-size: clamp(26px, 6vw, 38px); line-height: 1.05; text-transform: uppercase; margin: 0; }
   .result-headline { font-family: 'PP Monument Extended', sans-serif; font-size: clamp(25px, 5vw, 32px); line-height: 1.18; margin: 0; }
   .result-body { font-size: 16px; line-height: 1.65; opacity: 0.9; margin: 0; }
 
@@ -111,6 +116,21 @@ document.addEventListener('click', function(e) {
 </style>
 </head>
 <body>
+
+<nav>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:28px;width:auto;display:block;"></a>
+  <div class="navlinks">
+    <a href="approach.html">Approach</a>
+    <a href="individual-therapy.html">Individual Therapy</a>
+    <a href="group-therapy.html">Group Therapy</a>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="book.html" class="nav-book-btn">Book a free consultation</a>
+  </div>
+</nav>
+
 <div class="wrap">
 
   <div id="quiz-flow">
@@ -138,13 +158,15 @@ document.addEventListener('click', function(e) {
   </div>
 
   <div id="result-screen">
-    <div class="meter-wrap">
-      <div class="meter-labels"><span>Grounded</span><span>Tightrope</span><span>Iron Mask</span></div>
-      <div class="meter-track"><div class="meter-fill" id="meter-fill"></div></div>
+    <div class="result-hero">
+      <img class="archetype-image" id="archetype-image" src="" alt="">
+      <div>
+        <span class="archetype-eyebrow">Your Result</span>
+        <h2 class="archetype-headline" id="archetype-headline"></h2>
+      </div>
     </div>
 
-    <p class="archetype-tag" id="archetype-tag"></p>
-    <h2 class="result-headline" id="result-headline"></h2>
+    <h3 class="result-headline" id="result-headline"></h3>
     <p class="result-body" id="result-body"></p>
 
     <div id="option-blocks"></div>
@@ -179,8 +201,8 @@ document.addEventListener('click', function(e) {
   const progressFill = document.getElementById('progress-fill');
   const quizFlow = document.getElementById('quiz-flow');
   const resultScreen = document.getElementById('result-screen');
-  const meterFill = document.getElementById('meter-fill');
-  const archetypeTag = document.getElementById('archetype-tag');
+  const archetypeImage = document.getElementById('archetype-image');
+  const archetypeHeadline = document.getElementById('archetype-headline');
   const resultHeadline = document.getElementById('result-headline');
   const resultBody = document.getElementById('result-body');
   const optionBlocks = document.getElementById('option-blocks');
@@ -218,15 +240,15 @@ document.addEventListener('click', function(e) {
 
   function showResult() {
     const total = answers.reduce((a, b) => a + b, 0);
-    const pct = ((total - 12) / (60 - 12)) * 100;
-    meterFill.style.width = `${pct}%`;
 
     optionBlocks.innerHTML = '';
     const ctaRow = document.createElement('div');
     ctaRow.className = 'cta-row';
 
     if (total <= 27) {
-      archetypeTag.textContent = 'Your result: The Grounded Man';
+      archetypeImage.src = 'assets/quiz/archetype-grounded-man.png';
+      archetypeImage.alt = 'The Grounded Man';
+      archetypeHeadline.textContent = 'The Grounded Man';
       resultHeadline.textContent = "You've clearly already done real work here.";
       resultBody.textContent = "Your answers don't show much sign of buried anger, harsh self-judgment, or numbing yourself just to get through the week. That's not luck, it's usually the result of already having put in real work, the kind that leaves a man actually grounded instead of just holding it together. The next move probably isn't individual therapy to fix something broken. It's group. A room of other men who are also further along tends to deepen what you've already built: sharper self-awareness, better relationships, and your own version of what healthy masculinity actually looks like, not somebody else's checklist for it. Groundedness like this tends to spread when it's around other people, not just sit still on its own.";
 
@@ -240,7 +262,9 @@ document.addEventListener('click', function(e) {
       ctaRow.appendChild(btn);
 
     } else if (total <= 42) {
-      archetypeTag.textContent = 'Your result: The Tightrope Walker';
+      archetypeImage.src = 'assets/quiz/archetype-tightrope-walker.png';
+      archetypeImage.alt = 'The Tightrope Walker';
+      archetypeHeadline.textContent = 'The Tightrope Walker';
       resultHeadline.textContent = "Here's what your answers show.";
       resultBody.textContent = "You've got real self-awareness in some areas and real blind spots in others, and right now you're walking a line: upright, functional, mostly balanced, but it's taking real effort to stay there. For some guys, that shows up as a short fuse. For others, it's quieter: harsh self-judgment, a sense of not measuring up, or just going numb instead of getting angry. Either way, some of what you're carrying, you handle. Some of it, you push down and route around, through work, through staying busy, through keeping people at a manageable distance. Staying balanced isn't the same as being steady, and that's a common place to land, and a workable one.";
 
@@ -261,7 +285,9 @@ document.addEventListener('click', function(e) {
       ctaRow.appendChild(btn2);
 
     } else {
-      archetypeTag.textContent = 'Your result: The Iron Mask';
+      archetypeImage.src = 'assets/quiz/archetype-iron-mask.png';
+      archetypeImage.alt = 'The Iron Mask';
+      archetypeHeadline.textContent = 'The Iron Mask';
       resultHeadline.textContent = 'Your answers show a clear, consistent pattern.';
       resultBody.textContent = "Across most of these questions, you described pushing feelings down and routing them somewhere else, sometimes as anger, sometimes as harsh self-judgment or a quiet sense that you don't measure up, and often through staying busy or numbing out instead of dealing with what's underneath. What's built up looks a lot like armor: it's been doing its job, keeping you upright and functional, but it's also sealed off real distance in your closest relationships, more than you'd probably like. This isn't a character flaw. It's a mask you've gotten very good at wearing, and it can come off. Based on these results, I recommend a combination of individual and group therapy.";
 
