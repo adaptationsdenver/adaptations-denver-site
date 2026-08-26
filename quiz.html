@@ -125,6 +125,18 @@ document.addEventListener('click', function(e) {
   .placeholder-form input[type="email"] { flex: 1; min-width: 200px; padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 6px; font-family: 'PP Neue Machina', sans-serif; font-size: 15px; background: white; color: var(--ink); }
 
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+  @media (max-width: 640px) {
+    *{min-width:0 !important;}
+    .cta-btn{white-space:normal !important;}
+    .question { font-size: 24px !important; }
+    .result-body { font-size: 17px !important; opacity: 0.95 !important; }
+    .option-desc { font-size: 16px !important; opacity: 0.92 !important; }
+    .option-title { font-size: 18px !important; }
+    .cta-btn { font-size: 17px !important; padding: 17px 26px !important; }
+    .scale-btn { font-size: 20px !important; }
+    .restart-link { font-size: 15px !important; }
+  }
 </style>
 </head>
 <body>

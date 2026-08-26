@@ -189,6 +189,31 @@ document.addEventListener('click', function(e) {
     .navlinks a.btn{margin:12px var(--container-pad);text-align:center;}
   }
 </style>
+<style>
+  @media (max-width:640px){
+    .service-card, .card, .hero-copy, .blog-card{min-width:0 !important;}
+    .founder-row{flex-direction:column !important;}
+    .founder-row > div:first-child{max-width:100% !important;}
+    .founder-row img{max-width:220px !important;}
+    .btn{white-space:normal !important;}
+    :root{
+      --text-body-lg: 500 22px/1.6 var(--font-body);
+      --text-body-md: 500 18px/1.6 var(--font-body);
+      --text-body-sm: 500 15px/1.5 var(--font-body);
+    }
+    .service-card, .card{padding:26px !important;min-width:0 !important;}
+    section.grid3 > *{min-width:0 !important;}
+    .service-card h3, .card h3{font-size:23px !important;line-height:1.2 !important;}
+    .service-card p, .card p{font-size:17px !important;line-height:1.55 !important;opacity:0.95 !important;}
+    .blog-card h3{font-size:21px !important;}
+    .blog-card p{font-size:16px !important;}
+    section.grid3{gap:24px !important;}
+    .blog-grid{gap:24px !important;}
+    .btn:not(.floating-cta){font-size:17px !important;padding:17px 26px !important;}
+    .floating-cta{font-size:15px !important;padding:14px 24px !important;}
+    .flourish-g{width:44px !important;height:44px !important;top:-16px !important;left:-16px !important;font-size:19px !important;}
+  }
+</style>
 </head>
 <body>
 
@@ -229,7 +254,7 @@ document.addEventListener('click', function(e) {
 <section style="background:var(--color-ink);color:var(--text-on-inverse);padding:clamp(60px,10vw,90px) 0 0 var(--container-pad);display:flex;gap:40px;align-items:center;position:relative;overflow:hidden;">
   <div class="hero-copy" style="display:flex;flex-direction:column;gap:24px;">
     <span class="eyebrow">Therapy for men · Denver, CO</span>
-    <h1 style="font-family:var(--font-display);font-weight:900;font-size:clamp(32px,6vw,52px);line-height:1.0;text-transform:uppercase;color:var(--text-on-inverse);margin:0;max-width:760px;">Under pressure.<br>Overwhelmed.<br>Tired of it all.</h1>
+    <h1 style="font-family:var(--font-display);font-weight:900;font-size:clamp(32px,6vw,52px);line-height:1.0;text-transform:uppercase;color:var(--text-on-inverse);margin:0;max-width:760px;overflow-wrap:break-word;">Under pressure.<br>Overwhelmed.<br>Tired of it all.</h1>
     <p style="font:500 17px/1.5 var(--font-body);color:var(--text-on-inverse-secondary);margin:0;max-width:520px;">Therapy for men who seem to manage everything, except themselves.<br><br>Ready to make a change?</p>
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
       <a href="book.html" class="btn btn-primary">Book a free consultation</a>
@@ -239,7 +264,7 @@ document.addEventListener('click', function(e) {
   <img src="assets/graphics/sisyphus-hero-right.png" alt="" class="hero-illustration">
 </section>
 
-<section style="padding:clamp(48px,8vw,64px) var(--container-pad);display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
+<section class="founder-row" style="padding:clamp(48px,8vw,64px) var(--container-pad);display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
   <div style="display:flex;flex-direction:column;gap:12px;max-width:280px;">
     <img src="assets/photos/founder-portrait-new.jpg" alt="Founder portrait" style="width:100%;max-width:280px;height:auto;display:block;">
     <div style="font:700 14px var(--font-body);color:var(--text-primary);">Brian Mulligan, LPCC, CAT, Owner</div>
@@ -283,7 +308,7 @@ document.addEventListener('click', function(e) {
 
 <section style="background:var(--color-paper);border-bottom:1px solid var(--border-default);padding:56px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
   <div style="display:flex;flex-direction:column;gap:8px;max-width:560px;">
-    <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;">Take the Men's Mental Health Check.</h2>
+    <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;">Take the Men's Mental Health Check.</h2>
     <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">See where you stand, and how individual and group therapy can help.</p>
   </div>
   <a href="/quiz.html" class="btn btn-primary" style="white-space:nowrap;">See Where You Stand</a>

@@ -191,6 +191,28 @@ document.addEventListener('click', function(e) {
     .navlinks a.btn{margin:12px var(--container-pad);text-align:center;}
   }
 </style>
+<style>
+  @media (max-width:640px){
+    .service-card, .card, .hero-copy, .blog-card{min-width:0 !important;}
+    .btn{white-space:normal !important;}
+    :root{
+      --text-body-lg: 500 22px/1.6 var(--font-body);
+      --text-body-md: 500 18px/1.6 var(--font-body);
+      --text-body-sm: 500 15px/1.5 var(--font-body);
+    }
+    .service-card, .card{padding:26px !important;min-width:0 !important;}
+    section.grid3 > *{min-width:0 !important;}
+    .service-card h3, .card h3{font-size:23px !important;line-height:1.2 !important;}
+    .service-card p, .card p{font-size:17px !important;line-height:1.55 !important;opacity:0.95 !important;}
+    .blog-card h3{font-size:21px !important;}
+    .blog-card p{font-size:16px !important;}
+    section.grid3{gap:24px !important;}
+    .blog-grid{gap:24px !important;}
+    .btn:not(.floating-cta){font-size:17px !important;padding:17px 26px !important;}
+    .floating-cta{font-size:15px !important;padding:14px 24px !important;}
+    .flourish-g{width:44px !important;height:44px !important;top:-16px !important;left:-16px !important;font-size:19px !important;}
+  }
+</style>
 </head>
 
 
@@ -241,7 +263,7 @@ document.addEventListener('click', function(e) {
 
 <section style="padding:80px var(--container-pad);display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
   <div class="flourish-c" style="max-width:620px;display:flex;flex-direction:column;gap:20px;">
-    <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;">What to expect</h2>
+    <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;">What to expect</h2>
     <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Sessions are built around your team's actual needs — lunch-and-learns, keynote talks, team-building workshops, or coworking intensives. Same evidence-based approach as the therapy work, adapted for a room instead of one person.</p>
     <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Format, length, and topic are customized per engagement. Available in person in Denver or virtually.</p>
   </div>
@@ -255,7 +277,7 @@ document.addEventListener('click', function(e) {
 <div class="flourish-h"></div>
 
 <section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
-  <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;">Ready to book a talk?</h2>
+  <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;">Ready to book a talk?</h2>
   <a href="book.html" class="btn btn-inverse">Book a free consultation</a>
 </section>
 
