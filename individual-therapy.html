@@ -133,7 +133,7 @@ document.addEventListener('click', function(e) {
 
   --shadow-card: 0 1px 0 var(--border-default);
   --container-max: 1240px;
-  --container-pad: clamp(20px, 5vw, 64px);
+  --container-pad: clamp(24px, 5vw, 64px);
 }
 
 </style>
@@ -177,7 +177,19 @@ document.addEventListener('click', function(e) {
   .hero-copy{flex:1;min-width:280px;padding-right:var(--container-pad);padding-bottom:70px;}
   .hero-illustration{position:absolute;right:0;bottom:0;width:clamp(160px,32vw,480px);height:auto;pointer-events:none;}
   @media (max-width:1050px){.hero-illustration{display:none;}}
-  @media (max-width:1400px){nav{flex-wrap:wrap;row-gap:12px;} .navlinks{flex-wrap:wrap;row-gap:10px;}}
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;}
+  .nav-toggle span{display:block;width:100%;height:2px;background:var(--color-ink);transition:transform 0.2s ease,opacity 0.2s ease;}
+  .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.active span:nth-child(2){opacity:0;}
+  .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (max-width:1400px){
+    nav{position:relative;}
+    .nav-toggle{display:flex;}
+    .navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--color-paper);border-bottom:1px solid var(--border-default);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;z-index:1000;box-shadow:0 8px 16px rgba(0,0,0,0.08);}
+    .navlinks.open{display:flex;}
+    .navlinks a{padding:14px var(--container-pad);border-bottom:1px solid var(--border-default);}
+    .navlinks a.btn{margin:12px var(--container-pad);text-align:center;}
+  }
 </style>
 </head>
 
@@ -185,7 +197,7 @@ document.addEventListener('click', function(e) {
 
 <nav>
   <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
-  <div class="navlinks">
+  <div class="navlinks" id="navlinks">
     <a href="approach.html">Approach</a>
     <a href="individual-therapy.html" style="opacity:1;font-weight:800;">Individual Therapy</a>
     <a href="group-therapy.html">Group Therapy</a>
@@ -195,7 +207,27 @@ document.addEventListener('click', function(e) {
     <a href="contact.html">Contact</a>
     <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
   </div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
 </nav>
+<script>
+(function(){
+  var toggle = document.getElementById('nav-toggle');
+  var links = document.getElementById('navlinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('active', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 
 <section style="background:var(--color-ink);color:var(--text-on-inverse);padding:clamp(60px,10vw,90px) 0 0 var(--container-pad);display:flex;gap:40px;align-items:center;position:relative;overflow:hidden;min-height:520px;">
   <div class="hero-copy" style="display:flex;flex-direction:column;gap:24px;">

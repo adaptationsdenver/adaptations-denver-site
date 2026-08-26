@@ -57,7 +57,19 @@ document.addEventListener('click', function(e) {
   .navlinks { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
   .navlinks a { font-family: 'PP Neue Machina', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
   .nav-book-btn { font-family: 'PP Neue Machina', sans-serif; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.02em; background: var(--accent); color: var(--paper); border: none; padding: 10px 20px; border-radius: 6px; text-decoration: none; display: inline-block; }
-  @media (max-width: 900px) { nav { flex-wrap: wrap; row-gap: 10px; } }
+  .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 32px; height: 32px; background: none; border: none; cursor: pointer; padding: 0; flex-shrink: 0; }
+  .nav-toggle span { display: block; width: 100%; height: 2px; background: var(--ink); transition: transform 0.2s ease, opacity 0.2s ease; }
+  .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  @media (max-width: 1400px) {
+    nav { position: relative; }
+    .nav-toggle { display: flex; }
+    .navlinks { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; padding: 8px 0; z-index: 1000; box-shadow: 0 8px 16px rgba(0,0,0,0.08); }
+    .navlinks.open { display: flex; }
+    .navlinks a { padding: 14px 24px; border-bottom: 1px solid var(--line); }
+    .navlinks a.nav-book-btn { margin: 12px 24px; text-align: center; }
+  }
 
   .wrap { max-width: 640px; margin: 0 auto; padding: 48px 24px 80px; min-height: 100vh; display: flex; flex-direction: column; }
   .eyebrow { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
@@ -119,7 +131,7 @@ document.addEventListener('click', function(e) {
 
 <nav>
   <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:28px;width:auto;display:block;"></a>
-  <div class="navlinks">
+  <div class="navlinks" id="navlinks">
     <a href="approach.html">Approach</a>
     <a href="individual-therapy.html">Individual Therapy</a>
     <a href="group-therapy.html">Group Therapy</a>
@@ -129,7 +141,27 @@ document.addEventListener('click', function(e) {
     <a href="contact.html">Contact</a>
     <a href="book.html" class="nav-book-btn">Book a free consultation</a>
   </div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
 </nav>
+<script>
+(function(){
+  var toggle = document.getElementById('nav-toggle');
+  var links = document.getElementById('navlinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('active', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 
 <div class="wrap">
 
