@@ -57,6 +57,9 @@ document.addEventListener('click', function(e) {
   nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 24px; background: var(--paper); border-bottom: 1px solid var(--line); }
   .navlinks { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
   .navlinks a { font-family: 'PP Neue Machina', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .navlinks-core { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .navlinks-core a { font-family: 'PP Neue Machina', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .nav-core-dup { display: none; }
   .nav-book-btn { font-family: 'PP Neue Machina', sans-serif; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.02em; background: var(--accent); color: var(--paper); border: none; padding: 10px 20px; border-radius: 6px; text-decoration: none; display: inline-block; }
   .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 32px; height: 32px; background: none; border: none; cursor: pointer; padding: 0; flex-shrink: 0; }
   .nav-toggle span { display: block; width: 100%; height: 2px; background: var(--ink); transition: transform 0.2s ease, opacity 0.2s ease; }
@@ -70,6 +73,13 @@ document.addEventListener('click', function(e) {
     .navlinks.open { display: flex; }
     .navlinks a { padding: 14px 24px; border-bottom: 1px solid var(--line); }
     .navlinks a.nav-book-btn { margin: 12px 24px; text-align: center; }
+  }
+  @media (max-width: 900px) {
+    .navlinks-core { display: none; }
+    .nav-core-dup { display: block; }
+  }
+  @media (max-width: 640px) {
+    .nav-cta { display: none; }
   }
 
   .wrap { max-width: 640px; margin: 0 auto; padding: 48px 24px 80px; min-height: 100vh; display: flex; flex-direction: column; }
@@ -144,16 +154,21 @@ document.addEventListener('click', function(e) {
 
 <nav>
   <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:28px;width:auto;display:block;"></a>
-  <div class="navlinks" id="navlinks">
+  <div class="navlinks-core" id="navlinks-core">
     <a href="approach.html">Approach</a>
     <a href="individual-therapy.html">Individual Therapy</a>
     <a href="group-therapy.html">Group Therapy</a>
+  </div>
+  <div class="navlinks" id="navlinks">
+    <a href="approach.html" class="nav-core-dup">Approach</a>
+    <a href="individual-therapy.html" class="nav-core-dup">Individual Therapy</a>
+    <a href="group-therapy.html" class="nav-core-dup">Group Therapy</a>
     <a href="consultation-speaking.html">Consultation + Speaking</a>
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
-    <a href="book.html" class="nav-book-btn">Book a free consultation</a>
   </div>
+  <a href="book.html" class="nav-book-btn nav-cta">Book a free consultation</a>
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
 </nav>
 <script>

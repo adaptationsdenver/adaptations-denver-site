@@ -160,6 +160,9 @@ document.addEventListener('click', function(e) {
   .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
   .navlinks{display:flex;align-items:center;gap:32px;}
   .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .navlinks-core{display:flex;align-items:center;gap:32px;}
+  .navlinks-core a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .nav-core-dup{display:none;}
   .navlinks button{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;background:var(--color-accent);color:var(--color-accent-ink);border:none;border-radius:var(--radius-sm);padding:10px 20px;cursor:pointer;}
   section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-width:0;}
   @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
@@ -188,6 +191,13 @@ document.addEventListener('click', function(e) {
     .navlinks.open{display:flex;}
     .navlinks a{padding:14px var(--container-pad);border-bottom:1px solid var(--border-default);}
     .navlinks a.btn{margin:12px var(--container-pad);text-align:center;}
+  }
+  @media (max-width:900px){
+    .navlinks-core{display:none;}
+    .nav-core-dup{display:block;}
+  }
+  @media (max-width:640px){
+    .nav-cta{display:none;}
   }
 </style>
 <style>
@@ -218,16 +228,21 @@ document.addEventListener('click', function(e) {
 
 <nav>
   <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
-  <div class="navlinks" id="navlinks">
+  <div class="navlinks-core" id="navlinks-core">
     <a href="approach.html">Approach</a>
     <a href="individual-therapy.html">Individual Therapy</a>
     <a href="group-therapy.html">Group Therapy</a>
+  </div>
+  <div class="navlinks" id="navlinks">
+    <a class="nav-core-dup" href="approach.html">Approach</a>
+    <a class="nav-core-dup" href="individual-therapy.html">Individual Therapy</a>
+    <a class="nav-core-dup" href="group-therapy.html">Group Therapy</a>
     <a href="consultation-speaking.html">Consultation + Speaking</a>
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html" style="opacity:1;font-weight:800;">Contact</a>
-    <a href="book.html" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
   </div>
+  <a href="book.html" class="nav-cta btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
 </nav>
 <script>
