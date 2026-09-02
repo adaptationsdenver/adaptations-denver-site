@@ -164,6 +164,10 @@ document.addEventListener('click', function(e) {
   section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
   .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+  .video-embed-wrap{position:relative;width:100%;max-width:640px;aspect-ratio:16/9;border:2px solid var(--color-ink);overflow:hidden;}
+  .video-play-facade{position:relative;width:100%;height:100%;border:none;padding:0;cursor:pointer;background:none;}
+  .video-play-facade img{width:100%;height:100%;object-fit:cover;display:block;}
+  .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:var(--color-accent);color:var(--color-paper);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;padding-left:4px;}
 
   /* Homepage refresh (design/homepage-refresh handoff) — flourish system + square-corner override, scoped to this page */
   .btn{border-radius:0;}
@@ -279,6 +283,22 @@ document.addEventListener('click', function(e) {
     <a href="approach.html" class="btn btn-primary" style="align-self:flex-start;padding:10px 20px;font-size:13px;">Learn about the proactive approach</a>
   </div>
 </section>
+
+<section style="padding:0 var(--container-pad) 24px;display:flex;justify-content:center;">
+  <div class="video-embed-wrap" id="podcast-video">
+    <button class="video-play-facade" id="video-play-btn" aria-label="Play video: Meet Brian">
+      <img src="https://img.youtube.com/vi/bUKnm6B5Ijk/maxresdefault.jpg" alt="Meet Brian — video preview">
+      <span class="play-icon">&#9654;</span>
+    </button>
+  </div>
+</section>
+<script>
+document.getElementById('video-play-btn').addEventListener('click', function() {
+  var wrap = document.getElementById('podcast-video');
+  wrap.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/bUKnm6B5Ijk?autoplay=1&modestbranding=1&rel=0" title="Adaptations Denver - Meet Brian" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+  if (typeof gtag === 'function') { gtag('event', 'video_play_click', { video_title: 'meet_brian_video' }); }
+});
+</script>
 
 <section style="padding:0 var(--container-pad) 72px;display:flex;flex-direction:column;gap:28px;">
   <div class="flourish-c">
