@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75XE9KFDSC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-75XE9KFDSC');
+</script>
+
+<!-- GA4: track mailto and tel link clicks -->
+<script>
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a');
+  if (!link) return;
+  const href = link.getAttribute('href') || '';
+  if (href.startsWith('mailto:')) {
+    gtag('event', 'mailto_click', { link_url: href });
+  } else if (href.startsWith('tel:')) {
+    gtag('event', 'tel_click', { link_url: href });
+  }
+});
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Useful Nonsense Part 1: Your Puppet Master Is Just a Guy Who Likes Puppets — Adaptations Denver</title>
+<meta name="description" content="An introduction to cognitive defusion, the Acceptance and Commitment Therapy skill that helps you stop mistaking your own anxious thoughts for orders.">
+
+<style>:root {
+  /* Base neutrals — from brand hex */
+  --color-ink: #1A1C1E;
+  --color-paper: #F7F5F2;
+
+  /* Neutral ramp, mixed from the two bases */
+  --color-ink-90: color-mix(in oklch, var(--color-ink) 90%, var(--color-paper));
+  --color-ink-70: color-mix(in oklch, var(--color-ink) 70%, var(--color-paper));
+  --color-ink-50: color-mix(in oklch, var(--color-ink) 50%, var(--color-paper));
+  --color-ink-30: color-mix(in oklch, var(--color-ink) 30%, var(--color-paper));
+  --color-ink-15: color-mix(in oklch, var(--color-ink) 15%, var(--color-paper));
+  --color-paper-90: color-mix(in oklch, var(--color-paper) 92%, var(--color-ink));
+
+  /* Accent candidates — same L/C in oklch, hue varies. Pick one for --color-accent. */
+  --color-accent-red: #C4472A;
+  --color-accent-amber: oklch(58% 0.19 65);
+  --color-accent-cobalt: oklch(58% 0.19 255);
+
+  /* Active accent (default: red — Supreme/Vice-coded). Swap this one line to change brand-wide. */
+  --color-accent: var(--color-accent-red);
+  --color-accent-ink: #FFFFFF; /* text/icon color on top of accent */
+
+  /* Semantic aliases */
+  --surface-page: var(--color-paper);
+  --surface-inverse: var(--color-ink);
+  --surface-card: var(--color-paper-90);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-70);
+  --text-on-inverse: var(--color-paper);
+  --text-on-inverse-secondary: var(--color-paper-90);
+  --border-default: var(--color-ink-15);
+  --border-strong: var(--color-ink-30);
+  --link-color: var(--color-accent);
+  --link-color-hover: color-mix(in oklch, var(--color-accent) 85%, var(--color-ink));
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-Black.otf") format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-BlackItalic.otf") format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Wide';
+  src: url("fonts/PPMonumentWide-Regular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: url("fonts/PPNeueMachina-PlainRegular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --font-display: 'PP Monument Extended', 'Arial Black', sans-serif;
+  --font-wide: 'PP Monument Wide', 'Arial Narrow', sans-serif;
+  --font-body: 'PP Neue Machina', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Display scale — headlines, only weight available is 900/Black */
+  --text-display-xl: 900 clamp(48px, 7vw, 120px)/0.98 var(--font-display);
+  --text-display-lg: 900 clamp(36px, 5vw, 72px)/1.0 var(--font-display);
+  --text-display-md: 900 clamp(28px, 3.2vw, 44px)/1.05 var(--font-display);
+
+  /* Wide/eyebrow treatment — real PP Monument Wide cut */
+  --text-wide-label: 400 13px/1.2 var(--font-wide);
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.18em;
+
+  /* Body scale */
+  --text-body-lg: 500 20px/1.5 var(--font-body);
+  --text-body-md: 500 17px/1.55 var(--font-body);
+  --text-body-sm: 500 14px/1.5 var(--font-body);
+  --text-label: 600 13px/1.2 var(--font-body);
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 0 var(--border-default);
+  --container-max: 1240px;
+  --container-pad: clamp(24px, 5vw, 64px);
+}
+
+</style>
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--color-paper);}
+  a{color:var(--link-color);text-decoration:none;}
+  a:hover{color:var(--link-color-hover);}
+  .btn{font-family:var(--font-body);font-weight:600;letter-spacing:0.02em;text-transform:uppercase;border:1px solid transparent;border-radius:var(--radius-sm);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;font-size:15px;}
+  .btn-primary{background:var(--color-accent);color:var(--color-accent-ink);}
+  .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
+  .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:13px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
+  .placeholder{background:repeating-linear-gradient(45deg, var(--color-ink-15), var(--color-ink-15) 10px, transparent 10px, transparent 20px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-secondary);text-align:center;}
+  .card{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .card-paper{background:var(--surface-card);color:var(--text-primary);border:1px solid var(--border-default);}
+  .card-ink{background:var(--surface-inverse);color:var(--text-on-inverse);}
+  .card h3{font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;margin:0;line-height:1.1;}
+  .card p{font-family:var(--font-body);font-size:15px;line-height:1.5;margin:0;opacity:0.85;}
+  .tag{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);display:inline-block;}
+  .tag-accent{background:var(--color-accent);color:var(--color-accent-ink);}
+  .tag-default{background:var(--color-ink-15);color:var(--text-primary);}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
+  .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
+  .navlinks{display:flex;align-items:center;gap:32px;}
+  .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .navlinks-core{display:flex;align-items:center;gap:32px;}
+  .navlinks-core a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .nav-core-dup{display:none;}
+  .navlinks button{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;background:var(--color-accent);color:var(--color-accent-ink);border:none;border-radius:var(--radius-sm);padding:10px 20px;cursor:pointer;}
+  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-width:0;}
+  @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
+  .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;}
+  .nav-toggle span{display:block;width:100%;height:2px;background:var(--color-ink);transition:transform 0.2s ease,opacity 0.2s ease;}
+  .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.active span:nth-child(2){opacity:0;}
+  .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (max-width:1400px){
+    nav{position:relative;}
+    .nav-toggle{display:flex;}
+    .navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--color-paper);border-bottom:1px solid var(--border-default);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;z-index:1000;box-shadow:0 8px 16px rgba(0,0,0,0.08);}
+    .navlinks.open{display:flex;}
+    .navlinks a{padding:14px var(--container-pad);border-bottom:1px solid var(--border-default);}
+    .navlinks a.btn{margin:12px var(--container-pad);text-align:center;}
+  }
+  @media (max-width:900px){
+    .navlinks-core{display:none;}
+    .nav-core-dup{display:block;}
+  }
+  @media (max-width:640px){
+    .nav-cta{display:none;}
+  }
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:28px;min-width:0;}
+  .blog-card{display:flex;flex-direction:column;border:2px solid var(--color-ink);background:var(--color-paper);text-decoration:none;color:inherit;min-width:0;}
+  .blog-card:hover{color:inherit;}
+  .blog-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;}
+</style>
+<style>
+  @media (max-width:640px){
+    .service-card, .card, .hero-copy, .blog-card{min-width:0 !important;}
+    .btn{white-space:normal !important;}
+    :root{
+      --text-body-lg: 500 22px/1.6 var(--font-body);
+      --text-body-md: 500 18px/1.6 var(--font-body);
+      --text-body-sm: 500 15px/1.5 var(--font-body);
+    }
+    .service-card, .card{padding:26px !important;min-width:0 !important;}
+    section.grid3 > *{min-width:0 !important;}
+    .service-card h3, .card h3{font-size:23px !important;line-height:1.2 !important;}
+    .service-card p, .card p{font-size:17px !important;line-height:1.55 !important;opacity:0.95 !important;}
+    .blog-card h3{font-size:21px !important;}
+    .blog-card p{font-size:16px !important;}
+    section.grid3{gap:24px !important;}
+    .blog-grid{gap:24px !important;}
+    .btn:not(.floating-cta){font-size:17px !important;padding:17px 26px !important;}
+    .floating-cta{font-size:15px !important;padding:14px 24px !important;}
+    .flourish-g{width:44px !important;height:44px !important;top:-16px !important;left:-16px !important;font-size:19px !important;}
+  }
+</style>
+<style>
+  .hero-diagonal-wedge{display:block;}
+  .hero-stacked{display:none;}
+  @media (max-width:1400px){
+    .hero-diagonal-wedge{display:none;}
+    .hero-stacked{display:flex !important;}
+  }
+</style>
+</head>
+
+<body>
+<nav>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
+  <div class="navlinks-core" id="navlinks-core">
+    <a href="approach.html">Approach</a>
+    <a href="individual-therapy.html">Individual Therapy</a>
+    <a href="group-therapy.html">Group Therapy</a>
+  </div>
+  <div class="navlinks" id="navlinks">
+    <a class="nav-core-dup" href="approach.html">Approach</a>
+    <a class="nav-core-dup" href="individual-therapy.html">Individual Therapy</a>
+    <a class="nav-core-dup" href="group-therapy.html">Group Therapy</a>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
+    <a href="about.html">About</a>
+    <a href="blog.html" style="opacity:1;font-weight:800;">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="book.html" class="nav-cta btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav>
+<script>
+(function(){
+  var toggle = document.getElementById('nav-toggle');
+  var links = document.getElementById('navlinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('active', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+<section style="position:relative;overflow:hidden;background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 60px;display:flex;">
+  <div style="position:relative;z-index:2;flex:1;min-width:280px;max-width:660px;display:flex;flex-direction:column;gap:20px;">
+    <a href="blog.html" class="eyebrow" style="display:inline-block;">&larr; Blog</a>
+    <h1 style="font:var(--text-display-lg);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">Useful Nonsense Part 1: Your Puppet Master Is Just a Guy Who Likes Puppets</h1>
+    <p style="font:var(--text-body-lg);color:var(--text-on-inverse-secondary);margin:0;">An introduction to cognitive defusion &mdash; the skill that helps you stop mistaking your own thoughts for orders.</p>
+    <p style="font:var(--text-body-sm);color:var(--text-on-inverse-secondary);opacity:0.7;margin:0;">September 14, 2026 &middot; Brian Mulligan, LPCC, CAT</p>
+  </div>
+  <div class="hero-diagonal-wedge" style="position:absolute;top:0;right:0;bottom:0;width:42%;clip-path:polygon(30% 0, 100% 0, 100% 100%, 0 100%);z-index:1;">
+    <img src="assets/blog/blog-puppet-master-hero.png" alt="Useful Nonsense Part 1: Your Puppet Master Is Just a Guy Who Likes Puppets" style="width:100%;height:100%;object-fit:cover;display:block;">
+  </div>
+</section>
+
+<section class="hero-stacked" style="padding:40px var(--container-pad) 0;justify-content:center;">
+  <img src="assets/blog/blog-puppet-master-hero.png" alt="Useful Nonsense Part 1: Your Puppet Master Is Just a Guy Who Likes Puppets" style="width:100%;max-width:560px;height:auto;display:block;border:2px solid var(--color-ink);">
+</section>
+
+<section style="padding:36px var(--container-pad) 90px;display:flex;justify-content:center;">
+  <div style="max-width:720px;width:100%;display:flex;flex-direction:column;gap:20px;">
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">There&rsquo;s a <a href="https://youtu.be/SxgR5EiehQM?t=121" target="_blank" rel="noopener" style="text-decoration:underline;">scene in Men In Black</a> (the original, not the bad remake) where, upon examining a body at the morgue, Will Smith&rsquo;s character discovers a little alien hiding inside the head of a human body. Morbidity of the setting notwithstanding (and your personal opinions on Will Smith in the post-Oscar-slap era of the problematic celebrity), I believe this to be an apt metaphor for what it&rsquo;s like to live with a mind that doesn&rsquo;t always cooperate.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Hang with me now, faithful reader, as I try to explain:</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">The Mind and the Brain</h2>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Every one of us has a brain, and the brain can do wonderful things like help us plan our schedules, make a mean shrimp scampi, and learn how to do long division.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The mind, however, is a different animal. In fact, it&rsquo;s really like its own <em>species</em>. It&rsquo;s the one that tells you you&rsquo;re forgetting something important at 3am and won&rsquo;t shut up about it. It&rsquo;s the one that reminds you, unprovoked mid-conversation, of the time you spelled &ldquo;patio&rdquo; wrong in the 3rd grade spelling bee and cried on stage in front of everyone&rsquo;s parents. It&rsquo;s the one that forgets how to do long division.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">The Puppet Master</h2>
+    <img src="assets/blog/blog-puppet-master-body-1.png" alt="A puppet master pulling strings from behind the curtain" style="width:100%;height:auto;display:block;margin:8px 0;border:2px solid var(--color-ink);">
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Our mind is consistently at odds with our brain. It can feel like our mind is a full-time employee whose sole job it is to sabotage our brain&rsquo;s daily efforts to live a good life.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">It tells us what we did wrong, but rarely reminds us of what we did right.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">It distracts us from what&rsquo;s important and takes us on a guided tour of our long history of personal failings.</p>
+    <blockquote style="margin:20px 0;padding:0 0 0 24px;border-left:4px solid var(--color-accent);font-family:var(--font-display);font-size:24px;line-height:1.3;text-transform:none;color:var(--text-primary);">Your mind is a cruel puppet master. It&rsquo;s the little alien in your head, pulling the strings, making you dance to the beat of a drum that&rsquo;s not yours.</blockquote>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">It makes us freeze when we should act, and act when we should pause and reconsider.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Dutiful reader, your mind is a cruel puppet master. It&rsquo;s the little alien in your head, pulling the strings, making you dance to the beat of a drum that&rsquo;s not yours.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">How Stella Got Her Drum Back &mdash; And You Can Too</h2>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">It is with a forlorn and heavy heart that I tell you, dearest reader, that you cannot get rid of the puppet master. Your mind and all its clever machinations will be with you <em>forever</em>.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">But lo, there be yet hope! Just because your mind is a skilled puppeteer does not mean that you have to be its marionette. The key to breaking free of the puppet master is what lies at the heart of Acceptance and Commitment Therapy (ACT).</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">Nerd Science</h2>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The ACT approach is informed by a philosophy of mind called <a href="https://pubmed.ncbi.nlm.nih.gov/27993338/" target="_blank" rel="noopener" style="text-decoration:underline;">Relational Frame Theory</a> (RFT), which posits that human minds automatically and involuntarily link words, images, and experiences together through language, and once those links are formed, you cannot simply choose to unlink them. In plainer terms: your mind is a machine built for making connections, and it never once asks your permission before it makes one.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">This proposition is antithetical to most of our assumptions about our minds, namely, that we have any control over the contents of our thoughts. Some might bristle at this notion. Well, bristle all you want &mdash; it doesn&rsquo;t change the fact that when I tell you about the pink paisley-printed elephant on roller skates who sounded just like Morgan Freeman when it told you to, &ldquo;Clean your damn house!&rdquo;, you couldn&rsquo;t help but imagine it.</p>
+    <img src="assets/blog/blog-puppet-master-body-2.png" alt="A pink paisley-printed elephant on roller skates" style="width:100%;height:auto;display:block;margin:8px 0;border:2px solid var(--color-ink);">
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The point is that your mind simply reacts with whatever it comes into contact. Over the past several decades, <a href="https://pubmed.ncbi.nlm.nih.gov/38615492/" target="_blank" rel="noopener" style="text-decoration:underline;">countless</a> <a href="https://onlinelibrary.wiley.com/doi/10.1111/jopy.12279" target="_blank" rel="noopener" style="text-decoration:underline;">research</a> <a href="https://pubmed.ncbi.nlm.nih.gov/30994261/" target="_blank" rel="noopener" style="text-decoration:underline;">studies</a> have confirmed RFT&rsquo;s scientific basis, validating the theory and its central tenets. Your brain really does have a mind of its own.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">What This Means</h2>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The puppet master isn&rsquo;t a glitch. He&rsquo;s not a bad update your brain needs to install, or a virus some part of you picked up along the way. He&rsquo;s the system, working exactly as designed. Every connection this capricious creature has ever made is a string he built the moment you learned language, years before anyone thought to ask if you consented to the arrangement.</p>
+    <blockquote style="margin:20px 0;padding:0 0 0 24px;border-left:4px solid var(--color-accent);font-family:var(--font-display);font-size:24px;line-height:1.3;text-transform:none;color:var(--text-primary);">He didn&rsquo;t sneak in. He was elected at birth and given a lifetime appointment.</blockquote>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">So if firing him isn&rsquo;t an option, stalwart reader, what exactly are we supposed to do with him?</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">Cognitive Defusion</h2>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">You stop treating the puppet master like a director, and you start treating him like what he actually is: a guy backstage, in a booth, holding some strings.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">That&rsquo;s the whole move. Psychologists call it <a href="https://link.springer.com/article/10.1007/s10608-018-9944-3" target="_blank" rel="noopener" style="text-decoration:underline;">cognitive defusion</a>, one of the central skills taught in ACT, and it asks something almost insultingly simple of you: don&rsquo;t argue with the thought, don&rsquo;t correct it, don&rsquo;t try to drown it out with a louder, nicer thought standing next to it. Just notice it for what it is. Words. A mental event. A weird little guy who happens to really, deeply, professionally like puppets.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Here&rsquo;s the part that trips people up. Defusion doesn&rsquo;t make the puppet master go quiet. He&rsquo;ll still show up with his usual material: the 3am inventory of everything you&rsquo;re forgetting, the unsolicited highlight reel of your worst moments, the confident prediction that this (whatever &lsquo;this&rsquo; is this week) is the one that finally does you in.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">He&rsquo;s not going on vacation. He&rsquo;s not getting fired. There are no term limits for the puppet master.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">What changes is your response. Right now, when he pulls a string, you dance. That&rsquo;s fusion &mdash; the state of being so tangled up in a thought that you can&rsquo;t tell where the thought ends and you begin. Defusion is the moment you notice the string before your leg moves. You feel the tug, you clock the guy backstage, and you get to decide, for maybe the first time, whether this particular dance is one you actually want to do.</p>
+    <blockquote style="margin:20px 0;padding:0 0 0 24px;border-left:4px solid var(--color-accent);font-family:var(--font-display);font-size:24px;line-height:1.3;text-transform:none;color:var(--text-primary);">You feel the tug, you clock the guy backstage, and you get to decide, for maybe the first time, whether this particular dance is one you actually want to do.</blockquote>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">A Small Experiment</h2>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Try this. Take a thought that&rsquo;s been pulling your strings lately, something like &ldquo;I&rsquo;m going to mess this up&rdquo; or &ldquo;nobody actually wants me around.&rdquo; Now, instead of immediately buying into it, see if you can imagine that sweet nothing being whispered into your ear by a strange little alien who just adores puppets.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Notice what just happened. The thought didn&rsquo;t get quieter. It didn&rsquo;t get more true, either. It just moved. A second ago it was the voice of God, handing down a verdict. Now it&rsquo;s a guy, backstage, saying his line. Same words. Completely different relationship to them.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Bizarre? Yes. Nonsensical? Also yes. Effective? That&rsquo;s what the evidence says.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">That&rsquo;s defusion in miniature. It&rsquo;s not a trick to make the thought disappear. It&rsquo;s a way of remembering, string by string, that you are not the puppet, you&rsquo;re the guy who&rsquo;s allowed to notice he&rsquo;s being pulled. With time, the idea is that you can move away from the mind&rsquo;s coercive control (little alien in Men In Black), and toward harmonious collaboration (Remy and Chef Linguine in Ratatouille).</p>
+    <blockquote style="margin:20px 0;padding:0 0 0 24px;border-left:4px solid var(--color-accent);font-family:var(--font-display);font-size:24px;line-height:1.3;text-transform:none;color:var(--text-primary);">You are not the puppet, you&rsquo;re the guy who&rsquo;s allowed to notice he&rsquo;s being pulled.</blockquote>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Next up in the series: what to actually do once you&rsquo;ve spotted the strings, because noticing them is only half the job.</p>
+  </div>
+</section>
+
+<div class="flourish-h"></div>
+
+<section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+  <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;max-width:560px;">Ready to stop dancing to someone else&rsquo;s drum?</h2>
+  <a href="book.html" class="btn btn-inverse">Book a free consult</a>
+</section>
+
+<footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
+  <div class="wordmark" style="color:var(--text-on-inverse);">Adaptations Denver</div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:right;">
+    <div>Denver, CO &middot; brian@adaptationsdenver.com &middot; (720) 515-2706</div>
+    <div style="opacity:0.6;font-size:12px;">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
+  </div>
+</footer>
+
+<a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
+</body></html>
