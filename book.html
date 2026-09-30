@@ -289,6 +289,15 @@ document.addEventListener('click', function(e) {
   <div class="calendly-inline-widget" data-url="https://calendly.com/adaptationsdenver-consultation/30min" style="min-width:320px;height:700px;"></div>
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <!-- Calendly inline widget end -->
+  <script>
+    window.addEventListener('message', function(e) {
+      if (e.origin !== 'https://calendly.com') return;
+      if (!e.data || e.data.event !== 'calendly.event_scheduled') return;
+      if (typeof gtag === 'function') {
+        gtag('event', 'consultation_booked', { booking_source: 'calendly_book_page' });
+      }
+    });
+  </script>
 </section>
 
 <footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
