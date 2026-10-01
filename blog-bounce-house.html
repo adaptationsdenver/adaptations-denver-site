@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html><head>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yqh97plmcr");
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75XE9KFDSC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-75XE9KFDSC');
+</script>
+
+<!-- GA4: track mailto and tel link clicks -->
+<script>
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a');
+  if (!link) return;
+  const href = link.getAttribute('href') || '';
+  if (href.startsWith('mailto:')) {
+    gtag('event', 'mailto_click', { link_url: href });
+  } else if (href.startsWith('tel:')) {
+    gtag('event', 'tel_click', { link_url: href });
+  }
+});
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Useful Nonsense Part 2: You Do Not Live in a Bounce House — Adaptations Denver</title>
+<meta name="description" content="The second entry in the Useful Nonsense series: on acceptance, the difference between pain and suffering, and why fighting your reality only makes it worse.">
+<link rel="canonical" href="https://adaptationsdenver.com/blog-bounce-house.html">
+
+<style>:root {
+  /* Base neutrals — from brand hex */
+  --color-ink: #1A1C1E;
+  --color-paper: #F7F5F2;
+
+  /* Neutral ramp, mixed from the two bases */
+  --color-ink-90: color-mix(in oklch, var(--color-ink) 90%, var(--color-paper));
+  --color-ink-70: color-mix(in oklch, var(--color-ink) 70%, var(--color-paper));
+  --color-ink-50: color-mix(in oklch, var(--color-ink) 50%, var(--color-paper));
+  --color-ink-30: color-mix(in oklch, var(--color-ink) 30%, var(--color-paper));
+  --color-ink-15: color-mix(in oklch, var(--color-ink) 15%, var(--color-paper));
+  --color-paper-90: color-mix(in oklch, var(--color-paper) 92%, var(--color-ink));
+
+  /* Accent candidates — same L/C in oklch, hue varies. Pick one for --color-accent. */
+  --color-accent-red: #C4472A;
+  --color-accent-amber: oklch(58% 0.19 65);
+  --color-accent-cobalt: oklch(58% 0.19 255);
+
+  /* Active accent (default: red — Supreme/Vice-coded). Swap this one line to change brand-wide. */
+  --color-accent: var(--color-accent-red);
+  --color-accent-ink: #FFFFFF; /* text/icon color on top of accent */
+
+  /* Semantic aliases */
+  --surface-page: var(--color-paper);
+  --surface-inverse: var(--color-ink);
+  --surface-card: var(--color-paper-90);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-70);
+  --text-on-inverse: var(--color-paper);
+  --text-on-inverse-secondary: var(--color-paper-90);
+  --border-default: var(--color-ink-15);
+  --border-strong: var(--color-ink-30);
+  --link-color: var(--color-accent);
+  --link-color-hover: color-mix(in oklch, var(--color-accent) 85%, var(--color-ink));
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-Black.otf") format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-BlackItalic.otf") format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Wide';
+  src: url("fonts/PPMonumentWide-Regular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: url("fonts/PPNeueMachina-PlainRegular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --font-display: 'PP Monument Extended', 'Arial Black', sans-serif;
+  --font-wide: 'PP Monument Wide', 'Arial Narrow', sans-serif;
+  --font-body: 'PP Neue Machina', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Display scale — headlines, only weight available is 900/Black */
+  --text-display-xl: 900 clamp(48px, 7vw, 120px)/0.98 var(--font-display);
+  --text-display-lg: 900 clamp(36px, 5vw, 72px)/1.0 var(--font-display);
+  --text-display-md: 900 clamp(28px, 3.2vw, 44px)/1.05 var(--font-display);
+
+  /* Wide/eyebrow treatment — real PP Monument Wide cut */
+  --text-wide-label: 400 13px/1.2 var(--font-wide);
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.18em;
+
+  /* Body scale */
+  --text-body-lg: 500 20px/1.5 var(--font-body);
+  --text-body-md: 500 17px/1.55 var(--font-body);
+  --text-body-sm: 500 14px/1.5 var(--font-body);
+  --text-label: 600 13px/1.2 var(--font-body);
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 0 var(--border-default);
+  --container-max: 1240px;
+  --container-pad: clamp(24px, 5vw, 64px);
+}
+
+</style>
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--color-paper);}
+  a{color:var(--link-color);text-decoration:none;}
+  a:hover{color:var(--link-color-hover);}
+  .btn{font-family:var(--font-body);font-weight:600;letter-spacing:0.02em;text-transform:uppercase;border:1px solid transparent;border-radius:var(--radius-sm);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;font-size:15px;}
+  .btn-primary{background:var(--color-accent);color:var(--color-accent-ink);}
+  .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
+  .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:13px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
+  .placeholder{background:repeating-linear-gradient(45deg, var(--color-ink-15), var(--color-ink-15) 10px, transparent 10px, transparent 20px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-secondary);text-align:center;}
+  .card{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .card-paper{background:var(--surface-card);color:var(--text-primary);border:1px solid var(--border-default);}
+  .card-ink{background:var(--surface-inverse);color:var(--text-on-inverse);}
+  .card h3{font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;margin:0;line-height:1.1;}
+  .card p{font-family:var(--font-body);font-size:15px;line-height:1.5;margin:0;opacity:0.85;}
+  .tag{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);display:inline-block;}
+  .tag-accent{background:var(--color-accent);color:var(--color-accent-ink);}
+  .tag-default{background:var(--color-ink-15);color:var(--text-primary);}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
+  .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
+  .navlinks{display:flex;align-items:center;gap:32px;}
+  .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .navlinks-core{display:flex;align-items:center;gap:32px;}
+  .navlinks-core a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .nav-core-dup{display:none;}
+  .navlinks button{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;background:var(--color-accent);color:var(--color-accent-ink);border:none;border-radius:var(--radius-sm);padding:10px 20px;cursor:pointer;}
+  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-width:0;}
+  @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
+  .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;}
+  .nav-toggle span{display:block;width:100%;height:2px;background:var(--color-ink);transition:transform 0.2s ease,opacity 0.2s ease;}
+  .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.active span:nth-child(2){opacity:0;}
+  .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (max-width:1400px){
+    nav{position:relative;}
+    .nav-toggle{display:flex;}
+    .navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--color-paper);border-bottom:1px solid var(--border-default);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;z-index:1000;box-shadow:0 8px 16px rgba(0,0,0,0.08);}
+    .navlinks.open{display:flex;}
+    .navlinks a{padding:14px var(--container-pad);border-bottom:1px solid var(--border-default);}
+    .navlinks a.btn{margin:12px var(--container-pad);text-align:center;}
+  }
+  @media (max-width:900px){
+    .navlinks-core{display:none;}
+    .nav-core-dup{display:block;}
+  }
+  @media (max-width:640px){
+    .nav-cta{display:none;}
+  }
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:28px;min-width:0;}
+  .blog-card{display:flex;flex-direction:column;border:2px solid var(--color-ink);background:var(--color-paper);text-decoration:none;color:inherit;min-width:0;}
+  .blog-card:hover{color:inherit;}
+  .blog-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;}
+</style>
+<style>
+  @media (max-width:640px){
+    .service-card, .card, .hero-copy, .blog-card{min-width:0 !important;}
+    .btn{white-space:normal !important;}
+    :root{
+      --text-body-lg: 500 22px/1.6 var(--font-body);
+      --text-body-md: 500 18px/1.6 var(--font-body);
+      --text-body-sm: 500 15px/1.5 var(--font-body);
+    }
+    .service-card, .card{padding:26px !important;min-width:0 !important;}
+    section.grid3 > *{min-width:0 !important;}
+    .service-card h3, .card h3{font-size:23px !important;line-height:1.2 !important;}
+    .service-card p, .card p{font-size:17px !important;line-height:1.55 !important;opacity:0.95 !important;}
+    .blog-card h3{font-size:21px !important;}
+    .blog-card p{font-size:16px !important;}
+    section.grid3{gap:24px !important;}
+    .blog-grid{gap:24px !important;}
+    .btn:not(.floating-cta){font-size:17px !important;padding:17px 26px !important;}
+    .floating-cta{font-size:15px !important;padding:14px 24px !important;}
+    .flourish-g{width:44px !important;height:44px !important;top:-16px !important;left:-16px !important;font-size:19px !important;}
+  }
+</style>
+<style>
+  .hero-diagonal-wedge{display:block;}
+  .hero-stacked{display:none;}
+  @media (max-width:1400px){
+    .hero-diagonal-wedge{display:none;}
+    .hero-stacked{display:flex !important;}
+  }
+  .post-blockquote{margin:20px 0;padding:0 0 0 24px;border-left:4px solid var(--color-accent);font-family:var(--font-display);font-style:italic;font-size:24px;line-height:1.3;text-transform:none;color:var(--text-primary);}
+  .post-body a{text-decoration:underline;}
+  .reference-list{display:flex;flex-direction:column;gap:16px;margin:4px 0 0;padding:0;list-style:none;}
+  .reference-list li{font:var(--text-body-sm);color:var(--text-secondary);line-height:1.6;padding-left:28px;text-indent:-28px;}
+</style>
+</head>
+
+<body>
+<nav>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
+  <div class="navlinks-core" id="navlinks-core">
+    <a href="approach.html">Approach</a>
+    <a href="individual-therapy.html">Individual Therapy</a>
+    <a href="group-therapy.html">Group Therapy</a>
+  </div>
+  <div class="navlinks" id="navlinks">
+    <a class="nav-core-dup" href="approach.html">Approach</a>
+    <a class="nav-core-dup" href="individual-therapy.html">Individual Therapy</a>
+    <a class="nav-core-dup" href="group-therapy.html">Group Therapy</a>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
+    <a href="about.html">About</a>
+    <a href="blog.html" style="opacity:1;font-weight:800;">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="book.html" class="nav-cta btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav>
+<script>
+(function(){
+  var toggle = document.getElementById('nav-toggle');
+  var links = document.getElementById('navlinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('active', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+<section style="position:relative;overflow:hidden;background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 60px;display:flex;">
+  <div style="position:relative;z-index:2;flex:1;min-width:280px;max-width:660px;display:flex;flex-direction:column;gap:20px;">
+    <a href="blog.html" class="eyebrow" style="display:inline-block;">&larr; Blog</a>
+    <h1 style="font:var(--text-display-lg);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">Useful Nonsense Part 2: You Do Not Live in a Bounce House</h1>
+    <p style="font:var(--text-body-lg);font-style:italic;color:var(--text-on-inverse-secondary);margin:0;">On acceptance, and why the floor was never going back to foam.</p>
+    <p style="font:var(--text-body-sm);color:var(--text-on-inverse-secondary);opacity:0.7;margin:0;">October 1, 2026 &middot; Brian Mulligan, LPCC, CAT</p>
+  </div>
+  <div class="hero-diagonal-wedge" style="position:absolute;top:0;right:0;bottom:0;width:42%;clip-path:polygon(30% 0, 100% 0, 100% 100%, 0 100%);z-index:1;">
+    <img src="assets/blog/blog-bounce-house-hero.png" alt="Useful Nonsense Part 2: You Do Not Live in a Bounce House" style="width:100%;height:100%;object-fit:cover;display:block;">
+  </div>
+</section>
+
+<section class="hero-stacked" style="padding:40px var(--container-pad) 0;justify-content:center;">
+  <img src="assets/blog/blog-bounce-house-hero.png" alt="Useful Nonsense Part 2: You Do Not Live in a Bounce House" style="width:100%;max-width:560px;height:auto;display:block;border:2px solid var(--color-ink);">
+</section>
+
+<section class="post-body" style="padding:36px var(--container-pad) 90px;display:flex;justify-content:center;">
+  <div style="max-width:720px;width:100%;display:flex;flex-direction:column;gap:20px;">
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Marlo Stanfield, a character on the HBO show The Wire, holds a special place in my heart, despite being a murderous, cold-hearted, ruthless, ambitious drug kingpin without a shred of compassion for others or any hint of having a conscience. Why would such a character be endearing to a therapist, you might be asking? Because he delivered one of my favorite quotes of all time: &ldquo;<a href="https://www.youtube.com/watch?v=PwuckTkE7T4" target="_blank" rel="noopener">You want it to be one way. But it&rsquo;s the other way</a>.&rdquo;</p>
+
+    <blockquote class="post-blockquote">&ldquo;You want it to be one way. But it&rsquo;s the other way.&rdquo;</blockquote>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Could such a person have some wisdom to offer us, the sane and humane? I believe yes. This quote, to me, is a near-perfect encapsulation of what it is like to resist one&rsquo;s reality. Let&rsquo;s take these words out of the context of the scene and talk about acceptance, <a href="https://pubmed.ncbi.nlm.nih.gov/38615492/" target="_blank" rel="noopener">a core process in Acceptance and Commitment Therapy (ACT)</a>.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">The Bounce House</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">When I was a child, I loved bounce houses. A party or event that had a bounce house, or better yet a bouncy castle, was heaven on Earth. I&rsquo;d frequently beg my mother to take me to play places like <a href="https://en.wikipedia.org/wiki/Discovery_Zone" target="_blank" rel="noopener">Discovery Zone</a> for the opportunity to careen and flail and thrash against surfaces more forgiving than the floor. I was a rambunctious child.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">It was with great anguish, then, that we arrived at Discovery Zone one Saturday morning to find that its doors were closed. For good. Naturally, I was inconsolable. No Chuck-e-Cheese or Dave and Busters could right this wrong. This was clearly a grave injustice, a flagrant abuse of human rights demanding immediate intervention from the highest authorities in the land.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Unaware of organizations like the U.N. or the ACLU at that age, I took the issue up with the authorities I knew best: my parents. Alas, dear reader, they could not remedy this atrocity, no matter how hard I cried or how passionately I implored. Slowly, I came to reckon with the reality that I was not going to get what I wanted. And, on a more formative level, an understanding began to sink into my small child brain: the world does not always cohere to my wishes simply because I wished for it.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">What Acceptance Actually Means</h2>
+
+    <blockquote class="post-blockquote">The world does not always cohere to my wishes simply because I wished for it.</blockquote>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Acceptance is often misunderstood. It&rsquo;s frequently equated with passivity or resignation, with lying down and giving up. In <a href="https://link.springer.com/article/10.1186/s12888-020-03020-1" target="_blank" rel="noopener">ACT</a>, it&rsquo;s better understood as a kind of attitude or orientation toward one&rsquo;s own experience that emphasizes willingness. The openness and receptivity inherent to this stance, to be willing to look at the facts and feel what you feel in each moment, is truly challenging. It&rsquo;s been my experience that most people, most days, most of the time, wish that something would be different about their present-moment experience. (For instance, as I write this, I notice my wish for this entry to be completed, and to be perfect.)</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">My kid brain wanted so desperately to be bouncing that it found the prospect of not bouncing to be intolerable. I simply wasn&rsquo;t able to acknowledge a world in which Discovery Zone was no longer in business. Gradually, as my various strategies to resist this reality (crying, yelling, begging, pouting) were thwarted at every turn, a confrontation was forced upon me. Unable at that age to develop a nuanced understanding of the competitive economic marketplace of child play places, I did something arguably more important: I came face-to-face with feelings of disappointment, and pain, and loss. Trivial as it may seem, I can still feel today some traces of what that was like for me then, and to me then, it was a big deal.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">Pain vs. Suffering</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">What I realize now is that it was the acceptance of these <a href="https://pubmed.ncbi.nlm.nih.gov/28703602/" target="_blank" rel="noopener">painful and unwanted feelings</a>, the willingness to let them in, to experience them, and to drop my resistances, that allowed me to <a href="https://onlinelibrary.wiley.com/doi/10.1002/jclp.70127" target="_blank" rel="noopener">move through suffering</a>. Buddhist-informed practices often differentiate between pain and suffering, classifying pain as something that is human and cannot be avoided, and suffering as something our minds like to add on, as a sort of insult to injury. Our suffering is caused primarily by our resistance to our own emotional realities. It is our grasping and pulling and fighting against that amplifies pain, pain that is often tolerable, even acceptable, on its own.</p>
+
+    <blockquote class="post-blockquote">Our suffering is caused primarily by our resistance to our own emotional realities. It is our grasping and pulling and fighting against that amplifies pain, pain that is often tolerable, even acceptable, on its own.</blockquote>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">You Do Not Live in a Bounce House</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Here is the thing nobody tells you on the way out of childhood: the floor stops being foam. Somewhere between Discovery Zone and your current mortgage, the padded walls came down and nobody sent a memo. You are, right now, standing on something hard. Grief is hard. A diagnosis is hard. A marriage ending is hard. These things do not yield when you throw yourself against them, no matter how much momentum you bring, no matter how loud you scream on the way down.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">And yet. Watch how most of us actually behave when we land wrong. We don&rsquo;t accept the floor. We argue with it. We demand a refund. We write strongly worded letters to a universe that has never once read its mail. Somewhere inside each of us is still a small, rambunctious child standing in a parking lot, inconsolable, certain that enough crying will reopen Discovery Zone. Most of us just got quieter about it, dear reader. We traded tantrums for something that looks more respectable: rumination, control, the relentless search for a loophole in reality itself.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">The Riptide Problem</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">If you&rsquo;ve ever been caught in a riptide, you already understand acceptance better than most psychology textbooks explain it. The instinct, when the current starts pulling you out, is to swim straight back toward shore, as hard as you can, immediately. This is also the worst possible thing you can do. You will exhaust yourself fighting a current that is, frankly, stronger than you are, and you will drown closer to the beach than you&rsquo;d like to admit. The actual move, the one every lifeguard will tell you, is to stop fighting the direction of the water and swim parallel to the shore instead. You let the current take you somewhere you didn&rsquo;t plan on going, and from there, you find your way back in.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Painful feelings work the same way. The riptide doesn&rsquo;t care that you didn&rsquo;t consent to it. Fighting it head-on doesn&rsquo;t make it weaker, it makes you tired. And somewhere in the <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9897529/" target="_blank" rel="noopener">panic of resisting</a>, you stop being able to think clearly enough to do anything useful at all. Acceptance isn&rsquo;t giving up on getting back to shore. It&rsquo;s understanding that the direct, furious, white-knuckled fight against the current is the thing that&rsquo;s actually going to drown you.</p>
+
+    <blockquote class="post-blockquote">Acceptance isn&rsquo;t giving up on getting back to shore. It&rsquo;s understanding that the direct, furious, white-knuckled fight against the current is the thing that&rsquo;s actually going to drown you.</blockquote>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">Your Puppet Master Has Opinions About This</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">You&rsquo;ll remember the puppet master from last week, the small, overconfident guy backstage who really, deeply, professionally likes puppets. He has a lot to say about your current riptide, almost none of it helpful. He is the one insisting, with total conviction, that the floor should be foam. He is the one who tells you that if you just think about this hard enough, cry about it loud enough, control it precisely enough, the facts of your life will eventually rearrange themselves to suit him.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Here&rsquo;s the uncomfortable overlap between last week&rsquo;s post and this one: <a href="https://pubmed.ncbi.nlm.nih.gov/30994261/" target="_blank" rel="noopener">defusion and acceptance are not two separate skills</a> you learn in sequence. They are more like the same muscle, flexed in two directions. Defusion is noticing the puppet master is talking. Acceptance is what you do with the feeling he&rsquo;s talking about, once you&rsquo;ve stopped mistaking his narration for a court order.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">A Small Experiment</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Next time you catch yourself fighting something that&rsquo;s already true, a feeling, a diagnosis, a fact you&rsquo;d very much prefer wasn&rsquo;t a fact, try naming the fight itself. Not the feeling. The resistance to the feeling. <em>I am currently trying very hard to make this not be true.</em> Say it exactly like that, out loud if you can stomach it, quietly if you can&rsquo;t.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">You&rsquo;ll likely notice two things happen almost immediately. First, the absurdity of the sentence, you are, after all, informing yourself of something you already knew. Second, and more usefully, a small release in the muscles you didn&rsquo;t notice you were clenching. Naming the fight doesn&rsquo;t end it. But it does something almost as good: it reminds you that you are the one doing the fighting, which means you are also, at least in theory, the one who gets to stop.</p>
+
+    <blockquote class="post-blockquote">Naming the fight doesn&rsquo;t end it. But it does something almost as good: it reminds you that you are the one doing the fighting, which means you are also, at least in theory, the one who gets to stop.</blockquote>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The floor was never going to be foam again. The good news, if you can call it that, is you were never actually built to need it to be.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Next up in the series: what to do with your hands once you&rsquo;ve stopped fighting the current. Spoiler, it involves actually moving toward something, not just surviving the water.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:40px 0 0;">References</h2>
+    <ul class="reference-list">
+      <li>A-Tjak, J. G. L., Morina, N., Topper, M., &amp; Emmelkamp, P. M. G. (2021). One year follow-up and mediation in cognitive behavioral therapy and acceptance and commitment therapy for adult depression. <em>BMC Psychiatry, 21</em>, Article 41. <a href="https://doi.org/10.1186/s12888-020-03020-1" target="_blank" rel="noopener">https://doi.org/10.1186/s12888-020-03020-1</a></li>
+      <li>Cookson, C., Luzon, O., Newland, J., &amp; Kingston, J. (2020). Examining the role of cognitive fusion and experiential avoidance in predicting anxiety and depression. <em>Psychology and Psychotherapy: Theory, Research and Practice, 93</em>(3), 456&ndash;473. <a href="https://doi.org/10.1111/papt.12233" target="_blank" rel="noopener">https://doi.org/10.1111/papt.12233</a></li>
+      <li>Ford, B. Q., Lam, P., John, O. P., &amp; Mauss, I. B. (2018). The psychological health benefits of accepting negative emotions and thoughts: Laboratory, diary, and longitudinal evidence. <em>Journal of Personality and Social Psychology, 115</em>(6), 1075&ndash;1092. <a href="https://doi.org/10.1037/pspp0000157" target="_blank" rel="noopener">https://doi.org/10.1037/pspp0000157</a></li>
+      <li>Ka&#378;mierczak, I., &amp; Lacko, D. (2026). The paradox of acceptance: A longitudinal study on acceptance, depression, and the moderating role of anger suppression within an ACT framework. <em>Journal of Clinical Psychology, 82</em>(7), 1030&ndash;1042. <a href="https://doi.org/10.1002/jclp.70127" target="_blank" rel="noopener">https://doi.org/10.1002/jclp.70127</a></li>
+      <li>Macri, J. A., &amp; Rogge, R. D. (2024). Examining domains of psychological flexibility and inflexibility as treatment mechanisms in acceptance and commitment therapy: A comprehensive systematic and meta-analytic review. <em>Clinical Psychology Review, 110</em>, Article 102432. <a href="https://doi.org/10.1016/j.cpr.2024.102432" target="_blank" rel="noopener">https://doi.org/10.1016/j.cpr.2024.102432</a></li>
+      <li>Mart&iacute;nez-Rubio, D., Colomer-Carbonell, A., Sanabria-Mazo, J. P., P&eacute;rez-Aranda, A., Navarrete, J., Mart&iacute;nez-Brot&oacute;ns, C., Escamilla, C., Muro, A., Montero-Mar&iacute;n, J., Luciano, J. V., &amp; Feliu-Soler, A. (2023). How mindfulness, self-compassion, and experiential avoidance are related to perceived stress in a sample of university students. <em>PLOS ONE, 18</em>(2), Article e0280791. <a href="https://doi.org/10.1371/journal.pone.0280791" target="_blank" rel="noopener">https://doi.org/10.1371/journal.pone.0280791</a></li>
+      <li>Walser, R. D., &amp; O&rsquo;Connell, M. (2021). Acceptance and commitment therapy and the therapeutic relationship: Rupture and repair. <em>Journal of Clinical Psychology, 77</em>(2), 429&ndash;440. <a href="https://doi.org/10.1002/jclp.23114" target="_blank" rel="noopener">https://doi.org/10.1002/jclp.23114</a></li>
+    </ul>
+
+  </div>
+</section>
+
+<div class="flourish-h"></div>
+
+<section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+  <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;max-width:560px;">Ready to stop fighting the current?</h2>
+  <a href="book.html" class="btn btn-inverse">Book a free consult</a>
+</section>
+
+<footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
+  <div class="wordmark" style="color:var(--text-on-inverse);">Adaptations Denver</div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:right;">
+    <div>Denver, CO &middot; brian@adaptationsdenver.com &middot; (720) 515-2706</div>
+    <div style="opacity:0.6;font-size:12px;">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
+  </div>
+</footer>
+
+<a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
+</body></html>
