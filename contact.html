@@ -232,6 +232,28 @@ document.addEventListener('click', function(e) {
     .flourish-g{width:44px !important;height:44px !important;top:-16px !important;left:-16px !important;font-size:19px !important;}
   }
 </style>
+<style>
+  /* Services dropdown */
+  .nav-dd{position:relative;display:flex;align-items:center;}
+  .nav-dd-toggle,.navlinks .nav-dd-m-toggle{font-family:'PP Neue Machina','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:normal;text-transform:none;color:#1A1C1E;background:none;border:none;border-radius:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+  .nav-dd-caret{display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform 0.2s ease;}
+  .nav-dd.open .nav-dd-caret,.nav-dd-m.open .nav-dd-caret{transform:translateY(2px) rotate(-135deg);}
+  .nav-dd-menu{display:none;position:absolute;top:calc(100% + 24px);left:-22px;min-width:240px;background:#F7F5F2;border:2px solid #1A1C1E;box-shadow:0 8px 16px rgba(0,0,0,0.08);padding:8px 0;z-index:1001;}
+  .nav-dd-menu::before{content:"";position:absolute;left:-2px;right:-2px;top:-28px;height:28px;}
+  .nav-dd.open .nav-dd-menu{display:block;}
+  @media (hover:hover){
+    .nav-dd:hover .nav-dd-menu{display:block;}
+    .nav-dd:hover .nav-dd-caret{transform:translateY(2px) rotate(-135deg);}
+  }
+  .nav-dd-menu a{display:block;padding:10px 22px;font-size:14px;font-weight:600;color:#1A1C1E;white-space:nowrap;}
+  .nav-dd-menu a:hover,.nav-dd-menu a:focus-visible{background:rgba(26,28,30,0.06);color:#C4472A;}
+  .nav-dd-label{display:block;margin-top:8px;padding:14px 22px 6px;border-top:1px solid rgba(26,28,30,0.15);font-family:'PP Monument Wide','Arial Narrow',sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#C4472A;}
+  .navlinks .nav-dd-m-toggle{width:100%;justify-content:space-between;padding:14px var(--container-pad,24px);border-bottom:1px solid rgba(26,28,30,0.15);text-align:left;}
+  .nav-dd-m-menu{display:none;background:rgba(26,28,30,0.04);}
+  .nav-dd-m.open .nav-dd-m-menu{display:block;}
+  .navlinks .nav-dd-m-menu a{display:block;padding:12px var(--container-pad,24px) 12px calc(var(--container-pad,24px) + 18px);font-size:14px;}
+  .nav-dd-m-menu .nav-dd-label{margin-top:0;border-top:none;border-bottom:1px solid rgba(26,28,30,0.15);padding:14px var(--container-pad,24px) 8px calc(var(--container-pad,24px) + 18px);}
+</style>
 </head>
 
 <body>
@@ -240,13 +262,39 @@ document.addEventListener('click', function(e) {
   <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
   <div class="navlinks-core" id="navlinks-core">
     <a href="approach.html">Approach</a>
-    <a href="individual-therapy.html">Individual Therapy</a>
-    <a href="group-therapy.html">Group Therapy</a>
+    <div class="nav-dd">
+      <button type="button" class="nav-dd-toggle" aria-expanded="false" aria-controls="nav-dd-menu">Services<span class="nav-dd-caret" aria-hidden="true"></span></button>
+      <div class="nav-dd-menu" id="nav-dd-menu">
+        <a href="individual-therapy.html">Individual Therapy</a>
+        <a href="group-therapy.html">Group Therapy</a>
+        <span class="nav-dd-label">What we help with</span>
+        <a href="anger-therapy.html">Anger</a>
+        <a href="substance-use-therapy.html">Substance Use</a>
+        <a href="depression-therapy.html">Depression</a>
+        <a href="perfectionism-therapy.html">Perfectionism</a>
+        <a href="career-burnout-therapy.html">Career &amp; Burnout</a>
+        <a href="relationship-therapy.html">Relationships</a>
+        <a href="life-transitions-therapy.html">Life Transitions</a>
+      </div>
+    </div>
   </div>
   <div class="navlinks" id="navlinks">
     <a class="nav-core-dup" href="approach.html">Approach</a>
-    <a class="nav-core-dup" href="individual-therapy.html">Individual Therapy</a>
-    <a class="nav-core-dup" href="group-therapy.html">Group Therapy</a>
+    <div class="nav-core-dup nav-dd-m">
+      <button type="button" class="nav-dd-m-toggle" aria-expanded="false" aria-controls="nav-dd-m-menu">Services<span class="nav-dd-caret" aria-hidden="true"></span></button>
+      <div class="nav-dd-m-menu" id="nav-dd-m-menu">
+        <a href="individual-therapy.html">Individual Therapy</a>
+        <a href="group-therapy.html">Group Therapy</a>
+        <span class="nav-dd-label">What we help with</span>
+        <a href="anger-therapy.html">Anger</a>
+        <a href="substance-use-therapy.html">Substance Use</a>
+        <a href="depression-therapy.html">Depression</a>
+        <a href="perfectionism-therapy.html">Perfectionism</a>
+        <a href="career-burnout-therapy.html">Career &amp; Burnout</a>
+        <a href="relationship-therapy.html">Relationships</a>
+        <a href="life-transitions-therapy.html">Life Transitions</a>
+      </div>
+    </div>
     <a href="consultation-speaking.html">Consultation + Speaking</a>
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
@@ -272,6 +320,38 @@ document.addEventListener('click', function(e) {
       toggle.setAttribute('aria-expanded', 'false');
     });
   });
+})();
+</script>
+<script>
+(function(){
+  var dd = document.querySelector('.navlinks-core .nav-dd');
+  if (dd) {
+    var btn = dd.querySelector('.nav-dd-toggle');
+    var canHover = window.matchMedia('(hover:hover)');
+    var setOpen = function(open){
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(!dd.classList.contains('open'));
+    });
+    dd.addEventListener('mouseenter', function(){ if (canHover.matches) btn.setAttribute('aria-expanded', 'true'); });
+    dd.addEventListener('mouseleave', function(){ if (canHover.matches) setOpen(false); });
+    dd.addEventListener('focusout', function(e){ if (!dd.contains(e.relatedTarget)) setOpen(false); });
+    document.addEventListener('click', function(e){ if (!dd.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && dd.classList.contains('open')) { setOpen(false); btn.focus(); }
+    });
+  }
+  var m = document.querySelector('.nav-dd-m');
+  if (m) {
+    var mbtn = m.querySelector('.nav-dd-m-toggle');
+    mbtn.addEventListener('click', function(){
+      var open = m.classList.toggle('open');
+      mbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
 })();
 </script>
 
