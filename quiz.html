@@ -141,6 +141,11 @@ document.addEventListener('click', function(e) {
 
   .email-block { margin-top: 4px; padding-top: 22px; border-top: 1px solid var(--line); }
   .email-block p { font-size: 14px; opacity: 0.7; margin: 0 0 14px; }
+  .email-block .email-title { font-family: 'PP Monument Extended', sans-serif; font-size: 18px; line-height: 1.25; opacity: 1; margin: 0 0 8px; }
+  .email-block .email-fine { font-size: 12px; opacity: 0.55; margin: 10px 0 0; }
+  .email-block .email-status { font-size: 15px; opacity: 1; margin: 0; }
+  .email-block .email-status:empty { display: none; }
+  @media (max-width: 480px) { .placeholder-form input[type="email"], .placeholder-form .cta-btn { flex: 1 1 100%; } }
   /* Replace with real MailerLite embedded form code. Keep id="lead-magnet-form" for GA4 tracking. */
   .placeholder-form { display: flex; gap: 10px; flex-wrap: wrap; }
   .placeholder-form input[type="email"] { flex: 1; min-width: 200px; padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 6px; font-family: 'PP Neue Machina', sans-serif; font-size: 15px; background: white; color: var(--ink); }
@@ -324,11 +329,14 @@ document.addEventListener('click', function(e) {
     <button class="restart-link" id="restart-btn">Take it again</button>
 
     <div class="email-block">
-      <p>Want occasional straight-talk emails on men's mental health? No spam, unsubscribe anytime.</p>
+      <p class="email-title">Get your full <span id="report-name">report</span> by email</p>
+      <p>What's actually going on underneath your result, what the pattern tends to look like, and three things you can do right now.</p>
       <form class="placeholder-form" id="lead-magnet-form">
-        <input type="email" placeholder="you@email.com" required>
-        <button type="submit" class="cta-btn" style="padding:13px 20px;">Sign up</button>
+        <input type="email" id="report-email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required>
+        <button type="submit" class="cta-btn" id="report-submit" style="padding:13px 20px;">Send my report</button>
       </form>
+      <p class="email-fine" id="report-fine">You'll also get occasional emails from me on men's mental health. Unsubscribe anytime.</p>
+      <p class="email-status" id="report-status" role="status" aria-live="polite"></p>
     </div>
   </div>
 
@@ -358,8 +366,29 @@ document.addEventListener('click', function(e) {
   const optionBlocks = document.getElementById('option-blocks');
   const restartBtn = document.getElementById('restart-btn');
   const leadForm = document.getElementById('lead-magnet-form');
+  const reportName = document.getElementById('report-name');
+  const reportEmail = document.getElementById('report-email');
+  const reportSubmit = document.getElementById('report-submit');
+  const reportFine = document.getElementById('report-fine');
+  const reportStatus = document.getElementById('report-status');
+
+  const REPORT_FORMS = {
+    grounded: { formId: '200216628873397657', name: 'Grounded Man' },
+    tightrope: { formId: '200216636101232002', name: 'Tightrope Walker' },
+    ironmask: { formId: '200216638502471262', name: 'Iron Mask' }
+  };
 
   let answers = [];
+  let currentResult = null;
+
+  function resetReportForm() {
+    leadForm.reset();
+    leadForm.style.display = '';
+    reportFine.style.display = '';
+    reportStatus.textContent = '';
+    reportSubmit.disabled = false;
+    reportSubmit.textContent = 'Send my report';
+  }
 
   function showCard(index) {
     cards.forEach(c => c.classList.remove('active'));
@@ -396,6 +425,7 @@ document.addEventListener('click', function(e) {
     ctaRow.className = 'cta-row';
 
     if (total <= 27) {
+      currentResult = 'grounded';
       archetypeImage.src = 'assets/quiz/archetype-grounded-man.png';
       archetypeImage.alt = 'The Grounded Man';
       archetypeHeadline.textContent = 'The Grounded Man';
@@ -412,6 +442,7 @@ document.addEventListener('click', function(e) {
       ctaRow.appendChild(btn);
 
     } else if (total <= 42) {
+      currentResult = 'tightrope';
       archetypeImage.src = 'assets/quiz/archetype-tightrope-walker.png';
       archetypeImage.alt = 'The Tightrope Walker';
       archetypeHeadline.textContent = 'The Tightrope Walker';
@@ -435,6 +466,7 @@ document.addEventListener('click', function(e) {
       ctaRow.appendChild(btn2);
 
     } else {
+      currentResult = 'ironmask';
       archetypeImage.src = 'assets/quiz/archetype-iron-mask.png';
       archetypeImage.alt = 'The Iron Mask';
       archetypeHeadline.textContent = 'The Iron Mask';
@@ -459,6 +491,8 @@ document.addEventListener('click', function(e) {
     }
 
     optionBlocks.appendChild(ctaRow);
+    reportName.textContent = REPORT_FORMS[currentResult].name + ' report';
+    resetReportForm();
     quizFlow.style.display = 'none';
     resultScreen.classList.add('active');
 
@@ -474,12 +508,29 @@ document.addEventListener('click', function(e) {
     showCard(0);
   });
 
-  leadForm.addEventListener('submit', function(e) {
+  leadForm.addEventListener('submit', async function(e) {
     e.preventDefault();
-    if (typeof gtag === 'function') {
-      gtag('event', 'generate_lead', { source: 'mens_mental_health_check' });
+    const target = REPORT_FORMS[currentResult];
+    if (!target) return;
+    reportSubmit.disabled = true;
+    reportSubmit.textContent = 'Sending…';
+    reportStatus.textContent = '';
+    try {
+      const body = new URLSearchParams({ 'fields[email]': reportEmail.value.trim(), 'ml-submit': '1', 'anticsrf': 'true' });
+      const res = await fetch(`https://assets.mailerlite.com/jsonp/2088871/forms/${target.formId}/subscribe`, { method: 'POST', body: body });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error('MailerLite rejected the signup');
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { source: 'mens_mental_health_check', quiz_result: currentResult });
+      }
+      leadForm.style.display = 'none';
+      reportFine.style.display = 'none';
+      reportStatus.textContent = "Check your inbox, your report is on its way. If it's not there in a few minutes, check your spam or Promotions folder.";
+    } catch (err) {
+      reportSubmit.disabled = false;
+      reportSubmit.textContent = 'Send my report';
+      reportStatus.textContent = 'Something went wrong sending your report. Please try again, or email brian@adaptationsdenver.com.';
     }
-    leadForm.innerHTML = "<p style='opacity:0.75;'>Thanks, you're on the list.</p>";
   });
 
   showCard(0);
