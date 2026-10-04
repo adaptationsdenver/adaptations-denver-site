@@ -265,6 +265,7 @@ document.addEventListener('click', function(e) {
   .navlinks .nav-dd-m-menu a{display:block;padding:12px var(--container-pad,24px) 12px calc(var(--container-pad,24px) + 18px);font-size:14px;}
   .nav-dd-m-menu .nav-dd-label{margin-top:0;border-top:none;border-bottom:1px solid rgba(26,28,30,0.15);padding:14px var(--container-pad,24px) 8px calc(var(--container-pad,24px) + 18px);}
 </style>
+<link rel="stylesheet" href="assets/pcheck/pcheck.css">
 </head>
 
 <body>
@@ -374,6 +375,10 @@ document.addEventListener('click', function(e) {
   </div>
 </section>
 
+<section style="padding:clamp(48px,7vw,72px) var(--container-pad);border-bottom:1px solid var(--border-default);">
+  <div id="pcheck-root" class="pcheck"></div>
+</section>
+
 <section style="padding:clamp(56px,8vw,88px) var(--container-pad);">
   <div class="service-body">
     <div class="service-block flourish-c">
@@ -412,4 +417,5 @@ document.addEventListener('click', function(e) {
 </footer>
 
 <a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
+<script src="assets/pcheck/pcheck.js" defer></script>
 </body></html>

@@ -262,6 +262,7 @@ document.addEventListener('click', function(e) {
   .navlinks .nav-dd-m-menu a{display:block;padding:12px var(--container-pad,24px) 12px calc(var(--container-pad,24px) + 18px);font-size:14px;}
   .nav-dd-m-menu .nav-dd-label{margin-top:0;border-top:none;border-bottom:1px solid rgba(26,28,30,0.15);padding:14px var(--container-pad,24px) 8px calc(var(--container-pad,24px) + 18px);}
 </style>
+<link rel="stylesheet" href="assets/pcheck/pcheck.css">
 </head>
 <body>
 
@@ -468,6 +469,10 @@ document.getElementById('video-play-btn').addEventListener('click', function() {
   <a href="book.html" class="btn btn-inverse">Book a free consult</a>
 </section>
 
+<section style="padding:clamp(48px,7vw,72px) var(--container-pad);">
+  <div id="pcheck-root" class="pcheck"></div>
+</section>
+
 <footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:40px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;">
   <div class="wordmark" style="color:var(--text-on-inverse);">Adaptations Denver</div>
   <div>Denver, CO · brian@adaptationsdenver.com · (720) 515-2706</div>
@@ -475,4 +480,5 @@ document.getElementById('video-play-btn').addEventListener('click', function() {
 <div style="background:var(--color-ink);color:var(--text-on-inverse-secondary);opacity:0.5;font:13px var(--font-body);padding:12px var(--container-pad);">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
 
 <a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
+<script src="assets/pcheck/pcheck.js" defer></script>
 </body></html>
