@@ -160,7 +160,7 @@
 
   root.innerHTML =
     '<div class="pcheck-flow">' +
-      '<h2 class="pcheck-title">The Perfectionism Self-Check</h2>' +
+      '<h1 class="pcheck-title">The Perfectionism Self-Check</h1>' +
       '<p class="pcheck-sub">15 quick statements. Rate how true each one is for you, 1 to 5. No email required to see your result.</p>' +
       '<div class="pcheck-progress-row">' +
         '<span class="pcheck-progress-num" aria-hidden="true"></span>' +
@@ -218,13 +218,13 @@
     var html =
       '<div class="pcheck-result-img-wrap"><img class="pcheck-result-img" src="' + PCHECK_IMAGE_DIR + 'result-' + slug.replace(/_/g, '-') + '.png" alt="' + esc(r.name) + ' illustration" width="160" height="160"></div>' +
       '<span class="pcheck-result-label">Your result: ' + esc(r.name) + '</span>' +
-      '<h3 class="pcheck-result-headline" tabindex="-1">' + esc(r.headline) + '</h3>' +
+      '<h2 class="pcheck-result-headline" tabindex="-1">' + esc(r.headline) + '</h2>' +
       r.body.map(function (p) { return '<p class="pcheck-result-body">' + esc(p) + '</p>'; }).join('') +
-      '<h4 class="pcheck-section-title">What This Pattern Tends to Look Like</h4>' +
+      '<h3 class="pcheck-section-title">What This Pattern Tends to Look Like</h3>' +
       '<ul class="pcheck-tags">' +
         r.tags.map(function (t) { return '<li><strong>' + esc(t[0]) + '</strong> ' + esc(t[1]) + '</li>'; }).join('') +
       '</ul>' +
-      '<h4 class="pcheck-section-title">A Next Step</h4>' +
+      '<h3 class="pcheck-section-title">A Next Step</h3>' +
       '<p class="pcheck-result-body">' + esc(r.nextStep) + '</p>' +
       '<div class="pcheck-cta-row">' +
         r.buttons.map(function (b, i) {

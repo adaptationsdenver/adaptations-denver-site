@@ -265,7 +265,6 @@ document.addEventListener('click', function(e) {
   .navlinks .nav-dd-m-menu a{display:block;padding:12px var(--container-pad,24px) 12px calc(var(--container-pad,24px) + 18px);font-size:14px;}
   .nav-dd-m-menu .nav-dd-label{margin-top:0;border-top:none;border-bottom:1px solid rgba(26,28,30,0.15);padding:14px var(--container-pad,24px) 8px calc(var(--container-pad,24px) + 18px);}
 </style>
-<link rel="stylesheet" href="assets/pcheck/pcheck.css">
 </head>
 
 <body>
@@ -375,8 +374,12 @@ document.addEventListener('click', function(e) {
   </div>
 </section>
 
-<section style="padding:clamp(48px,7vw,72px) var(--container-pad);border-bottom:1px solid var(--border-default);">
-  <div id="pcheck-root" class="pcheck"></div>
+<section style="background:var(--color-paper);border-bottom:1px solid var(--border-default);padding:56px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+  <div style="display:flex;flex-direction:column;gap:8px;max-width:560px;">
+    <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;">Is your bar driving you, or draining you?</h2>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Take the Perfectionism Self-Check. 15 quick statements, about three minutes, no email required.</p>
+  </div>
+  <a href="/perfectionism-check.html" class="btn btn-primary" style="white-space:nowrap;">Take the Self-Check</a>
 </section>
 
 <section style="padding:clamp(56px,8vw,88px) var(--container-pad);">
@@ -417,5 +420,4 @@ document.addEventListener('click', function(e) {
 </footer>
 
 <a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
-<script src="assets/pcheck/pcheck.js" defer></script>
 </body></html>
