@@ -61,7 +61,12 @@
 .pcheck-restart { background: none; border: none; color: var(--pcheck-ink); opacity: 0.55; font-family: var(--pcheck-body); font-size: 14px; text-decoration: underline; cursor: pointer; padding: 0; width: fit-content; }
 
 .pcheck-email { padding-top: 22px; border-top: 1px solid var(--pcheck-line); }
-.pcheck-email-title { font-family: var(--pcheck-display); font-weight: 900; font-size: 18px; line-height: 1.25; margin: 0 0 12px; }
+.pcheck-email-title { font-family: var(--pcheck-display); font-weight: 900; font-size: 18px; line-height: 1.25; margin: 0 0 8px; }
+.pcheck-email-desc { font-size: 14px; line-height: 1.5; opacity: 0.7; margin: 0 0 14px; }
+.pcheck-email-fine { font-size: 12px; line-height: 1.5; opacity: 0.55; margin: 10px 0 0; }
+.pcheck-email-status { font-size: 15px; line-height: 1.5; margin: 0; }
+.pcheck-email-status:empty { display: none; }
+.pcheck-email-submit:disabled { opacity: 0.6; cursor: default; }
 .pcheck-email-form { display: flex; gap: 10px; flex-wrap: wrap; }
 .pcheck-email-input { flex: 1; min-width: 200px; padding: 13px 15px; border: 1.5px solid var(--pcheck-line); border-radius: 6px; font-family: var(--pcheck-body); font-size: 15px; background: #fff; color: var(--pcheck-ink); }
 
