@@ -157,6 +157,9 @@ document.addEventListener('click', function(e) {
   .btn-primary{background:var(--color-accent);color:var(--color-accent-ink);}
   .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
   .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:13px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
+  .approach-list{margin:0;padding-left:1.6em;display:flex;flex-direction:column;gap:10px;font:var(--text-body-md);color:var(--text-primary);}
+  .approach-list li{padding-left:6px;}
+  .approach-list li::marker{color:var(--color-accent);font-weight:700;}
   .placeholder{background:repeating-linear-gradient(45deg, var(--color-ink-15), var(--color-ink-15) 10px, transparent 10px, transparent 20px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-secondary);text-align:center;}
   .card{padding:28px;display:flex;flex-direction:column;gap:14px;}
   .card-paper{background:var(--surface-card);color:var(--text-primary);border:1px solid var(--border-default);}
@@ -357,8 +360,23 @@ document.addEventListener('click', function(e) {
 
 <section style="background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 90px;display:flex;flex-direction:column;gap:28px;">
   <span class="eyebrow">Approach</span>
-  <h1 style="font:var(--text-display-xl);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">Competence is not the same as capacity.</h1>
-  <p style="font:var(--text-body-lg);max-width:560px;color:var(--text-on-inverse-secondary);margin:0;">Most guys wait until it's a crisis. I think that's backwards. It's one thing to clear a hurdle. It's another to know how to stop building them in the first place.</p>
+  <h1 style="font:var(--text-display-xl);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">What Therapy Actually Is</h1>
+  <p style="font:var(--text-body-lg);max-width:560px;color:var(--text-on-inverse-secondary);margin:0;">Ask ten therapists and you'll get ten answers. Here's mine.</p>
+</section>
+
+<section style="padding:80px var(--container-pad) 0;">
+  <div style="max-width:620px;display:flex;flex-direction:column;gap:18px;">
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">At its core, it comes down to three things:</p>
+    <ol class="approach-list">
+      <li>Figuring out what you actually want and need.</li>
+      <li>Figuring out what's in the way of it.</li>
+      <li>Figuring out how to get it.</li>
+    </ol>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Add in the complexity of an actual life and real personal history, and sure, it gets more complicated. But the goal doesn't change. Therapy should produce something you can use, not just something you can talk about.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">What that "something" looks like is different for everyone. Figuring it out together is the first part of the job.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Detours happen, and sometimes they're worth taking. But you came here for a reason, and keeping that reason in view is on me as much as it's on you.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">There's only one agenda in this room. It's yours.</p>
+  </div>
 </section>
 
 <section style="padding:80px var(--container-pad);display:flex;flex-direction:column;gap:28px;">
