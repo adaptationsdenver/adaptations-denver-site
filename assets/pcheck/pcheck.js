@@ -43,14 +43,6 @@
         "Your answers show a high personal bar paired with a light grip on mistakes. You push for quality and care how the work turns out. A miss gets fixed and filed. That combination is less common than it sounds, and it's usually built on purpose, one rough project at a time.",
         'The one thing worth watching: this pattern holds up best when conditions are decent. A brutal quarter, a new boss, or a stretch of bad sleep can tip a high bar into a heavy one before you notice.'
       ],
-      tags: [
-        ['Driven.', 'You set demanding goals and expect to reach them.'],
-        ['Satisfied.', 'Finishing something feels like finishing.'],
-        ['Proportionate.', 'A mistake gets its actual size.'],
-        ['Resilient.', 'Criticism stings for a moment and becomes information.'],
-        ['Focused.', 'You put effort where it pays.'],
-        ['Pressure-sensitive.', 'In a rough season, your usual balance gets tested.']
-      ],
       nextStep: 'A group setting is a good place to compare notes with other high performers. An individual consult works well for pressure-testing your standards against a specific role or project. Both are optional ways to keep a good pattern in good repair.',
       buttons: [BOOK_GROUP, BOOK_INDIVIDUAL],
       show988: false
@@ -61,14 +53,6 @@
       body: [
         'Your answers show demanding personal standards with a lot of friction around them. Finishing rarely feels like finishing, mistakes stick, and a good share of your effort goes to checking, replaying, and bracing for the next evaluation. You probably produce excellent work. The price is that the satisfaction never arrives, so the next task starts in a hole.',
         'You likely also sense that other people expect you to stay flawless, which raises the stakes on every piece of work. The bar moves up each time you clear it.'
-      ],
-      tags: [
-        ['Never satisfied.', 'Finishing something rarely feels like finishing.'],
-        ['Replaying mistakes.', 'One error outweighs ten wins.'],
-        ['Over-checking.', 'You review work past the point where it helps.'],
-        ['Worn down.', 'The effort has outrun your recovery.'],
-        ['Self-critical.', 'You hold yourself to a stricter standard than anyone else gets.'],
-        ['Watched.', 'It feels like everyone expects you not to slip.']
       ],
       nextStep: "This pattern tends to respond well to individual therapy. I work on the self-criticism and the belief that worth is earned through flawless output. Group work adds something individual sessions can't: seeing other high performers carry the same pressure, which loosens the sense that you're the only one running this way.",
       buttons: [BOOK_INDIVIDUAL, BOOK_GROUP],
@@ -81,14 +65,6 @@
         "Your answers show a pattern that's easy to miss, including by you. You wouldn't call yourself a perfectionist, and your stated bar isn't unusually high. Yet mistakes stick, small decisions get replayed, and part of you assumes other people are watching for slips. The standard doing the damage may be one you believe other people hold for you.",
         "That makes this hard to spot from the inside. There's no lofty goal to point at as the source of the pressure, so it passes for ordinary stress or a personal flaw."
       ],
-      tags: [
-        ['Quietly exacting.', 'You scrutinize your own work more closely than you let on.'],
-        ['Second-guessing.', 'Small choices get replayed after the fact.'],
-        ['Mistake-sticky.', 'An error stays with you long after everyone else has moved on.'],
-        ['Watched.', "You sense people assuming you won't slip."],
-        ['Understated.', 'You downplay your standards, so the pressure goes unnoticed.'],
-        ['Stalled.', 'Work waits for the moment it feels right.']
-      ],
       nextStep: "Individual therapy is the strongest fit. The work is looking at the expectations you carry, where they came from, and how much of them anyone else actually holds. If you'd rather start with a conversation, a free consult is a good place to test whether this pattern fits.",
       buttons: [BOOK_FREE],
       show988: true
@@ -99,14 +75,6 @@
       body: [
         "Your answers show a moderate personal bar and a light grip on errors. You match effort to the stakes, a mistake gets handled and set down, and you don't feel every piece of work being graded. In a field that rewards intensity, that's a real asset, and it protects you from much of the burnout that comes with chasing flawless.",
         'One question is worth asking, since only you hold the answer: is the bar where you want it, or did it come down because you got tired? A standard you chose and a standard that dropped after a rough stretch look identical on this quiz.'
-      ],
-      tags: [
-        ['Flexible.', 'You adjust the bar to the situation.'],
-        ['Forgiving.', 'A mistake gets fixed and filed.'],
-        ['Unpressured.', "You don't feel watched for every slip."],
-        ['Steady.', "A setback doesn't shake your sense of who you are."],
-        ['Selective.', 'You choose where extra effort pays off.'],
-        ['Worth a look.', "Low standards can be a choice, and sometimes they're an adaptation after burnout."]
       ],
       nextStep: "Nothing in your answers points to a problem that needs fixing. If you're curious whether your relaxed standards are a choice or a retreat, or you want help rebuilding ambition at a sustainable pace, a free consult is a low-stakes place to talk it through. Group work is also a good way to meet other high performers who've found a pace they can hold.",
       buttons: [BOOK_FREE, BOOK_GROUP],
@@ -220,10 +188,6 @@
       '<span class="pcheck-result-label">Your result: ' + esc(r.name) + '</span>' +
       '<h2 class="pcheck-result-headline" tabindex="-1">' + esc(r.headline) + '</h2>' +
       r.body.map(function (p) { return '<p class="pcheck-result-body">' + esc(p) + '</p>'; }).join('') +
-      '<h3 class="pcheck-section-title">What This Pattern Tends to Look Like</h3>' +
-      '<ul class="pcheck-tags">' +
-        r.tags.map(function (t) { return '<li><strong>' + esc(t[0]) + '</strong> ' + esc(t[1]) + '</li>'; }).join('') +
-      '</ul>' +
       '<h3 class="pcheck-section-title">A Next Step</h3>' +
       '<p class="pcheck-result-body">' + esc(r.nextStep) + '</p>' +
       '<div class="pcheck-cta-row">' +
