@@ -45,14 +45,6 @@
         "Your answers show real meaning in the work and a load you can carry. You can point to how the job matters, a good week feels worth the effort, and the hard parts of the work mostly stay at work. In helping and high-pressure fields, that's the combination most people are trying to build.",
         "The thing to watch: strain builds slowly, and it tends to build while everything still looks fine. A staffing gap, a heavy caseload, or a run of hard cases can shift this pattern faster than you'd expect."
       ],
-      tags: [
-        ['Purposeful.', 'You can name how your work makes a difference.'],
-        ['Energized.', 'The best parts of the job leave you with more than you put in.'],
-        ['Committed.', "You'd choose this work again."],
-        ['Contained.', 'The hard parts of the job mostly stay at work.'],
-        ['Rested.', "A rough day doesn't cost you sleep."],
-        ['Worth watching.', 'Strain builds quietly, so an occasional check-in pays off.']
-      ],
       nextStep: "Nothing in your answers needs fixing. A group setting is a good place to compare notes with other professionals who've found a sustainable pace, and an individual consult works for pressure-testing your load against a specific role. Both are optional ways to keep a good pattern in good repair.",
       buttons: [BOOK_FREE, BOOK_GROUP],
       show988: false
@@ -63,14 +55,6 @@
       body: [
         "Your answers show strong meaning alongside real strain. You can say why the work matters, and you're running low anyway: a heavy load, hard days that cost you sleep, and the tough parts of the job following you home. People who care a lot land here often, and it's easy to miss because purpose keeps you going well past the point where the tank is empty.",
         'When meaning stays high, exhaustion is easy to explain away. The work is worth it, so the cost starts to feel like the price of doing it.'
-      ],
-      tags: [
-        ['Committed.', "You'd choose this work again."],
-        ['Running on empty.', "By the end of the week there's little left."],
-        ['Overloaded.', 'The workload feels bottomless.'],
-        ['Carrying it home.', "Other people's problems follow you off the clock."],
-        ['Short on sleep.', 'Hard days cost you rest.'],
-        ['Bracing.', 'Your body reacts when you think about the hard parts of the job.']
       ],
       nextStep: "This pattern tends to respond well to individual therapy. The work is looking at load, boundaries, and the guilt that comes with easing off, plus processing the heavier parts of the job. Group work adds something individual sessions can't: other professionals carrying the same weight, which loosens the sense that you're the only one running this way.",
       buttons: [BOOK_INDIVIDUAL, BOOK_GROUP],
@@ -83,14 +67,6 @@
         "Your answers show manageable strain and a thin sense of meaning. The load is workable, the hard parts of the job stay put, and the work isn't giving much back. You may feel flat about it more than miserable.",
         "Because nothing is on fire, this can run for years without anyone, including you, calling it a problem."
       ],
-      tags: [
-        ['Steady.', 'The load is manageable.'],
-        ['Contained.', 'The hard parts stay at work.'],
-        ['Flat.', "A good week doesn't leave you energized."],
-        ['Unconvinced.', "You'd hesitate to choose this work again."],
-        ['Distant.', "It's hard to point to how your work matters."],
-        ['Elsewhere.', 'Your satisfaction may come from outside the job.']
-      ],
       nextStep: 'Nothing urgent here. A free consult is a low-stakes place to sort out which explanation fits, and whether anything needs to change. A group is also a way to meet other professionals working through the same questions.',
       buttons: [BOOK_FREE, BOOK_GROUP],
       show988: false
@@ -101,14 +77,6 @@
       body: [
         "Your answers show high strain and thin meaning together, the classic burnout picture. You're running on empty, the load feels endless, the tough parts of the job follow you home, and the sense that your work matters has faded. That pairing is exhausting in a particular way: effort keeps going out and not much comes back.",
         "This is common among people who've carried a lot for a long time, and it deserves to be taken seriously, even if you've been pushing through it."
-      ],
-      tags: [
-        ['Worn out.', "By the end of the week there's nothing left."],
-        ['Trapped.', 'The job feels hard to leave.'],
-        ['Dreading.', 'The start of the workweek weighs on you.'],
-        ['Overloaded.', 'The workload feels bottomless.'],
-        ['Numb.', 'After a heavy day, you feel flat.'],
-        ['Disconnected.', "It's hard to point to how your work matters."]
       ],
       nextStep: 'Individual therapy is the strongest fit. The work covers load, boundaries, the meaning that has thinned out, and what you\'ve been carrying. If sleep, appetite, or mood have changed, a check-in with your doctor is worth adding. Group work helps with the isolation that tends to come with burnout.',
       buttons: [BOOK_INDIVIDUAL, BOOK_GROUP],
@@ -224,10 +192,6 @@
       '<span class="bcheck-result-label">Your result: ' + esc(r.name) + '</span>' +
       '<h2 class="bcheck-result-headline" tabindex="-1">' + esc(r.headline) + '</h2>' +
       r.body.map(function (p) { return '<p class="bcheck-result-body">' + esc(p) + '</p>'; }).join('') +
-      '<h3 class="bcheck-section-title">What This Pattern Tends to Look Like</h3>' +
-      '<ul class="bcheck-tags">' +
-        r.tags.map(function (t) { return '<li><strong>' + esc(t[0]) + '</strong> ' + esc(t[1]) + '</li>'; }).join('') +
-      '</ul>' +
       '<h3 class="bcheck-section-title">A Next Step</h3>' +
       '<p class="bcheck-result-body">' + esc(r.nextStep) + '</p>' +
       '<div class="bcheck-cta-row">' +
