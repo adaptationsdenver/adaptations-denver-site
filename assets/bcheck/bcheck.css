@@ -1,0 +1,90 @@
+/* The Burnout and Fatigue Self-Check, styled after quiz.html and assets/pcheck/pcheck.css */
+.bcheck {
+  --bcheck-ink: var(--color-ink, #1A1C1E);
+  --bcheck-paper: var(--color-paper, #F7F5F2);
+  --bcheck-accent: var(--color-accent, #C4472A);
+  --bcheck-accent-soft: #C4472A1a;
+  --bcheck-line: #1A1C1E22;
+  --bcheck-display: var(--font-display, 'PP Monument Extended', 'Arial Black', sans-serif);
+  --bcheck-body: var(--font-body, 'PP Neue Machina', 'Helvetica Neue', Arial, sans-serif);
+  max-width: 640px;
+  color: var(--bcheck-ink);
+  font-family: var(--bcheck-body);
+}
+.bcheck *, .bcheck *::before, .bcheck *::after { box-sizing: border-box; }
+.bcheck [hidden] { display: none !important; }
+
+.bcheck-title { font-family: var(--bcheck-display); font-weight: 900; font-size: clamp(26px, 5vw, 38px); line-height: 1.08; text-transform: uppercase; margin: 0 0 10px; overflow-wrap: break-word; }
+.bcheck-sub { font-size: 16px; line-height: 1.5; opacity: 0.72; margin: 0 0 36px; max-width: 46ch; }
+
+.bcheck-progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+.bcheck-progress-num { font-family: var(--bcheck-display); font-size: 13px; letter-spacing: 0.08em; white-space: nowrap; }
+.bcheck-progress-track { flex: 1; height: 3px; background: var(--bcheck-line); position: relative; }
+.bcheck-progress-fill { position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--bcheck-accent); transition: width 0.35s ease; }
+
+.bcheck-card { display: flex; flex-direction: column; gap: 18px; }
+.bcheck-card.bcheck-animate { animation: bcheck-fade 0.3s ease; }
+@keyframes bcheck-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.bcheck-question { font-family: var(--bcheck-display); font-weight: 900; font-size: clamp(20px, 4vw, 25px); line-height: 1.25; margin: 0; min-height: 2.5em; }
+.bcheck-question:focus { outline: none; }
+
+.bcheck-scale { display: flex; gap: 8px; margin-top: 4px; }
+.bcheck-scale-btn {
+  flex: 1; min-width: 0; aspect-ratio: 1 / 1; max-height: 96px; border: 1.5px solid var(--bcheck-line); background: transparent; color: var(--bcheck-ink);
+  border-radius: 8px; font-family: var(--bcheck-display); font-weight: 900; font-size: 18px; cursor: pointer; padding: 0;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+@media (hover: hover) { .bcheck-scale-btn:hover { border-color: var(--bcheck-accent); background: var(--bcheck-accent-soft); } }
+.bcheck-scale-btn:focus-visible { border-color: var(--bcheck-accent); background: var(--bcheck-accent-soft); outline: 2px solid var(--bcheck-accent); outline-offset: 2px; }
+.bcheck-scale-labels { display: flex; justify-content: space-between; font-size: 12px; opacity: 0.6; margin-top: 2px; }
+
+.bcheck-result { display: flex; flex-direction: column; gap: 20px; animation: bcheck-fade 0.4s ease; }
+.bcheck-result-img-wrap { display: none; }
+.bcheck-result-img-wrap.bcheck-loaded { display: block; }
+.bcheck-result-img { width: 160px; height: 160px; object-fit: contain; border-radius: 10px; display: block; }
+.bcheck-result-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bcheck-accent); font-weight: 600; display: block; margin-bottom: -8px; }
+.bcheck-result-headline { font-family: var(--bcheck-display); font-weight: 900; font-size: clamp(24px, 5vw, 32px); line-height: 1.18; margin: 0; }
+.bcheck-result-headline:focus { outline: none; }
+.bcheck-result-body { font-size: 16px; line-height: 1.65; opacity: 0.9; margin: 0; }
+
+.bcheck-section-title { font-family: var(--bcheck-display); font-weight: 900; font-size: 16px; text-transform: uppercase; letter-spacing: 0.02em; margin: 8px 0 -6px; padding-top: 18px; border-top: 1px solid var(--bcheck-line); }
+.bcheck-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.bcheck-tags li { font-size: 15px; line-height: 1.5; padding: 10px 0; border-bottom: 1px solid var(--bcheck-line); }
+.bcheck-tags li:last-child { border-bottom: none; }
+.bcheck-tags strong { font-family: var(--bcheck-display); font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--bcheck-ink); margin-right: 4px; }
+
+.bcheck-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.bcheck-btn { display: inline-block; background: var(--bcheck-accent); color: var(--bcheck-paper); text-decoration: none; font-family: var(--bcheck-body); font-weight: 600; font-size: 15px; line-height: 1.3; padding: 15px 24px; border-radius: 6px; text-align: center; border: 1.5px solid var(--bcheck-accent); cursor: pointer; }
+.bcheck-btn:hover { opacity: 0.9; color: var(--bcheck-paper); }
+.bcheck-btn-secondary, .bcheck-btn-secondary:hover { background: transparent; color: var(--bcheck-ink); border-color: var(--bcheck-line); }
+.bcheck-btn:focus-visible, .bcheck-restart:focus-visible { outline: 2px solid var(--bcheck-accent); outline-offset: 2px; }
+
+.bcheck-988 { font-size: 14px; line-height: 1.55; margin: 0; padding: 14px 16px; border: 1.5px solid var(--bcheck-ink); border-radius: 6px; }
+.bcheck-disclaimer { font-size: 13px; line-height: 1.5; opacity: 0.6; margin: 0; }
+.bcheck-research { font-size: 12px; line-height: 1.5; opacity: 0.5; margin: -12px 0 0; }
+.bcheck-restart { background: none; border: none; color: var(--bcheck-ink); opacity: 0.55; font-family: var(--bcheck-body); font-size: 14px; text-decoration: underline; cursor: pointer; padding: 0; width: fit-content; }
+
+.bcheck-email { padding-top: 22px; border-top: 1px solid var(--bcheck-line); }
+.bcheck-email-title { font-family: var(--bcheck-display); font-weight: 900; font-size: 18px; line-height: 1.25; margin: 0 0 8px; }
+.bcheck-email-desc { font-size: 14px; line-height: 1.5; opacity: 0.7; margin: 0 0 14px; }
+.bcheck-email-fine { font-size: 12px; line-height: 1.5; opacity: 0.55; margin: 10px 0 0; }
+.bcheck-email-status { font-size: 15px; line-height: 1.5; margin: 0; }
+.bcheck-email-status:empty { display: none; }
+.bcheck-email-submit:disabled { opacity: 0.6; cursor: default; }
+.bcheck-email-form { display: flex; gap: 10px; flex-wrap: wrap; }
+.bcheck-email-input { flex: 1; min-width: 200px; padding: 13px 15px; border: 1.5px solid var(--bcheck-line); border-radius: 6px; font-family: var(--bcheck-body); font-size: 15px; background: #fff; color: var(--bcheck-ink); }
+
+@media (max-width: 640px) {
+  .bcheck-question { font-size: 22px; }
+  .bcheck-result-body { font-size: 17px; opacity: 0.95; }
+  .bcheck-tags li { font-size: 16px; }
+  .bcheck-btn { font-size: 17px; padding: 17px 26px; flex: 1 1 100%; }
+  .bcheck-scale-btn { font-size: 20px; }
+  .bcheck-restart { font-size: 15px; }
+  .bcheck-result-img { width: 128px; height: 128px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bcheck *, .bcheck { animation: none !important; transition: none !important; }
+}
