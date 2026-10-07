@@ -8,6 +8,15 @@
 
   var BCHECK_IMAGE_DIR = 'assets/bcheck/';
 
+  // Each MailerLite form feeds a group whose automation sends that result's report email.
+  var MAILERLITE_ACCOUNT_ID = '2088871';
+  var REPORT_FORM_IDS = {
+    sustained_professional: '200637609910731972',
+    devoted_drained: '200637610571335436',
+    quietly_disengaged: '200637611215160520',
+    depleted_disconnected: '200637611918755586'
+  };
+
   var STATEMENTS = [
     { id: 1, text: 'I can name specific ways my work makes a difference.' },
     { id: 2, text: 'When I look back on a good week, the effort feels worth it.' },
@@ -91,6 +100,7 @@
   var order = [];
   var answers = {};
   var index = 0;
+  var currentSlug = null;
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -186,6 +196,7 @@
     var strain = burnout + secondaryStress;
     var slug = classify(satisfaction, strain);
     var r = RESULTS[slug];
+    currentSlug = slug;
 
     var html =
       '<div class="bcheck-result-img-wrap"><img class="bcheck-result-img" src="' + BCHECK_IMAGE_DIR + 'result-' + slug.replace(/_/g, '-') + '.png" alt="' + esc(r.name) + ' illustration" width="160" height="160"></div>' +
@@ -203,17 +214,7 @@
       '<p class="bcheck-disclaimer">' + esc(DISCLAIMER) + '</p>' +
       '<p class="bcheck-research">' + esc(RESEARCH_NOTE) + '</p>' +
       '<button type="button" class="bcheck-restart">Take it again</button>' +
-      /*
-       * EMAIL CAPTURE PLACEHOLDER (MailerLite, not connected yet).
-       * Hidden on purpose so visitors can't type an email that goes nowhere.
-       * To connect, mirror assets/pcheck/pcheck.js: one MailerLite form + group + automation per result
-       * (MAILERLITE_ACCOUNT_ID + REPORT_FORM_IDS keyed by result slug),
-       * POST to https://assets.mailerlite.com/jsonp/2088871/forms/<formId>/subscribe
-       * with fields[email], ml-submit=1, anticsrf=true; on success fire
-       * gtag('event', 'generate_lead', { source: 'burnout_fatigue_self_check', quiz_result: slug }),
-       * then remove the `hidden` attribute.
-       */
-      '<div class="bcheck-email" hidden>' +
+      '<div class="bcheck-email">' +
         '<p class="bcheck-email-title">Get your full ' + esc(r.name.replace(/^The /, '')) + ' report by email</p>' +
         '<p class="bcheck-email-desc">Your full result, plus what this pattern tends to look like day to day.</p>' +
         '<form class="bcheck-email-form">' +
@@ -269,9 +270,40 @@
     questionEl.focus({ preventScroll: true });
   });
 
-  // Placeholder form: block submission until MailerLite is connected.
   resultEl.addEventListener('submit', function (e) {
-    if (e.target.closest('.bcheck-email-form')) e.preventDefault();
+    var form = e.target.closest('.bcheck-email-form');
+    if (!form) return;
+    e.preventDefault();
+    var formId = REPORT_FORM_IDS[currentSlug];
+    if (!formId) return;
+    var block = form.closest('.bcheck-email');
+    var submit = form.querySelector('.bcheck-email-submit');
+    var fine = block.querySelector('.bcheck-email-fine');
+    var status = block.querySelector('.bcheck-email-status');
+    var slug = currentSlug;
+    submit.disabled = true;
+    submit.textContent = 'Sending…';
+    status.textContent = '';
+    var body = new URLSearchParams({ 'fields[email]': form.querySelector('.bcheck-email-input').value.trim(), 'ml-submit': '1', 'anticsrf': 'true' });
+    fetch('https://assets.mailerlite.com/jsonp/' + MAILERLITE_ACCOUNT_ID + '/forms/' + formId + '/subscribe', { method: 'POST', body: body })
+      .then(function (res) {
+        return res.json().then(function (data) {
+          if (!res.ok || !data.success) throw new Error('MailerLite rejected the signup');
+        });
+      })
+      .then(function () {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'generate_lead', { source: 'burnout_fatigue_self_check', quiz_result: slug });
+        }
+        form.hidden = true;
+        fine.hidden = true;
+        status.textContent = "Check your inbox, your report is on its way. If it's not there in a few minutes, check your spam or Promotions folder.";
+      })
+      .catch(function () {
+        submit.disabled = false;
+        submit.textContent = 'Send my report';
+        status.textContent = 'Something went wrong sending your report. Please try again, or email brian@adaptationsdenver.com.';
+      });
   });
 
   start();
