@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html><head>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yqh97plmcr");
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75XE9KFDSC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-75XE9KFDSC');
+</script>
+
+<!-- GA4: track mailto and tel link clicks -->
+<script>
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a');
+  if (!link) return;
+  const href = link.getAttribute('href') || '';
+  if (href.startsWith('mailto:')) {
+    gtag('event', 'mailto_click', { link_url: href });
+  } else if (href.startsWith('tel:')) {
+    gtag('event', 'tel_click', { link_url: href });
+  }
+});
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The MENtal Health Deck | Adaptations Denver</title>
+<meta name="description" content="The MENtal Health Deck: a set of Reflections and Reminders about mental health. Built for men, useful for anyone. From Adaptations Denver, sponsor of Rally for Recovery.">
+<link rel="canonical" href="https://adaptationsdenver.com/mental-health-deck.html">
+<meta property="og:title" content="The MENtal Health Deck">
+<meta property="og:description" content="Reflections and Reminders about mental health. Built for men, useful for anyone.">
+<meta property="og:image" content="https://adaptationsdenver.com/assets/deck/mental-health-deck-hero.jpg">
+<meta property="og:url" content="https://adaptationsdenver.com/mental-health-deck.html">
+<meta property="og:type" content="website">
+
+<style>:root {
+  /* Base neutrals — from brand hex */
+  --color-ink: #1A1C1E;
+  --color-paper: #F7F5F2;
+
+  /* Neutral ramp, mixed from the two bases */
+  --color-ink-90: color-mix(in oklch, var(--color-ink) 90%, var(--color-paper));
+  --color-ink-70: color-mix(in oklch, var(--color-ink) 70%, var(--color-paper));
+  --color-ink-50: color-mix(in oklch, var(--color-ink) 50%, var(--color-paper));
+  --color-ink-30: color-mix(in oklch, var(--color-ink) 30%, var(--color-paper));
+  --color-ink-15: color-mix(in oklch, var(--color-ink) 15%, var(--color-paper));
+  --color-paper-90: color-mix(in oklch, var(--color-paper) 92%, var(--color-ink));
+
+  /* Accent candidates — same L/C in oklch, hue varies. Pick one for --color-accent. */
+  --color-accent-red: #C4472A;
+  --color-accent-amber: oklch(58% 0.19 65);
+  --color-accent-cobalt: oklch(58% 0.19 255);
+
+  /* Active accent (default: red — Supreme/Vice-coded). Swap this one line to change brand-wide. */
+  --color-accent: var(--color-accent-red);
+  --color-accent-ink: #FFFFFF; /* text/icon color on top of accent */
+
+  /* Semantic aliases */
+  --surface-page: var(--color-paper);
+  --surface-inverse: var(--color-ink);
+  --surface-card: var(--color-paper-90);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-70);
+  --text-on-inverse: var(--color-paper);
+  --text-on-inverse-secondary: var(--color-paper-90);
+  --border-default: var(--color-ink-15);
+  --border-strong: var(--color-ink-30);
+  --link-color: var(--color-accent);
+  --link-color-hover: color-mix(in oklch, var(--color-accent) 85%, var(--color-ink));
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-Black.woff2") format('woff2'), url("fonts/PPMonumentExtended-Black.otf") format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-BlackItalic.woff2") format('woff2'), url("fonts/PPMonumentExtended-BlackItalic.otf") format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Wide';
+  src: url("fonts/PPMonumentWide-Regular.woff2") format('woff2'), url("fonts/PPMonumentWide-Regular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: url("fonts/PPNeueMachina-PlainRegular.woff2") format('woff2'), url("fonts/PPNeueMachina-PlainRegular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --font-display: 'PP Monument Extended', 'Arial Black', sans-serif;
+  --font-wide: 'PP Monument Wide', 'Arial Narrow', sans-serif;
+  --font-body: 'PP Neue Machina', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Display scale — headlines, only weight available is 900/Black */
+  --text-display-xl: 900 clamp(48px, 7vw, 120px)/0.98 var(--font-display);
+  --text-display-lg: 900 clamp(36px, 5vw, 72px)/1.0 var(--font-display);
+  --text-display-md: 900 clamp(28px, 3.2vw, 44px)/1.05 var(--font-display);
+
+  /* Wide/eyebrow treatment — real PP Monument Wide cut */
+  --text-wide-label: 400 13px/1.2 var(--font-wide);
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.18em;
+
+  /* Body scale */
+  --text-body-lg: 500 20px/1.5 var(--font-body);
+  --text-body-md: 500 17px/1.55 var(--font-body);
+  --text-body-sm: 500 14px/1.5 var(--font-body);
+  --text-label: 600 13px/1.2 var(--font-body);
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 0 var(--border-default);
+  --container-max: 1240px;
+  --container-pad: clamp(24px, 5vw, 64px);
+}
+
+</style>
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--color-paper);}
+  a{color:var(--link-color);text-decoration:none;}
+  a:hover{color:var(--link-color-hover);}
+  .btn{font-family:var(--font-body);font-weight:600;letter-spacing:0.02em;text-transform:uppercase;border:1px solid transparent;border-radius:var(--radius-sm);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;font-size:15px;}
+  .btn-primary{background:var(--color-accent);color:var(--color-accent-ink);}
+  .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
+  .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:13px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
+  .placeholder{background:repeating-linear-gradient(45deg, var(--color-ink-15), var(--color-ink-15) 10px, transparent 10px, transparent 20px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-secondary);text-align:center;}
+  .card{padding:28px;display:flex;flex-direction:column;gap:14px;}
+  .card-paper{background:var(--surface-card);color:var(--text-primary);border:1px solid var(--border-default);}
+  .card-ink{background:var(--surface-inverse);color:var(--text-on-inverse);}
+  .card h3{font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;margin:0;line-height:1.1;}
+  .card p{font-family:var(--font-body);font-size:15px;line-height:1.5;margin:0;opacity:0.85;}
+  .tag{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);display:inline-block;}
+  .tag-accent{background:var(--color-accent);color:var(--color-accent-ink);}
+  .tag-default{background:var(--color-ink-15);color:var(--text-primary);}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
+  .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
+  .navlinks{display:flex;align-items:center;gap:32px;}
+  .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .navlinks-core{display:flex;align-items:center;gap:32px;}
+  .navlinks-core a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .nav-core-dup{display:none;}
+  .navlinks button{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;background:var(--color-accent);color:var(--color-accent-ink);border:none;border-radius:var(--radius-sm);padding:10px 20px;cursor:pointer;}
+  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
+  .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  .hero-copy{flex:1;min-width:280px;padding-right:var(--container-pad);padding-bottom:70px;}
+  .hero-illustration{position:absolute;right:0;bottom:0;width:clamp(160px,32vw,480px);height:auto;pointer-events:none;}
+  @media (max-width:1050px){.hero-illustration{display:none;}}
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;}
+  .nav-toggle span{display:block;width:100%;height:2px;background:var(--color-ink);transition:transform 0.2s ease,opacity 0.2s ease;}
+  .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.active span:nth-child(2){opacity:0;}
+  .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (max-width:1400px){
+    nav{position:relative;}
+    .nav-toggle{display:flex;}
+    .navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--color-paper);border-bottom:1px solid var(--border-default);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;z-index:1000;box-shadow:0 8px 16px rgba(0,0,0,0.08);}
+    .navlinks.open{display:flex;}
+    .navlinks a{padding:14px var(--container-pad);border-bottom:1px solid var(--border-default);}
+    .navlinks a.btn{margin:12px var(--container-pad);text-align:center;}
+  }
+  @media (max-width:900px){
+    .navlinks-core{display:none;}
+    .nav-core-dup{display:block;}
+  }
+  @media (max-width:640px){
+    .nav-cta{display:none;}
+  }
+</style>
+<style>
+  @media (max-width:640px){
+    .service-card, .card, .hero-copy, .blog-card{min-width:0 !important;}
+    .btn{white-space:normal !important;}
+    :root{
+      --text-body-lg: 500 22px/1.6 var(--font-body);
+      --text-body-md: 500 18px/1.6 var(--font-body);
+      --text-body-sm: 500 15px/1.5 var(--font-body);
+    }
+    .service-card, .card{padding:26px !important;min-width:0 !important;}
+    section.grid3 > *{min-width:0 !important;}
+    .service-card h3, .card h3{font-size:23px !important;line-height:1.2 !important;}
+    .service-card p, .card p{font-size:17px !important;line-height:1.55 !important;opacity:0.95 !important;}
+    .blog-card h3{font-size:21px !important;}
+    .blog-card p{font-size:16px !important;}
+    section.grid3{gap:24px !important;}
+    .blog-grid{gap:24px !important;}
+    .btn:not(.floating-cta){font-size:17px !important;padding:17px 26px !important;}
+    .floating-cta{font-size:15px !important;padding:14px 24px !important;}
+    .flourish-g{width:44px !important;height:44px !important;top:-16px !important;left:-16px !important;font-size:19px !important;}
+  }
+</style>
+<style>
+  /* Services dropdown */
+  .nav-dd{position:relative;display:flex;align-items:center;}
+  .nav-dd-toggle,.navlinks .nav-dd-m-toggle{font-family:'PP Neue Machina','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:normal;text-transform:none;color:#1A1C1E;background:none;border:none;border-radius:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+  .nav-dd-caret{display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform 0.2s ease;}
+  .nav-dd.open .nav-dd-caret,.nav-dd-m.open .nav-dd-caret{transform:translateY(2px) rotate(-135deg);}
+  .nav-dd-menu{display:none;position:absolute;top:calc(100% + 24px);left:-22px;min-width:240px;background:#F7F5F2;border:2px solid #1A1C1E;box-shadow:0 8px 16px rgba(0,0,0,0.08);padding:8px 0;z-index:1001;}
+  .nav-dd-menu::before{content:"";position:absolute;left:-2px;right:-2px;top:-28px;height:28px;}
+  .nav-dd.open .nav-dd-menu{display:block;}
+  @media (hover:hover){
+    .nav-dd:hover .nav-dd-menu{display:block;}
+    .nav-dd:hover .nav-dd-caret{transform:translateY(2px) rotate(-135deg);}
+  }
+  .nav-dd-menu a{display:block;padding:10px 22px;font-size:14px;font-weight:600;color:#1A1C1E;white-space:nowrap;}
+  .nav-dd-menu a:hover,.nav-dd-menu a:focus-visible{background:rgba(26,28,30,0.06);color:#C4472A;}
+  .nav-dd-label{display:block;margin-top:8px;padding:14px 22px 6px;border-top:1px solid rgba(26,28,30,0.15);font-family:'PP Monument Wide','Arial Narrow',sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#C4472A;}
+  .navlinks .nav-dd-m-toggle{width:100%;justify-content:space-between;padding:14px var(--container-pad,24px);border-bottom:1px solid rgba(26,28,30,0.15);text-align:left;}
+  .nav-dd-m-menu{display:none;background:rgba(26,28,30,0.04);}
+  .nav-dd-m.open .nav-dd-m-menu{display:block;}
+  .navlinks .nav-dd-m-menu a{display:block;padding:12px var(--container-pad,24px) 12px calc(var(--container-pad,24px) + 18px);font-size:14px;}
+  .nav-dd-m-menu .nav-dd-label{margin-top:0;border-top:none;border-bottom:1px solid rgba(26,28,30,0.15);padding:14px var(--container-pad,24px) 8px calc(var(--container-pad,24px) + 18px);}
+</style>
+<style>
+  .deck-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:center;}
+  .deck-hero img{width:100%;height:auto;display:block;}
+  .deck-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .deck-card{padding:32px;display:flex;flex-direction:column;gap:14px;}
+  .deck-card h3{font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;margin:0;line-height:1.1;}
+  .deck-card p{font:var(--text-body-md);margin:0;}
+  .deck-sample{margin-top:auto;padding-top:18px;border-top:1px dashed currentColor;font:var(--text-body-md);font-style:italic;opacity:0.9;}
+  .deck-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  @media (max-width:900px){
+    .deck-hero{grid-template-columns:1fr;}
+    .deck-pair,.deck-steps{grid-template-columns:1fr;}
+    .deck-steps{gap:36px;}
+  }
+</style>
+</head>
+
+
+<body>
+
+<nav>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
+  <div class="navlinks-core" id="navlinks-core">
+    <a href="approach.html">Approach</a>
+    <div class="nav-dd">
+      <button type="button" class="nav-dd-toggle" aria-expanded="false" aria-controls="nav-dd-menu">Services<span class="nav-dd-caret" aria-hidden="true"></span></button>
+      <div class="nav-dd-menu" id="nav-dd-menu">
+        <a href="individual-therapy.html">Individual Therapy</a>
+        <a href="group-therapy.html">Group Therapy</a>
+        <span class="nav-dd-label">What we help with</span>
+        <a href="anger-therapy.html">Anger</a>
+        <a href="substance-use-therapy.html">Substance Use</a>
+        <a href="depression-therapy.html">Depression</a>
+        <a href="perfectionism-therapy.html">Perfectionism</a>
+        <a href="career-burnout-therapy.html">Career &amp; Burnout</a>
+        <a href="relationship-therapy.html">Relationships</a>
+        <a href="life-transitions-therapy.html">Life Transitions</a>
+      </div>
+    </div>
+  </div>
+  <div class="navlinks" id="navlinks">
+    <a class="nav-core-dup" href="approach.html">Approach</a>
+    <div class="nav-core-dup nav-dd-m">
+      <button type="button" class="nav-dd-m-toggle" aria-expanded="false" aria-controls="nav-dd-m-menu">Services<span class="nav-dd-caret" aria-hidden="true"></span></button>
+      <div class="nav-dd-m-menu" id="nav-dd-m-menu">
+        <a href="individual-therapy.html">Individual Therapy</a>
+        <a href="group-therapy.html">Group Therapy</a>
+        <span class="nav-dd-label">What we help with</span>
+        <a href="anger-therapy.html">Anger</a>
+        <a href="substance-use-therapy.html">Substance Use</a>
+        <a href="depression-therapy.html">Depression</a>
+        <a href="perfectionism-therapy.html">Perfectionism</a>
+        <a href="career-burnout-therapy.html">Career &amp; Burnout</a>
+        <a href="relationship-therapy.html">Relationships</a>
+        <a href="life-transitions-therapy.html">Life Transitions</a>
+      </div>
+    </div>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="book.html" class="nav-cta btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav>
+<script>
+(function(){
+  var toggle = document.getElementById('nav-toggle');
+  var links = document.getElementById('navlinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('active', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var dd = document.querySelector('.navlinks-core .nav-dd');
+  if (dd) {
+    var btn = dd.querySelector('.nav-dd-toggle');
+    var canHover = window.matchMedia('(hover:hover)');
+    var setOpen = function(open){
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(!dd.classList.contains('open'));
+    });
+    dd.addEventListener('mouseenter', function(){ if (canHover.matches) btn.setAttribute('aria-expanded', 'true'); });
+    dd.addEventListener('mouseleave', function(){ if (canHover.matches) setOpen(false); });
+    dd.addEventListener('focusout', function(e){ if (!dd.contains(e.relatedTarget)) setOpen(false); });
+    document.addEventListener('click', function(e){ if (!dd.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && dd.classList.contains('open')) { setOpen(false); btn.focus(); }
+    });
+  }
+  var m = document.querySelector('.nav-dd-m');
+  if (m) {
+    var mbtn = m.querySelector('.nav-dd-m-toggle');
+    mbtn.addEventListener('click', function(){
+      var open = m.classList.toggle('open');
+      mbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
+</script>
+
+<section style="background:var(--color-ink);color:var(--text-on-inverse);padding:clamp(56px,8vw,96px) var(--container-pad);">
+  <div class="deck-hero" style="max-width:var(--container-max);margin:0 auto;">
+    <div style="display:flex;flex-direction:column;gap:22px;">
+      <span class="eyebrow">Rally for Recovery · Raffle</span>
+      <h1 style="font:var(--text-display-lg);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">The <span style="color:var(--color-accent);">MEN</span>tal Health Deck</h1>
+      <p style="font:var(--text-body-lg);color:var(--text-on-inverse-secondary);margin:0;max-width:520px;">Reflections and Reminders about mental health. Built for men. Useful for anyone.</p>
+    </div>
+    <img src="assets/deck/mental-health-deck-hero.jpg" alt="Illustration of The MENtal Health Deck: a boxed deck of black, white and red cards on a red surface" width="1232" height="928">
+  </div>
+</section>
+
+<section style="padding:80px var(--container-pad);">
+  <div class="flourish-c" style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:20px;">
+    <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">Thanks for throwing your name in.</h2>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">You entered the raffle at Rally for Recovery, which means you were there: in the room, showing up for recovery in Denver. That counts. I was glad to sponsor the Rally, and glad you came.</p>
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">If your name gets drawn, I'll reach out at the email you entered. Either way, here's what's in the deck and how to use it.</p>
+  </div>
+</section>
+
+<section style="padding:0 var(--container-pad) 80px;">
+  <div style="max-width:var(--container-max);margin:0 auto;display:flex;flex-direction:column;gap:40px;">
+    <img src="assets/deck/mental-health-deck-photo.jpg" alt="The MENtal Health Deck on a wooden table: the wrapped deck, a stack of black Reflection cards and a stack of white Reminder cards" width="1600" height="1200" loading="lazy" style="width:100%;height:auto;display:block;border:2px solid var(--color-ink);">
+    <div class="flourish-c" style="display:flex;flex-direction:column;gap:24px;">
+      <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">What's in the deck</h2>
+      <div class="deck-pair">
+        <div class="deck-card card-ink">
+          <span class="eyebrow">The black cards</span>
+          <h3>Reflections</h3>
+          <p>Questions worth sitting with. No right answers, no score. Just something to turn over for a while.</p>
+          <p class="deck-sample">"What would change if you let someone carry half the weight?"</p>
+        </div>
+        <div class="deck-card card-paper">
+          <span class="eyebrow">The white cards</span>
+          <h3>Reminders</h3>
+          <p>Short, true things that are easy to forget when it gets hard. Read one when you need it.</p>
+          <p class="deck-sample">"Talking about it doesn't make it more real. It's already real."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="flourish-h"></div>
+
+<section style="padding:80px var(--container-pad);">
+  <div style="max-width:var(--container-max);margin:0 auto;display:flex;flex-direction:column;gap:44px;">
+    <div class="flourish-c" style="max-width:720px;display:flex;flex-direction:column;gap:16px;">
+      <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">How to use it</h2>
+      <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">There's no wrong way. A few that work:</p>
+    </div>
+    <div class="deck-steps">
+      <div class="card card-paper service-card"><span class="flourish-g">01</span><h3 style="margin-top:12px;">One a day</h3><p>Pull a card in the morning. Carry it with you. Notice where it shows up.</p></div>
+      <div class="card card-paper service-card"><span class="flourish-g">02</span><h3 style="margin-top:12px;">Bring someone in</h3><p>Pull one with a friend, a partner or your group. Answer it out loud.</p></div>
+      <div class="card card-paper service-card"><span class="flourish-g">03</span><h3 style="margin-top:12px;">Keep it close</h3><p>Desk, truck, nightstand. Wherever you'll actually see it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--color-ink);color:var(--text-on-inverse);padding:80px var(--container-pad);">
+  <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:20px;">
+    <span class="eyebrow">Why a deck</span>
+    <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">Built for men. Useful for anyone.</h2>
+    <p style="font:var(--text-body-md);color:var(--text-on-inverse-secondary);margin:0;">Most men were never handed a language for what goes on inside. So it stays inside. This deck is a starting point: a few words to work with, one card at a time.</p>
+    <p style="font:var(--text-body-md);color:var(--text-on-inverse-secondary);margin:0;">If a card hits harder than you expected, that's worth paying attention to. And it's the kind of thing I help men work through every week.</p>
+  </div>
+</section>
+
+<div class="flourish-h"></div>
+
+<section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+  <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;">Want to go further than a card?</h2>
+  <a href="book.html" class="btn btn-inverse">Book a free consultation</a>
+</section>
+
+<footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
+  <div class="wordmark" style="color:var(--text-on-inverse);">Adaptations Denver</div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:right;">
+    <div>Denver, CO · brian@adaptationsdenver.com · (720) 515-2706</div>
+    <div style="opacity:0.6;font-size:12px;">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
+  </div>
+</footer>
+
+<a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
+</body></html>
