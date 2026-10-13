@@ -202,21 +202,6 @@ document.addEventListener('click', function(e) {
     .bars{display:flex;}
   }
 
-  /* Credibility */
-  .cred{background:var(--color-ink);color:var(--text-on-inverse);padding:56px 0;}
-  .cred-grid{display:grid;gap:32px;grid-template-columns:1fr;align-items:start;}
-  .cred-who{display:flex;gap:20px;align-items:center;}
-  .cred-who img{width:96px;height:96px;object-fit:cover;object-position:center 20%;display:block;border:2px solid var(--color-paper);flex-shrink:0;}
-  .cred-who h2{font-size:clamp(18px,2vw,22px);line-height:1.15;}
-  .cred-who p{margin:6px 0 0;font:var(--text-body-sm);color:var(--text-on-inverse-secondary);opacity:0.85;}
-  .cred-facts{display:grid;gap:22px;grid-template-columns:1fr;margin:0;padding:0;list-style:none;}
-  .cred-facts li{border-top:1px solid rgba(247,245,242,0.25);padding-top:14px;font:var(--text-body-md);color:var(--text-on-inverse-secondary);}
-  .cred-facts strong{display:block;font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);margin-bottom:8px;}
-  @media (min-width:900px){
-    .cred-grid{grid-template-columns:minmax(260px,0.8fr) 2fr;gap:56px;}
-    .cred-facts{grid-template-columns:repeat(3,1fr);}
-  }
-
   /* Stats bar */
   .stats{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--color-ink);background:var(--color-paper);}
   .stat{padding:28px clamp(20px,3vw,40px);display:flex;flex-direction:column;gap:10px;min-width:0;}
@@ -366,24 +351,6 @@ document.addEventListener('click', function(e) {
   </div>
 </section>
 
-<!-- 2. CREDIBILITY -->
-<section class="cred" aria-labelledby="cred-title">
-  <div class="wrap cred-grid">
-    <div class="cred-who">
-      <img src="assets/photos/founder-portrait-new.jpg" alt="Brian Mulligan">
-      <div>
-        <h2 id="cred-title" class="display">Brian Mulligan, LPCC, CAT</h2>
-        <p>Therapist and founder, Adaptations Denver</p>
-      </div>
-    </div>
-    <ul class="cred-facts">
-      <li><strong>The work</strong>A licensed therapist in Denver whose practice is built for men.</li>
-      <li><strong>The room</strong>Six years as an ad agency copywriter before counseling. I know how to hold a room, keep it moving and end on time.</li>
-      <li><strong>Your world</strong>Both sessions below were delivered at a Denver law firm, to attorneys and staff.</li>
-    </ul>
-  </div>
-</section>
-
 <!-- 3. SUMMARY STATS (filled in from the SESSIONS data below) -->
 <section class="block" style="padding-bottom:0;" aria-labelledby="stats-title">
   <div class="wrap">
@@ -508,7 +475,7 @@ document.addEventListener('click', function(e) {
       </details>
       <details>
         <summary>What does it cost?</summary>
-        <div class="a"><p>It depends on format and length. After the call you'll get a straightforward quote.</p></div>
+        <div class="a"><p>Your first session is free.</p><p>Part of my work as a business owner is building lasting professional relationships, and I'd rather show you what I bring than tell you about it. One hour with your people will tell you more than any proposal could.</p><p>If it lands, we'll talk about what comes next. Pricing after that depends on format and length, and you'll get a straightforward quote.</p></div>
       </details>
     </div>
   </div>
