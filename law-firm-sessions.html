@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html><head>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yqh97plmcr");
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75XE9KFDSC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-75XE9KFDSC');
+</script>
+
+<!-- GA4: track mailto and tel link clicks -->
+<script>
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a');
+  if (!link) return;
+  const href = link.getAttribute('href') || '';
+  if (href.startsWith('mailto:')) {
+    gtag('event', 'mailto_click', { link_url: href, cta_location: link.dataset.cta || '' });
+  } else if (href.startsWith('tel:')) {
+    gtag('event', 'tel_click', { link_url: href });
+  }
+});
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sessions for Law Firms | Adaptations Denver</title>
+<meta name="description" content="Talks for law firms on burnout, compassion fatigue and perfectionism, from Denver therapist Brian Mulligan, LPCC, CAT.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Sessions for Law Firms | Adaptations Denver">
+<meta property="og:description" content="Talks on burnout, compassion fatigue and perfectionism, built for attorneys and the people who support them.">
+<meta property="og:image" content="https://adaptationsdenver.com/assets/teasers/perfectionism-1.jpg">
+<meta property="og:type" content="website">
+
+<style>:root {
+  /* Base neutrals — from brand hex */
+  --color-ink: #1A1C1E;
+  --color-paper: #F7F5F2;
+
+  /* Neutral ramp, mixed from the two bases */
+  --color-ink-90: color-mix(in oklch, var(--color-ink) 90%, var(--color-paper));
+  --color-ink-70: color-mix(in oklch, var(--color-ink) 70%, var(--color-paper));
+  --color-ink-50: color-mix(in oklch, var(--color-ink) 50%, var(--color-paper));
+  --color-ink-30: color-mix(in oklch, var(--color-ink) 30%, var(--color-paper));
+  --color-ink-15: color-mix(in oklch, var(--color-ink) 15%, var(--color-paper));
+  --color-paper-90: color-mix(in oklch, var(--color-paper) 92%, var(--color-ink));
+
+  /* Accent candidates — same L/C in oklch, hue varies. Pick one for --color-accent. */
+  --color-accent-red: #C4472A;
+  --color-accent-amber: oklch(58% 0.19 65);
+  --color-accent-cobalt: oklch(58% 0.19 255);
+
+  /* Active accent (default: red — Supreme/Vice-coded). Swap this one line to change brand-wide. */
+  --color-accent: var(--color-accent-red);
+  --color-accent-ink: #FFFFFF; /* text/icon color on top of accent */
+
+  /* Semantic aliases */
+  --surface-page: var(--color-paper);
+  --surface-inverse: var(--color-ink);
+  --surface-card: var(--color-paper-90);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-70);
+  --text-on-inverse: var(--color-paper);
+  --text-on-inverse-secondary: var(--color-paper-90);
+  --border-default: var(--color-ink-15);
+  --border-strong: var(--color-ink-30);
+  --link-color: var(--color-accent);
+  --link-color-hover: color-mix(in oklch, var(--color-accent) 85%, var(--color-ink));
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-Black.woff2") format('woff2'), url("fonts/PPMonumentExtended-Black.otf") format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-BlackItalic.woff2") format('woff2'), url("fonts/PPMonumentExtended-BlackItalic.otf") format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Wide';
+  src: url("fonts/PPMonumentWide-Regular.woff2") format('woff2'), url("fonts/PPMonumentWide-Regular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: url("fonts/PPNeueMachina-PlainRegular.woff2") format('woff2'), url("fonts/PPNeueMachina-PlainRegular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --font-display: 'PP Monument Extended', 'Arial Black', sans-serif;
+  --font-wide: 'PP Monument Wide', 'Arial Narrow', sans-serif;
+  --font-body: 'PP Neue Machina', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Display scale — headlines, only weight available is 900/Black */
+  --text-display-xl: 900 clamp(48px, 7vw, 120px)/0.98 var(--font-display);
+  --text-display-lg: 900 clamp(36px, 5vw, 72px)/1.0 var(--font-display);
+  --text-display-md: 900 clamp(28px, 3.2vw, 44px)/1.05 var(--font-display);
+
+  /* Wide/eyebrow treatment — real PP Monument Wide cut */
+  --text-wide-label: 400 13px/1.2 var(--font-wide);
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.18em;
+
+  /* Body scale */
+  --text-body-lg: 500 20px/1.5 var(--font-body);
+  --text-body-md: 500 17px/1.55 var(--font-body);
+  --text-body-sm: 500 14px/1.5 var(--font-body);
+  --text-label: 600 13px/1.2 var(--font-body);
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 0 var(--border-default);
+  --container-max: 1240px;
+  --container-pad: clamp(24px, 5vw, 64px);
+}
+
+</style><style>
+  /* Law firm sessions page (unlisted, noindex) */
+  *,*::before,*::after{box-sizing:border-box;}
+  body{margin:0;font-family:var(--font-body);background:var(--color-paper);color:var(--color-ink);-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;}
+  a{color:var(--link-color);text-decoration:none;}
+  a:hover{color:var(--link-color-hover);}
+  :focus-visible{outline:3px solid var(--color-accent);outline-offset:3px;}
+  .wrap{max-width:var(--container-max);margin:0 auto;padding:0 var(--container-pad);}
+  .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
+  .display{font-family:var(--font-display);font-weight:900;text-transform:uppercase;margin:0;overflow-wrap:break-word;}
+  .h2{font-size:clamp(26px,3.6vw,44px);line-height:1.05;}
+  .lede{font:var(--text-body-md);color:var(--text-secondary);margin:0;max-width:640px;}
+  .btn{font-family:var(--font-body);font-weight:600;letter-spacing:0.02em;text-transform:uppercase;border:2px solid transparent;border-radius:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:16px 28px;font-size:15px;line-height:1.2;text-align:center;}
+  .btn-primary{background:var(--color-accent);color:#fff;}
+  .btn-primary:hover{background:var(--link-color-hover);color:#fff;}
+  .btn-ghost{background:transparent;color:var(--color-ink);border-color:var(--color-ink);}
+  .btn-ghost:hover{background:var(--color-ink);color:var(--color-paper);}
+  .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
+  .btn-inverse:hover{background:#fff;color:var(--color-ink);}
+  .rule{border-top:2px solid var(--color-ink);position:relative;padding-top:18px;}
+  .rule::before{content:"";position:absolute;top:-2px;left:0;width:28px;height:2px;background:var(--color-accent);}
+  .stripe{height:6px;background:repeating-linear-gradient(45deg,var(--color-accent) 0 6px,transparent 6px 12px);}
+  .badge{width:44px;height:44px;border:2px solid var(--color-ink);display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;flex-shrink:0;background:var(--color-paper);}
+  .tag{font-family:var(--font-wide);font-size:11px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:6px 10px;display:inline-block;border:1px solid currentColor;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+  /* Header */
+  .top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px var(--container-pad);border-bottom:1px solid var(--border-default);background:var(--color-paper);}
+  .top img{height:30px;width:auto;display:block;}
+  .top .btn{padding:10px 18px;font-size:13px;}
+
+  /* Hero */
+  .hero{position:relative;border-left:12px solid var(--color-accent);padding:clamp(56px,9vw,112px) 0 clamp(56px,8vw,96px);}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:end;}
+  .hero-bracket{position:absolute;top:clamp(24px,4vw,40px);left:calc(var(--container-pad) - 12px);width:44px;height:44px;border-top:3px solid var(--color-accent);border-left:3px solid var(--color-accent);}
+  .hero h1{font-size:clamp(34px,6.4vw,84px);line-height:0.98;max-width:13ch;}
+  .hero .sub{font:var(--text-body-lg);color:var(--text-secondary);margin:0;max-width:600px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  .bars{display:none;align-items:flex-end;gap:14px;height:240px;justify-content:flex-end;}
+  .bars span{display:block;width:44px;background:var(--color-ink);}
+  .bars span:nth-child(1){height:46%;}
+  .bars span:nth-child(2){height:62%;transform:translateY(-12%);}
+  .bars span:nth-child(3){height:78%;transform:translateY(-24%);}
+  .bars span:nth-child(4){height:70%;transform:translateY(-52%);background:var(--color-accent);}
+  @media (min-width:900px){
+    .hero-grid{grid-template-columns:minmax(0,1fr) auto;}
+    .bars{display:flex;}
+  }
+
+  /* Credibility */
+  .cred{background:var(--color-ink);color:var(--text-on-inverse);padding:56px 0;}
+  .cred-grid{display:grid;gap:32px;grid-template-columns:1fr;align-items:start;}
+  .cred-who{display:flex;gap:20px;align-items:center;}
+  .cred-who img{width:96px;height:96px;object-fit:cover;object-position:center 20%;display:block;border:2px solid var(--color-paper);flex-shrink:0;}
+  .cred-who h2{font-size:clamp(18px,2vw,22px);line-height:1.15;}
+  .cred-who p{margin:6px 0 0;font:var(--text-body-sm);color:var(--text-on-inverse-secondary);opacity:0.85;}
+  .cred-facts{display:grid;gap:22px;grid-template-columns:1fr;margin:0;padding:0;list-style:none;}
+  .cred-facts li{border-top:1px solid rgba(247,245,242,0.25);padding-top:14px;font:var(--text-body-md);color:var(--text-on-inverse-secondary);}
+  .cred-facts strong{display:block;font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);margin-bottom:8px;}
+  @media (min-width:900px){
+    .cred-grid{grid-template-columns:minmax(260px,0.8fr) 2fr;gap:56px;}
+    .cred-facts{grid-template-columns:repeat(3,1fr);}
+  }
+
+  /* Stats bar */
+  .stats{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--color-ink);background:var(--color-paper);}
+  .stat{padding:28px clamp(20px,3vw,40px);display:flex;flex-direction:column;gap:10px;min-width:0;}
+  .stat + .stat{border-left:2px solid var(--color-ink);}
+  .stat-num{font-family:var(--font-display);font-weight:900;font-size:clamp(34px,6vw,72px);line-height:1;}
+  .stat-num small{font-size:0.45em;margin-left:2px;}
+  .stat-label{font:var(--text-body-sm);color:var(--text-secondary);}
+  .stats-note{font:var(--text-body-sm);color:var(--text-secondary);margin:12px 0 0;}
+
+  section.block{padding:clamp(64px,9vw,104px) 0;}
+
+  /* Session cards */
+  .session{border:2px solid var(--color-ink);background:var(--color-paper);margin-top:40px;}
+  .session-head{padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;gap:18px;border-bottom:2px solid var(--color-ink);}
+  .session-meta-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .session h3{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:clamp(24px,3.4vw,40px);line-height:1.02;margin:0;}
+  .session .subtitle{font:var(--text-body-lg);margin:-6px 0 0;color:var(--text-secondary);}
+  .session .promise{font:var(--text-body-md);margin:0;max-width:720px;}
+  .session-body{display:grid;grid-template-columns:1fr;}
+  .session-col{padding:clamp(24px,4vw,44px);min-width:0;}
+  .session-col + .session-col{border-top:2px solid var(--color-ink);}
+  @media (min-width:960px){
+    .session-body{grid-template-columns:1fr 1fr;}
+    .session-col + .session-col{border-top:none;border-left:2px solid var(--color-ink);}
+  }
+  .dl{display:grid;grid-template-columns:1fr;gap:14px;margin:0 0 28px;}
+  .dl div{display:grid;gap:4px;}
+  .dl dt{font-family:var(--font-wide);font-size:11px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--text-secondary);}
+  .dl dd{margin:0;font:var(--text-body-md);}
+  .takeaways{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:12px;}
+  .takeaways li{position:relative;padding-left:26px;font:var(--text-body-md);}
+  .takeaways li::before{content:"";position:absolute;left:0;top:0.62em;width:14px;height:2px;background:var(--color-accent);}
+  .col-label{font-family:var(--font-wide);font-size:12px;letter-spacing:var(--tracking-wider);text-transform:uppercase;margin:0 0 4px;}
+
+  /* Teasers */
+  .thumbs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px;}
+  .thumb{padding:0;border:2px solid var(--color-ink);background:var(--color-ink);cursor:zoom-in;aspect-ratio:16/9;overflow:hidden;position:relative;display:block;width:100%;}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease;}
+  .thumb:hover img{transform:scale(1.03);}
+  .thumb.first{grid-column:1 / -1;}
+
+  .quotes{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media (min-width:700px){.quotes{grid-template-columns:1fr 1fr;}}
+  .quote{margin:0;border-left:3px solid var(--color-accent);padding:4px 0 4px 18px;}
+  .quote p{margin:0;font:var(--text-body-md);}
+  .quote footer{margin-top:10px;font:var(--text-body-sm);opacity:0.7;}
+  
+
+  /* Usefulness bars (shared by the summary chart and each session) */
+  .ubars{display:grid;gap:10px;}
+  .ubar{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;font:var(--text-body-sm);white-space:nowrap;}
+  .ubar .track{height:22px;position:relative;}
+  .ubar .fill{height:100%;background:var(--color-accent);}
+  .ubar .zero{height:100%;width:3px;background:currentColor;opacity:0.25;}
+  .uaxis{display:grid;grid-template-columns:150px 1fr;gap:14px;font:var(--text-body-sm);}
+  .uaxis span:last-child{border-top:1px solid currentColor;padding-top:8px;opacity:0.7;}
+
+  /* Summary chart */
+  .chart-card{border:2px solid var(--color-ink);padding:clamp(24px,4vw,40px);background:var(--color-paper);}
+  .chart-card h3{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:clamp(18px,2.2vw,24px);margin:0;line-height:1.1;}
+  .chart-card .chart-sub{font:var(--text-body-sm);color:var(--text-secondary);margin:10px 0 28px;max-width:560px;}
+  .chart-card .ubar .track{height:30px;}
+  .results-grid{display:grid;gap:40px;grid-template-columns:1fr;align-items:center;}
+  @media (min-width:960px){.results-grid{grid-template-columns:1.3fr 1fr;gap:64px;}}
+
+  /* Also available */
+  .also{display:grid;grid-template-columns:1fr;gap:20px;margin-top:32px;}
+  @media (min-width:800px){.also{grid-template-columns:1fr 1fr;}}
+  .also-card{border:2px dashed var(--border-strong);padding:28px;display:flex;flex-direction:column;gap:12px;}
+  .also-card h3{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:20px;line-height:1.1;margin:0;}
+  .also-card p{margin:0;font:var(--text-body-md);color:var(--text-secondary);}
+
+  /* How it works */
+  .steps{display:grid;grid-template-columns:1fr;gap:36px;margin-top:40px;}
+  @media (min-width:860px){.steps{grid-template-columns:repeat(3,1fr);gap:28px;}}
+  .step{border:2px solid var(--color-ink);padding:34px 26px 26px;position:relative;}
+  .step .badge{position:absolute;top:-16px;left:-16px;}
+  .step h3{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:21px;margin:0 0 10px;}
+  .step p{margin:0;font:var(--text-body-md);color:var(--text-secondary);}
+  .formats{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;align-items:center;}
+  .formats .tag{font-size:12px;padding:10px 14px;border-width:2px;color:var(--color-ink);}
+
+  /* FAQ */
+  .faq{margin-top:32px;border-top:2px solid var(--color-ink);}
+  .faq details{border-bottom:1px solid var(--border-strong);}
+  .faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:clamp(16px,1.8vw,19px);line-height:1.25;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:26px;color:var(--color-accent);}
+  .faq details[open] summary::after{content:"–";}
+  .faq .a{padding:0 0 24px;max-width:760px;}
+  .faq .a p{margin:0 0 12px;font:var(--text-body-md);color:var(--text-secondary);}
+
+  /* Final CTA */
+  .final{background:var(--color-accent);color:#fff;padding:clamp(64px,9vw,104px) 0;}
+  .final h2{font-size:clamp(30px,5vw,64px);line-height:1;max-width:14ch;}
+  .final p{font:var(--text-body-lg);margin:0;max-width:600px;}
+  .final-ctas{display:flex;flex-wrap:wrap;gap:20px;align-items:center;}
+  .final-ctas a.email{color:#fff;text-decoration:underline;text-underline-offset:4px;font:var(--text-body-md);}
+  .final .note{font:var(--text-body-sm);opacity:0.85;border-top:1px solid rgba(255,255,255,0.4);padding-top:18px;}
+
+  footer.site{background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:40px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:14px;}
+  footer.site a{color:var(--text-on-inverse);}
+
+  /* Lightbox */
+  dialog.lb{border:none;padding:0;background:transparent;max-width:min(1200px,94vw);width:100%;color:var(--text-on-inverse);}
+  dialog.lb::backdrop{background:rgba(26,28,30,0.92);}
+  .lb-frame{display:flex;flex-direction:column;gap:14px;}
+  .lb-img{width:100%;height:auto;max-height:78vh;object-fit:contain;display:block;background:var(--color-ink);border:2px solid var(--color-paper);}
+  .lb-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;font:var(--text-body-sm);}
+  .lb-btns{display:flex;gap:8px;}
+  .lb-btn{background:var(--color-paper);color:var(--color-ink);border:none;border-radius:0;min-width:44px;height:44px;padding:0 14px;font:600 14px/1 var(--font-body);text-transform:uppercase;cursor:pointer;}
+  .lb-btn:hover{background:#fff;}
+  .lb-btn[disabled]{opacity:0.35;cursor:default;}
+
+  @media (max-width:640px){
+    :root{--text-body-lg:500 20px/1.55 var(--font-body);--text-body-md:500 17px/1.6 var(--font-body);--text-body-sm:500 14px/1.5 var(--font-body);}
+    .hero{border-left-width:8px;}
+    .ubar,.uaxis{grid-template-columns:128px 1fr;gap:10px;}
+    .btn{width:100%;}
+    .top .btn{width:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a href="index.html" aria-label="Adaptations Denver home"><img src="assets/graphics/logo.png" alt="Adaptations Denver"></a>
+  <a href="book.html" class="btn btn-primary" data-cta="header">Book a call</a>
+</header>
+
+<main>
+
+<!-- 1. HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <span class="hero-bracket" aria-hidden="true"></span>
+  <div class="wrap hero-grid">
+    <div style="display:flex;flex-direction:column;gap:26px;">
+      <span class="eyebrow">For law firms</span>
+      <h1 id="hero-title" class="display">The billable hour doesn't count what it costs.</h1>
+      <p class="sub">Talks on burnout, compassion fatigue and perfectionism, built for people who work in six-minute increments. Practical, grounded in research, and nobody gets asked to share their feelings.</p>
+      <div class="hero-ctas">
+        <a href="book.html" class="btn btn-primary" data-cta="hero">Book a call</a>
+        <a href="#sessions" class="btn btn-ghost">See the sessions</a>
+      </div>
+    </div>
+    <div class="bars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  </div>
+</section>
+
+<!-- 2. CREDIBILITY -->
+<section class="cred" aria-labelledby="cred-title">
+  <div class="wrap cred-grid">
+    <div class="cred-who">
+      <img src="assets/photos/founder-portrait-new.jpg" alt="Brian Mulligan">
+      <div>
+        <h2 id="cred-title" class="display">Brian Mulligan, LPCC, CAT</h2>
+        <p>Therapist and founder, Adaptations Denver</p>
+      </div>
+    </div>
+    <ul class="cred-facts">
+      <li><strong>The work</strong>A licensed therapist in Denver whose practice is built for men.</li>
+      <li><strong>The room</strong>Six years as an ad agency copywriter before counseling. I know how to hold a room, keep it moving and end on time.</li>
+      <li><strong>Your world</strong>Both sessions below were delivered at a Denver law firm, to attorneys and staff.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. SUMMARY STATS (filled in from the SESSIONS data below) -->
+<section class="block" style="padding-bottom:0;" aria-labelledby="stats-title">
+  <div class="wrap">
+    <h2 id="stats-title" class="sr-only">Attendee survey summary</h2>
+    <div class="stats" id="stats"></div>
+    <p class="stats-note" id="stats-note"></p>
+  </div>
+</section>
+
+<!-- 4. THE MENU (cards rendered from the SESSIONS data below) -->
+<section class="block" id="sessions" aria-labelledby="menu-title">
+  <div class="wrap">
+    <div class="rule" style="display:flex;flex-direction:column;gap:16px;">
+      <span class="eyebrow">The sessions</span>
+      <h2 id="menu-title" class="display h2">What I bring to your firm</h2>
+      <p class="lede">Each one has been delivered to a law firm audience. Click any slide to take a closer look.</p>
+    </div>
+    <div id="session-list"></div>
+
+    <!-- ALSO AVAILABLE: to remove, delete from here ... -->
+    <div id="also-available" style="margin-top:72px;">
+      <div class="rule" style="display:flex;flex-direction:column;gap:12px;">
+        <span class="eyebrow">Also available</span>
+        <p class="lede">Not yet delivered to a law firm. Ask about either one on a call.</p>
+      </div>
+      <div class="also">
+        <div class="also-card">
+          <span class="tag" style="align-self:flex-start;color:var(--text-secondary);">Available</span>
+          <h3>Cookie-Cutter Culture and the Dreaded Meeting</h3>
+          <p>On team culture, sameness and the meetings people dread, and what a team can do differently.</p>
+        </div>
+        <div class="also-card">
+          <span class="tag" style="align-self:flex-start;color:var(--text-secondary);">Available</span>
+          <h3>The Conversation Before the Crisis</h3>
+          <p>How managers spot a struggling employee and start the conversation early, before it becomes a leave, a resignation or worse.</p>
+        </div>
+      </div>
+    </div>
+    <!-- ... to here. -->
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- 5. SURVEY RESULTS -->
+<section class="block" aria-labelledby="results-title">
+  <div class="wrap results-grid">
+    <div class="chart-card" id="summary-chart">
+      <h3>Session Usefulness Survey Results</h3>
+      <p class="chart-sub">How useful attendees have found the sessions - data collected anonymously in weeks following the session</p>
+      <div id="summary-bars"></div>
+    </div>
+    <div class="rule" style="display:flex;flex-direction:column;gap:16px;">
+      <span class="eyebrow">What attendees said</span>
+      <h2 id="results-title" class="display h2">Measured, not assumed.</h2>
+      <p class="lede">Every session is followed by an anonymous survey in the weeks after. People answer once the coffee's worn off and they've had time to see if anything stuck.</p>
+      <blockquote class="quote" style="margin-top:8px;">
+        <p>&ldquo;Thank you! Your presentation was so relatable and very engaging and I look forward to the next one!&rdquo;</p>
+        <footer>Anonymous attendee</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- 6. HOW IT WORKS -->
+<section class="block" style="background:var(--color-paper-90);" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="rule" style="display:flex;flex-direction:column;gap:16px;">
+      <span class="eyebrow">How it works</span>
+      <h2 id="how-title" class="display h2">Three steps. No surprises.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="badge">01</span><h3>Call</h3><p>A short call about your firm, your people and what's going on. You'll know quickly whether it's a fit.</p></div>
+      <div class="step"><span class="badge">02</span><h3>Tailor</h3><p>I fit the examples, length and format to your firm. A litigation group and a trusts and estates team don't need the same talk.</p></div>
+      <div class="step"><span class="badge">03</span><h3>Deliver</h3><p>In person, virtual or hybrid, so people in the office and people working remote can join the same session. I keep to time, leave room for questions and send an anonymous survey afterward.</p></div>
+    </div>
+    <div class="formats" aria-label="Formats offered">
+      <span class="eyebrow" style="margin-right:6px;">Formats</span>
+      <span class="tag">Lunch-and-learn</span>
+      <span class="tag">Retreat keynote</span>
+      <span class="tag">Small-group workshop</span>
+      <span class="tag">Hybrid: in-office + remote</span>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FAQ -->
+<section class="block" aria-labelledby="faq-title">
+  <div class="wrap" style="max-width:960px;">
+    <div class="rule" style="display:flex;flex-direction:column;gap:16px;">
+      <span class="eyebrow">Fair questions</span>
+      <h2 id="faq-title" class="display h2">For the skeptical partner</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Is this therapy?</summary>
+        <div class="a"><p>No. It's education: how burnout, compassion fatigue and perfectionism work, how to spot them, and what helps. Nobody is diagnosed, assessed or treated.</p></div>
+      </details>
+      <details>
+        <summary>Will anyone have to share something personal?</summary>
+        <div class="a"><p>No. There's no going around the room, no partner exercises and no one put on the spot. People listen, and they can ask questions if they want to.</p></div>
+      </details>
+      <details>
+        <summary>Our attorneys won't want to look weak in front of the partners.</summary>
+        <div class="a"><p>That's exactly why the sessions are built the way they are. The material is about how these patterns show up in high performers in general, not about anyone in the room. Sitting through a talk on burnout says about as much about you as sitting through one on cybersecurity.</p><p>And the follow-up survey is anonymous.</p></div>
+      </details>
+      <details>
+        <summary>What about confidentiality?</summary>
+        <div class="a"><p>I don't take notes on attendees and I don't report back to the firm on individuals. The survey is anonymous. If your firm has its own requirements, tell me on the call and we'll work within them.</p></div>
+      </details>
+      <details>
+        <summary>How long is a session?</summary>
+        <div class="a"><p>Sixty minutes, including Q&amp;A. That fits a lunch hour for most firms. If you need something shorter or longer, we'll set it on the call.</p></div>
+      </details>
+      <details>
+        <summary>Can it be tailored to our firm?</summary>
+        <div class="a"><p>Yes. Practice area, seniority, what's been happening at the firm: all of it shapes the examples and emphasis.</p></div>
+      </details>
+      <details>
+        <summary>Can it be virtual?</summary>
+        <div class="a"><p>Yes. In person in the Denver area, fully virtual, or hybrid. If some of your people are in the office and some are remote, everyone can join the same session.</p></div>
+      </details>
+      <details>
+        <summary>What does it cost?</summary>
+        <div class="a"><p>It depends on format and length. After the call you'll get a straightforward quote.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 8. FINAL CTA -->
+<section class="final" aria-labelledby="final-title">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:26px;">
+    <h2 id="final-title" class="display">Put one on the calendar.</h2>
+    <p>Start with a short call. If it's not a fit, you'll know quickly, and so will I.</p>
+    <div class="final-ctas">
+      <a href="book.html" class="btn btn-inverse" data-cta="final">Book a call</a>
+      <a href="mailto:brian@adaptationsdenver.com?subject=Law%20firm%20session" class="email" data-cta="final">brian@adaptationsdenver.com</a>
+    </div>
+    <p class="note">Feel free to pass this page along to your managing partner, HR team or wellness committee.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div>Adaptations Denver · Denver, CO · <a href="mailto:brian@adaptationsdenver.com" data-cta="footer">brian@adaptationsdenver.com</a> · <a href="contact.html">Contact</a></div>
+  <div style="opacity:0.6;font-size:12px;">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
+</footer>
+
+<dialog class="lb" id="lightbox" aria-label="Slide preview">
+  <div class="lb-frame">
+    <img class="lb-img" id="lb-img" alt="">
+    <div class="lb-bar">
+      <span id="lb-caption" aria-live="polite"></span>
+      <div class="lb-btns">
+        <button type="button" class="lb-btn" id="lb-prev" aria-label="Previous slide">&larr;</button>
+        <button type="button" class="lb-btn" id="lb-next" aria-label="Next slide">&rarr;</button>
+        <button type="button" class="lb-btn" id="lb-close">Close</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* ============================================================
+   EDIT HERE. The session cards and the survey chart are built
+   from this block.
+   ============================================================ */
+var FORMAT = '60 minutes, including Q&A';
+var DELIVERY = 'In person, virtual or hybrid. Hybrid works for firms with people in the office and people working remote who all want to join.';
+
+var SESSIONS = [
+  {
+    id: 'compassion-fatigue',
+    title: 'When the Work Gets Under Your Skin',
+    subtitle: 'Compassion Fatigue, Burnout and Vicarious Trauma',
+    promise: 'What carrying other people\'s worst days does to the people who carry them, and what to do about it before it costs you good attorneys.',
+    audience: 'Attorneys and staff who absorb clients\' crises for a living: litigation, family, criminal, employment, immigration.',
+    takeaways: [
+      'How compassion fatigue splits into burnout ("the work empties you out") and vicarious trauma ("the work gets inside you").',
+      'The early signs, in yourself and in the office down the hall.',
+      'Why the two need different responses.',
+      'What individuals and the firm can actually do about it.'
+    ],
+    teasers: [
+      { src: 'assets/teasers/compassion-fatigue-1.jpg', alt: 'Title slide: When the Work Gets Under Your Skin. Compassion Fatigue, Vicarious Trauma, Burnout and What to Do About It.' },
+      { src: 'assets/teasers/compassion-fatigue-2.jpg', alt: 'Slide defining compassion fatigue and its two branches, burnout and vicarious trauma.' },
+      { src: 'assets/teasers/compassion-fatigue-3.jpg', alt: 'Venn diagram slide comparing the signs of burnout and vicarious trauma.' }
+    ],
+    usefulness: [3, 2, 0, 0, 0]   // survey votes: Extremely, Very, Somewhat, Slightly, Not at all
+  },
+  {
+    id: 'perfectionism',
+    title: 'The Bar That Keeps Getting Raised',
+    subtitle: 'Perfectionism and Self-Criticism in Hyper-Competitive Professions',
+    promise: 'Why high standards stop helping, and how to keep the edge without the self-punishment.',
+    audience: 'Associates on the partner track, partners, and anyone whose job is to never miss a thing.',
+    takeaways: [
+      'The perfectionistic feedback loop: an impossible standard, fear of error, overworking and checking, brief relief, then a higher bar.',
+      'Why you\'re "only as good as your last victory," and what that does over a career.',
+      'How to tell a high standard that drives good work from one that drives burnout.',
+      'Ways to interrupt the loop without lowering the quality of the work.'
+    ],
+    teasers: [
+      { src: 'assets/teasers/perfectionism-1.jpg', alt: 'Title slide: The Bar That Keeps Getting Raised. Perfectionism and Self-Criticism in Hyper-Competitive Professions.' },
+      { src: 'assets/teasers/perfectionism-2.jpg', alt: 'Slide titled Only as good as your last victory, showing the perfectionistic feedback loop and a rising spiral labeled Standard.' }
+    ],
+    usefulness: null              // add votes here when you have them, e.g. [4, 1, 0, 0, 0]
+  }
+];
+/* ===================== end of edit block ===================== */
+
+(function(){
+  var LEVELS = ['Extremely useful','Very useful','Somewhat useful','Slightly useful','Not at all useful'];
+  var WEIGHTS = [5,4,3,2,1];
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function track(name, params){ if (typeof gtag === 'function') gtag('event', name, params || {}); }
+  function sumArr(a){ return a.reduce(function(x,y){return x+y;},0); }
+
+  // Combine survey votes across sessions
+  var all = [0,0,0,0,0];
+  SESSIONS.forEach(function(s){ if (s.usefulness) s.usefulness.forEach(function(c,i){ all[i]+=c; }); });
+  var n = sumArr(all);
+
+  // Summary stats
+  if (n){
+    var avg = sumArr(all.map(function(c,i){ return c*WEIGHTS[i]; })) / n;
+    var top = Math.round((all[0]+all[1]) / n * 100);
+    document.getElementById('stats').innerHTML =
+      '<div class="stat"><div class="stat-num">' + avg.toFixed(1) + '<small>/5</small></div><div class="stat-label">Average usefulness rating</div></div>' +
+      '<div class="stat"><div class="stat-num">' + top + '<small>%</small></div><div class="stat-label">Rated it very or extremely useful</div></div>';
+    document.getElementById('stats-note').textContent = 'From anonymous follow-up surveys of law firm sessions.';
+  }
+
+  // Survey chart (no vote counts shown, by design)
+  var max = Math.max.apply(null, all) || 1;
+  document.getElementById('summary-bars').innerHTML =
+    '<div class="ubars" role="img" aria-label="Bar chart of how useful attendees rated the sessions, from extremely useful to not at all useful.">' +
+    LEVELS.map(function(l,i){
+      return '<div class="ubar"><span>' + l + '</span><div class="track">' + (all[i] ? '<div class="fill" style="width:' + (all[i]/max*100) + '%"></div>' : '<div class="zero"></div>') + '</div></div>';
+    }).join('') +
+    '<div class="uaxis" aria-hidden="true"><span></span><span>Votes</span></div></div>';
+
+  // Session cards
+  var list = document.getElementById('session-list');
+  list.innerHTML = SESSIONS.map(function(s, idx){
+    var num = ('0' + (idx+1)).slice(-2);
+    var thumbs = s.teasers.map(function(t, i){
+      return '<button type="button" class="thumb' + (i===0 ? ' first' : '') + '" data-session="' + s.id + '" data-index="' + i + '" aria-label="Open slide ' + (i+1) + ' of ' + esc(s.title) + '"><img src="' + esc(t.src) + '" alt="' + esc(t.alt) + '" loading="lazy"></button>';
+    }).join('');
+    return '<article class="session" id="session-' + s.id + '" aria-labelledby="t-' + s.id + '">' +
+      '<div class="session-head">' +
+        '<div class="session-meta-top"><span class="badge">' + num + '</span><span class="tag" style="color:var(--color-accent);">Delivered at a Denver law firm</span></div>' +
+        '<h3 id="t-' + s.id + '">' + esc(s.title) + '</h3>' +
+        '<p class="subtitle">' + esc(s.subtitle) + '</p>' +
+        '<p class="promise">' + esc(s.promise) + '</p>' +
+      '</div>' +
+      '<div class="session-body">' +
+        '<div class="session-col">' +
+          '<dl class="dl">' +
+            '<div><dt>Who it\'s for</dt><dd>' + esc(s.audience) + '</dd></div>' +
+            '<div><dt>Format and length</dt><dd>' + esc(FORMAT) + '</dd></div>' +
+            '<div><dt>Delivery</dt><dd>' + esc(DELIVERY) + '</dd></div>' +
+          '</dl>' +
+          '<p class="col-label">What people leave with</p>' +
+          '<ul class="takeaways">' + s.takeaways.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
+        '</div>' +
+        '<div class="session-col">' +
+          '<p class="col-label">A look at the slides</p>' +
+          '<div class="thumbs">' + thumbs + '</div>' +
+        '</div>' +
+      '</div>' +
+    '</article>';
+  }).join('');
+
+  // Lightbox
+  var dlg = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), cap = document.getElementById('lb-caption');
+  var prev = document.getElementById('lb-prev'), next = document.getElementById('lb-next');
+  var current = [], pos = 0, sessionTitle = '';
+  function show(){
+    var img = current[pos].querySelector('img');
+    lbImg.src = img.src; lbImg.alt = img.alt;
+    cap.textContent = sessionTitle + ' · ' + (pos+1) + ' / ' + current.length;
+    prev.disabled = pos === 0; next.disabled = pos === current.length - 1;
+  }
+  list.addEventListener('click', function(e){
+    var b = e.target.closest('.thumb'); if (!b) return;
+    var sid = b.dataset.session;
+    current = Array.prototype.slice.call(list.querySelectorAll('.thumb[data-session="' + sid + '"]'));
+    pos = current.indexOf(b);
+    sessionTitle = SESSIONS.filter(function(s){ return s.id === sid; })[0].title;
+    show();
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+    track('teaser_open', { presentation: sid, slide_number: pos + 1 });
+  });
+  prev.addEventListener('click', function(){ if (pos > 0){ pos--; show(); } });
+  next.addEventListener('click', function(){ if (pos < current.length - 1){ pos++; show(); } });
+  document.getElementById('lb-close').addEventListener('click', function(){ dlg.close(); });
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft'){ prev.click(); e.preventDefault(); }
+    if (e.key === 'ArrowRight'){ next.click(); e.preventDefault(); }
+  });
+
+  // CTA tracking (mailto_click is already sent by the site-wide listener in <head>)
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a'); if (!a) return;
+    if (/(^|\/)book\.html/.test(a.getAttribute('href') || '')) track('book_call_click', { cta_location: a.dataset.cta || '' });
+  });
+})();
+</script>
+</body></html>
