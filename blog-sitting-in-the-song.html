@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html><head>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yqh97plmcr");
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75XE9KFDSC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-75XE9KFDSC');
+</script>
+
+<!-- GA4: track mailto and tel link clicks -->
+<script>
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a');
+  if (!link) return;
+  const href = link.getAttribute('href') || '';
+  if (href.startsWith('mailto:')) {
+    gtag('event', 'mailto_click', { link_url: href });
+  } else if (href.startsWith('tel:')) {
+    gtag('event', 'tel_click', { link_url: href });
+  }
+});
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Useful Nonsense Part 3: Sitting in the Song You Can’t Skip — Adaptations Denver</title>
+<meta name="description" content="The third entry in the Useful Nonsense series: The Big Lebowski, the default mode network, the arrival fallacy, and training your attention to stay where your feet are.">
+<link rel="canonical" href="https://adaptationsdenver.com/blog-sitting-in-the-song.html">
+
+<style>:root {
+  /* Base neutrals — from brand hex */
+  --color-ink: #1A1C1E;
+  --color-paper: #F7F5F2;
+
+  /* Neutral ramp, mixed from the two bases */
+  --color-ink-90: color-mix(in oklch, var(--color-ink) 90%, var(--color-paper));
+  --color-ink-70: color-mix(in oklch, var(--color-ink) 70%, var(--color-paper));
+  --color-ink-50: color-mix(in oklch, var(--color-ink) 50%, var(--color-paper));
+  --color-ink-30: color-mix(in oklch, var(--color-ink) 30%, var(--color-paper));
+  --color-ink-15: color-mix(in oklch, var(--color-ink) 15%, var(--color-paper));
+  --color-paper-90: color-mix(in oklch, var(--color-paper) 92%, var(--color-ink));
+
+  /* Accent candidates — same L/C in oklch, hue varies. Pick one for --color-accent. */
+  --color-accent-red: #C4472A;
+  --color-accent-amber: oklch(58% 0.19 65);
+  --color-accent-cobalt: oklch(58% 0.19 255);
+
+  /* Active accent (default: red — Supreme/Vice-coded). Swap this one line to change brand-wide. */
+  --color-accent: var(--color-accent-red);
+  --color-accent-ink: #FFFFFF; /* text/icon color on top of accent */
+
+  /* Semantic aliases */
+  --surface-page: var(--color-paper);
+  --surface-inverse: var(--color-ink);
+  --surface-card: var(--color-paper-90);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-70);
+  --text-on-inverse: var(--color-paper);
+  --text-on-inverse-secondary: var(--color-paper-90);
+  --border-default: var(--color-ink-15);
+  --border-strong: var(--color-ink-30);
+  --link-color: var(--color-accent);
+  --link-color-hover: color-mix(in oklch, var(--color-accent) 85%, var(--color-ink));
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-Black.woff2") format('woff2'), url("fonts/PPMonumentExtended-Black.otf") format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-BlackItalic.woff2") format('woff2'), url("fonts/PPMonumentExtended-BlackItalic.otf") format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Wide';
+  src: url("fonts/PPMonumentWide-Regular.woff2") format('woff2'), url("fonts/PPMonumentWide-Regular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: url("fonts/PPNeueMachina-PlainRegular.woff2") format('woff2'), url("fonts/PPNeueMachina-PlainRegular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --font-display: 'PP Monument Extended', 'Arial Black', sans-serif;
+  --font-wide: 'PP Monument Wide', 'Arial Narrow', sans-serif;
+  --font-body: 'PP Neue Machina', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Display scale — headlines, only weight available is 900/Black */
+  --text-display-xl: 900 clamp(48px, 7vw, 120px)/0.98 var(--font-display);
+  --text-display-lg: 900 clamp(36px, 5vw, 72px)/1.0 var(--font-display);
+  --text-display-md: 900 clamp(28px, 3.2vw, 44px)/1.05 var(--font-display);
+
+  /* Wide/eyebrow treatment — real PP Monument Wide cut */
+  --text-wide-label: 400 13px/1.2 var(--font-wide);
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.18em;
+
+  /* Body scale */
+  --text-body-lg: 500 20px/1.5 var(--font-body);
+  --text-body-md: 500 17px/1.55 var(--font-body);
+  --text-body-sm: 500 14px/1.5 var(--font-body);
+  --text-label: 600 13px/1.2 var(--font-body);
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 0 var(--border-default);
+  --container-max: 1240px;
+  --container-pad: clamp(24px, 5vw, 64px);
+}
+
+</style>
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--color-paper);}
+  a{color:var(--link-color);text-decoration:none;}
+  a:hover{color:var(--link-color-hover);}
+  .btn{font-family:var(--font-body);font-weight:600;letter-spacing:0.02em;text-transform:uppercase;border:1px solid transparent;border-radius:var(--radius-sm);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;font-size:15px;}
+  .btn-primary{background:var(--color-accent);color:var(--color-accent-ink);}
+  .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
+  .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:13px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
+  .placeholder{background:repeating-linear-gradient(45deg, var(--color-ink-15), var(--color-ink-15) 10px, transparent 10px, transparent 20px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-secondary);text-align:center;}
+  .card{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .card-paper{background:var(--surface-card);color:var(--text-primary);border:1px solid var(--border-default);}
+  .card-ink{background:var(--surface-inverse);color:var(--text-on-inverse);}
+  .card h3{font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;margin:0;line-height:1.1;}
+  .card p{font-family:var(--font-body);font-size:15px;line-height:1.5;margin:0;opacity:0.85;}
+  .tag{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);display:inline-block;}
+  .tag-accent{background:var(--color-accent);color:var(--color-accent-ink);}
+  .tag-default{background:var(--color-ink-15);color:var(--text-primary);}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
+  .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
+  .navlinks{display:flex;align-items:center;gap:32px;}
+  .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .navlinks-core{display:flex;align-items:center;gap:32px;}
+  .navlinks-core a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .nav-core-dup{display:none;}
+  .navlinks button{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;background:var(--color-accent);color:var(--color-accent-ink);border:none;border-radius:var(--radius-sm);padding:10px 20px;cursor:pointer;}
+  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-width:0;}
+  @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
+  .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;}
+  .nav-toggle span{display:block;width:100%;height:2px;background:var(--color-ink);transition:transform 0.2s ease,opacity 0.2s ease;}
+  .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.active span:nth-child(2){opacity:0;}
+  .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (max-width:1400px){
+    nav{position:relative;}
+    .nav-toggle{display:flex;}
+    .navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--color-paper);border-bottom:1px solid var(--border-default);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;z-index:1000;box-shadow:0 8px 16px rgba(0,0,0,0.08);}
+    .navlinks.open{display:flex;}
+    .navlinks a{padding:14px var(--container-pad);border-bottom:1px solid var(--border-default);}
+    .navlinks a.btn{margin:12px var(--container-pad);text-align:center;}
+  }
+  @media (max-width:900px){
+    .navlinks-core{display:none;}
+    .nav-core-dup{display:block;}
+  }
+  @media (max-width:640px){
+    .nav-cta{display:none;}
+  }
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:28px;min-width:0;}
+  .blog-card{display:flex;flex-direction:column;border:2px solid var(--color-ink);background:var(--color-paper);text-decoration:none;color:inherit;min-width:0;}
+  .blog-card:hover{color:inherit;}
+  .blog-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;}
+</style>
+<style>
+  @media (max-width:640px){
+    .service-card, .card, .hero-copy, .blog-card{min-width:0 !important;}
+    .btn{white-space:normal !important;}
+    :root{
+      --text-body-lg: 500 22px/1.6 var(--font-body);
+      --text-body-md: 500 18px/1.6 var(--font-body);
+      --text-body-sm: 500 15px/1.5 var(--font-body);
+    }
+    .service-card, .card{padding:26px !important;min-width:0 !important;}
+    section.grid3 > *{min-width:0 !important;}
+    .service-card h3, .card h3{font-size:23px !important;line-height:1.2 !important;}
+    .service-card p, .card p{font-size:17px !important;line-height:1.55 !important;opacity:0.95 !important;}
+    .blog-card h3{font-size:21px !important;}
+    .blog-card p{font-size:16px !important;}
+    section.grid3{gap:24px !important;}
+    .blog-grid{gap:24px !important;}
+    .btn:not(.floating-cta){font-size:17px !important;padding:17px 26px !important;}
+    .floating-cta{font-size:15px !important;padding:14px 24px !important;}
+    .flourish-g{width:44px !important;height:44px !important;top:-16px !important;left:-16px !important;font-size:19px !important;}
+  }
+</style>
+<style>
+  .hero-diagonal-wedge{display:block;}
+  .hero-stacked{display:none;}
+  /* Keep the copy clear of the wedge's diagonal, which reaches 58% of the width at the bottom */
+  @media (min-width:701px){
+    .hero-wedge-copy{max-width:min(660px, calc(58vw - var(--container-pad) - 40px)) !important;}
+  }
+  @media (min-width:701px) and (max-width:1400px){
+    .hero-wedge-title{font-size:calc(6vw - 14px) !important;}
+    .hero-wedge-sub{font-size:clamp(16px, 1.6vw, 20px) !important;}
+  }
+  @media (max-width:700px){
+    .hero-diagonal-wedge{display:none;}
+    .hero-stacked{display:flex !important;}
+  }
+  .post-blockquote{margin:20px 0;padding:0 0 0 24px;border-left:4px solid var(--color-accent);font-family:var(--font-display);font-style:italic;font-size:24px;line-height:1.3;text-transform:none;color:var(--text-primary);}
+  .post-body a{text-decoration:underline;}
+  .reference-list{display:flex;flex-direction:column;gap:16px;margin:4px 0 0;padding:0;list-style:none;}
+  .reference-list li{font:var(--text-body-sm);color:var(--text-secondary);line-height:1.6;padding-left:28px;text-indent:-28px;overflow-wrap:anywhere;}
+</style>
+<style>
+  /* Services dropdown */
+  .nav-dd{position:relative;display:flex;align-items:center;}
+  .nav-dd-toggle,.navlinks .nav-dd-m-toggle{font-family:'PP Neue Machina','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:normal;text-transform:none;color:#1A1C1E;background:none;border:none;border-radius:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+  .nav-dd-caret{display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform 0.2s ease;}
+  .nav-dd.open .nav-dd-caret,.nav-dd-m.open .nav-dd-caret{transform:translateY(2px) rotate(-135deg);}
+  .nav-dd-menu{display:none;position:absolute;top:calc(100% + 24px);left:-22px;min-width:240px;background:#F7F5F2;border:2px solid #1A1C1E;box-shadow:0 8px 16px rgba(0,0,0,0.08);padding:8px 0;z-index:1001;}
+  .nav-dd-menu::before{content:"";position:absolute;left:-2px;right:-2px;top:-28px;height:28px;}
+  .nav-dd.open .nav-dd-menu{display:block;}
+  @media (hover:hover){
+    .nav-dd:hover .nav-dd-menu{display:block;}
+    .nav-dd:hover .nav-dd-caret{transform:translateY(2px) rotate(-135deg);}
+  }
+  .nav-dd-menu a{display:block;padding:10px 22px;font-size:14px;font-weight:600;color:#1A1C1E;white-space:nowrap;}
+  .nav-dd-menu a:hover,.nav-dd-menu a:focus-visible{background:rgba(26,28,30,0.06);color:#C4472A;}
+  .nav-dd-label{display:block;margin-top:8px;padding:14px 22px 6px;border-top:1px solid rgba(26,28,30,0.15);font-family:'PP Monument Wide','Arial Narrow',sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#C4472A;}
+  .navlinks .nav-dd-m-toggle{width:100%;justify-content:space-between;padding:14px var(--container-pad,24px);border-bottom:1px solid rgba(26,28,30,0.15);text-align:left;}
+  .nav-dd-m-menu{display:none;background:rgba(26,28,30,0.04);}
+  .nav-dd-m.open .nav-dd-m-menu{display:block;}
+  .navlinks .nav-dd-m-menu a{display:block;padding:12px var(--container-pad,24px) 12px calc(var(--container-pad,24px) + 18px);font-size:14px;}
+  .nav-dd-m-menu .nav-dd-label{margin-top:0;border-top:none;border-bottom:1px solid rgba(26,28,30,0.15);padding:14px var(--container-pad,24px) 8px calc(var(--container-pad,24px) + 18px);}
+</style>
+</head>
+
+<body>
+<nav>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
+  <div class="navlinks-core" id="navlinks-core">
+    <a href="approach.html">Approach</a>
+    <div class="nav-dd">
+      <button type="button" class="nav-dd-toggle" aria-expanded="false" aria-controls="nav-dd-menu">Services<span class="nav-dd-caret" aria-hidden="true"></span></button>
+      <div class="nav-dd-menu" id="nav-dd-menu">
+        <a href="individual-therapy.html">Individual Therapy</a>
+        <a href="group-therapy.html">Group Therapy</a>
+        <span class="nav-dd-label">What we help with</span>
+        <a href="anger-therapy.html">Anger</a>
+        <a href="substance-use-therapy.html">Substance Use</a>
+        <a href="depression-therapy.html">Depression</a>
+        <a href="perfectionism-therapy.html">Perfectionism</a>
+        <a href="career-burnout-therapy.html">Career &amp; Burnout</a>
+        <a href="relationship-therapy.html">Relationships</a>
+        <a href="life-transitions-therapy.html">Life Transitions</a>
+      </div>
+    </div>
+  </div>
+  <div class="navlinks" id="navlinks">
+    <a class="nav-core-dup" href="approach.html">Approach</a>
+    <div class="nav-core-dup nav-dd-m">
+      <button type="button" class="nav-dd-m-toggle" aria-expanded="false" aria-controls="nav-dd-m-menu">Services<span class="nav-dd-caret" aria-hidden="true"></span></button>
+      <div class="nav-dd-m-menu" id="nav-dd-m-menu">
+        <a href="individual-therapy.html">Individual Therapy</a>
+        <a href="group-therapy.html">Group Therapy</a>
+        <span class="nav-dd-label">What we help with</span>
+        <a href="anger-therapy.html">Anger</a>
+        <a href="substance-use-therapy.html">Substance Use</a>
+        <a href="depression-therapy.html">Depression</a>
+        <a href="perfectionism-therapy.html">Perfectionism</a>
+        <a href="career-burnout-therapy.html">Career &amp; Burnout</a>
+        <a href="relationship-therapy.html">Relationships</a>
+        <a href="life-transitions-therapy.html">Life Transitions</a>
+      </div>
+    </div>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
+    <a href="about.html">About</a>
+    <a href="blog.html" style="opacity:1;font-weight:800;">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="book.html" class="nav-cta btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav>
+<script>
+(function(){
+  var toggle = document.getElementById('nav-toggle');
+  var links = document.getElementById('navlinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('active', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var dd = document.querySelector('.navlinks-core .nav-dd');
+  if (dd) {
+    var btn = dd.querySelector('.nav-dd-toggle');
+    var canHover = window.matchMedia('(hover:hover)');
+    var setOpen = function(open){
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(!dd.classList.contains('open'));
+    });
+    dd.addEventListener('mouseenter', function(){ if (canHover.matches) btn.setAttribute('aria-expanded', 'true'); });
+    dd.addEventListener('mouseleave', function(){ if (canHover.matches) setOpen(false); });
+    dd.addEventListener('focusout', function(e){ if (!dd.contains(e.relatedTarget)) setOpen(false); });
+    document.addEventListener('click', function(e){ if (!dd.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && dd.classList.contains('open')) { setOpen(false); btn.focus(); }
+    });
+  }
+  var m = document.querySelector('.nav-dd-m');
+  if (m) {
+    var mbtn = m.querySelector('.nav-dd-m-toggle');
+    mbtn.addEventListener('click', function(){
+      var open = m.classList.toggle('open');
+      mbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
+</script>
+
+<section style="position:relative;overflow:hidden;background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 60px;display:flex;">
+  <div class="hero-wedge-copy" style="position:relative;z-index:2;flex:1;min-width:280px;max-width:660px;display:flex;flex-direction:column;gap:20px;">
+    <a href="blog.html" class="eyebrow" style="display:inline-block;">&larr; Blog</a>
+    <h1 class="hero-wedge-title" style="font:var(--text-display-lg);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">Useful Nonsense Part 3: Sitting in the Song You Can&rsquo;t Skip</h1>
+    <p class="hero-wedge-sub" style="font:var(--text-body-lg);font-style:italic;color:var(--text-on-inverse-secondary);margin:0;">On present-moment awareness, and why you get whatever is playing.</p>
+    <p style="font:var(--text-body-sm);color:var(--text-on-inverse-secondary);opacity:0.7;margin:0;">October 17, 2026 &middot; Brian Mulligan, LPCC, CAT</p>
+  </div>
+  <div class="hero-diagonal-wedge" style="position:absolute;top:0;right:0;bottom:0;width:42%;clip-path:polygon(30% 0, 100% 0, 100% 100%, 0 100%);z-index:1;">
+    <img src="assets/blog/blog-sitting-in-the-song-hero.webp" alt="Illustration of a long-haired man in sunglasses, headphones and a red robe, with a cassette player on his chest" style="width:100%;height:100%;object-fit:cover;display:block;">
+  </div>
+</section>
+
+<section class="hero-stacked" style="padding:40px var(--container-pad) 0;justify-content:center;">
+  <img src="assets/blog/blog-sitting-in-the-song-hero.webp" alt="Illustration of a long-haired man in sunglasses, headphones and a red robe, with a cassette player on his chest" style="width:100%;max-width:560px;height:auto;display:block;border:2px solid var(--color-ink);">
+</section>
+
+<section class="post-body" style="padding:36px var(--container-pad) 90px;display:flex;justify-content:center;">
+  <div style="max-width:720px;width:100%;display:flex;flex-direction:column;gap:20px;">
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Anyone who has religiously watched <em>The Big Lebowski</em> like me knows that The Dude <a href="https://www.youtube.com/watch?v=-JlmvtAHhnc" target="_blank" rel="noopener">hates the fuckin&rsquo; Eagles, man</a>. So much so that when he gets into a spat with his cab driver about the band, he gets dumped somewhere in the middle of Los Angeles and has to walk his way home.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">The Dude (Usually) Abides</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The funny part is that The Dude is usually excellent at listening to whatever song is playing. He finds joy in life&rsquo;s simple pleasures (a White Russian, bowling, a nice rug), and wherever he is, he&rsquo;s mostly just there. One thing at a time. The lane in front of him, the drink in his hand. But when he finds himself embroiled in a kidnapping case and pushed into the role of amateur P.I., his attention goes everywhere except where his feet are. He becomes, in a word, &ldquo;very un-Dude.&rdquo;</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Part of the hilarity of the film is seeing <em>our</em> Jeffrey Lebowski flail under pressure, taking proverbial pratfalls and stepping on rakes. It&rsquo;s a delightful kind of schadenfreude to watch him drop a joint in his crotch and plow his already-besieged car into a trashcan. But the real magic of the film is that we are <em>rooting</em> for this lazy, lovable, unemployed everyman. We want him back in his lane, back in the moment, back to bowling and candle-lit baths. Seeing The Dude in his element speaks to an inner Dude in all of us.</p>
+
+    <blockquote class="post-blockquote">Seeing The Dude in his element speaks to an inner Dude in all of us.</blockquote>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">Sometimes the Song Sucks</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">When pressures mount, it&rsquo;s normal to experience stress. None of us are immune to it. Yet so many of us reflexively respond to stress by trying to escape it, and <a href="https://pubmed.ncbi.nlm.nih.gov/21071660" target="_blank" rel="noopener">when we can&rsquo;t leave the car, the mind leaves anyway</a>. One of its first lines of defense against unpleasantness is to attempt to go somewhere else.</p>
+
+    <blockquote class="post-blockquote">When we can&rsquo;t leave the car, the mind leaves anyway.</blockquote>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">When the Eagles come on, The Dude has two options. He can let the song play, or he can fight with the radio (and the cabbie). He fights, and it costs him his ride. <a href="blog-bounce-house.html">Part 2</a> covered what to do with an unwelcome feeling (stop swimming against the current). Now, faithful reader, we&rsquo;re looking at something much sneakier: where your attention goes while the feeling is happening.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">Where the Mind Goes When You Can&rsquo;t Leave</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">I like to imagine The Dude in that backseat. He&rsquo;s been bamboozled. He&rsquo;s been drugged. He&rsquo;s experienced a particularly frightening flashback and had a coffee cup chucked at his head. Life is hard to make sense of sometimes, and The Dude was doing his best to try to put the disjointed pieces together &ndash; trying to <em>figure it all out</em>. This is not the Jeffrey Lebowski we know and love &ndash; it is a very un-Dude way of being. Physically, he&rsquo;s in the cab, but mentally he&rsquo;s somewhere else entirely, reviewing the past or trying to predict the future.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Research has a name for the brain circuitry involved in this &ldquo;elsewhere&rdquo; state of mind: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10524518/" target="_blank" rel="noopener">the default mode network</a>. It is most active when you aren&rsquo;t occupied with anything in front of you, and it fills the downtime with the past, the future, and the ongoing story of you. <a href="blog-puppet-master.html">Your puppet master</a>, it turns out, operates a time machine, and this is the engine room. It <a href="https://pubmed.ncbi.nlm.nih.gov/19580387" target="_blank" rel="noopener">only travels to two destinations</a>: the thing that already went wrong and the thing that might.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">Nobody Plays Music to Reach the Last Note</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Alan Watts &ndash; a cool and smart guy largely credited with popularizing mindfulness in &ldquo;The West&rdquo; &ndash; had a way of describing this. We treat life like a trip, he said, with a destination up ahead where the real thing finally starts. Music works differently. <a href="https://www.organism.earth/library/document/essential-lectures-3" target="_blank" rel="noopener">The point isn&rsquo;t to play a song with the objective to get to the end</a>. If arrival were the point, musicians would write songs with only one note, and the best orchestras would be the ones that finished fastest. The playing is the point.</p>
+
+    <blockquote class="post-blockquote">The playing is the point.</blockquote>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">The Fallacy of Finally Arriving</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Some people call it the arrival fallacy: the belief that somewhere past this project, this quarter, this divorce, or this Friday, your real life finally begins. <a href="https://pubmed.ncbi.nlm.nih.gov/22361725" target="_blank" rel="noopener">Every finish line turns into the next starting block</a>. The promotion lands and &ldquo;once this is done&rdquo; relocates to the next quarter. The deal closes and a new one opens. It&rsquo;s a treadmill with the speed button stuck, and the man on it keeps checking the display to see how far he&rsquo;s gone.</p>
+
+    <blockquote class="post-blockquote">Every finish line turns into the next starting block.</blockquote>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">If you&rsquo;ve hit every mark and still feel behind, <a href="https://pubmed.ncbi.nlm.nih.gov/35951379" target="_blank" rel="noopener">this is a big part of why</a>. The marks keep moving because the lane you&rsquo;re standing in is always the one you&rsquo;re hurrying to leave.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">But I Can&rsquo;t Just Sit Still and Do Nothing</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Though many of us appreciate The Dude&rsquo;s philosophy, few of us actually live it. In other words, stalwart reader, it&rsquo;s more likely than not that you and I have qualities that The Dude doesn&rsquo;t, namely <em>ambition</em>. So, does &ldquo;being present&rdquo; mean you can never plan anything? Does one have to live without goals, discard progress, and abandon intention? One does not.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Present moment awareness is <a href="https://pubmed.ncbi.nlm.nih.gov/38615492" target="_blank" rel="noopener">flexibility of attention</a>. You can visit the future on purpose, handle your business, and return. The trouble starts when the trip has no return ticket and the puppet master is driving the time machine. You can be fully in the moment and furious, or fully in the moment and scared. Calm may or may not tag along. What gets trained is where your attention sits.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">How Being Dumb Works for The Dude &ndash; and You Can, Too</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Your reactive mind that thinks it&rsquo;s so smart and clever wants to diagnose why you can&rsquo;t focus and engineer a fix. But there&rsquo;s a part of you &ndash; the dumb part &ndash; that requires no such convolutions.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Try this: pick a song you actively dislike (Eagles optional). Play it all the way through, with no skipping, no volume knob, and no phone in your other hand. Put your attention on one plain thing: the song itself, the weight of your feet, or the sound underneath the other sounds. Your mind will likely leave within a few seconds. By the second chorus it will be drafting tomorrow&rsquo;s to-do list and arguing with the lyrics. Each departure is the mind leaving the cab, and <a href="https://doi.org/10.1007/s11920-025-01608-6" target="_blank" rel="noopener">each return is one rep</a>. Bringing it back is the exercise.</p>
+
+    <blockquote class="post-blockquote">Bringing it back is the exercise.</blockquote>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">The Dude Abides</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Part 2 said you can&rsquo;t make the floor foam. Part 3 adds that you can&rsquo;t skip the song. It is the song of your life, and in each moment, you get whatever is playing.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">There is wisdom our blundering man in his bathrobe can impart. He is, in <em>his</em> typical resting state, present-moment awareness embodied. Perhaps we can all take a little something from The Dude, and simply &ldquo;abide.&rdquo;</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Next up in the series: if the song is the point, what are you listening for? Values, and why a direction beats a destination.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:40px 0 0;">References</h2>
+    <ul class="reference-list">
+      <li>Andrews-Hanna, J. R. (2012). The brain&rsquo;s default network and its adaptive role in internal mentation. <em>The Neuroscientist, 18</em>(3), 251&ndash;270. <a href="https://doi.org/10.1177/1073858411403316" target="_blank" rel="noopener">https://doi.org/10.1177/1073858411403316</a></li>
+      <li>Blackledge, J. T., &amp; Hayes, S. C. (2001). Emotion regulation in acceptance and commitment therapy. <em>Journal of Clinical Psychology, 57</em>(2), 243&ndash;255. <a href="https://doi.org/10.1002/1097-4679(200102)57:2&lt;243::AID-JCLP9&gt;3.0.CO;2-X" target="_blank" rel="noopener">https://doi.org/10.1002/1097-4679(200102)57:2&lt;243::AID-JCLP9&gt;3.0.CO;2-X</a></li>
+      <li>Bradshaw, E. L., Conigrave, J. H., Steward, B. A., Ferber, K. A., Parker, P. D., &amp; Ryan, R. M. (2023). A meta-analysis of the dark side of the American dream: Evidence for the universal wellness costs of prioritizing extrinsic over intrinsic goals. <em>Journal of Personality and Social Psychology, 124</em>(4), 873&ndash;899. <a href="https://doi.org/10.1037/pspp0000431" target="_blank" rel="noopener">https://doi.org/10.1037/pspp0000431</a></li>
+      <li>Diener, E., Lucas, R. E., &amp; Scollon, C. N. (2006). Beyond the hedonic treadmill: Revising the adaptation theory of well-being. <em>American Psychologist, 61</em>(4), 305&ndash;314. <a href="https://doi.org/10.1037/0003-066X.61.4.305" target="_blank" rel="noopener">https://doi.org/10.1037/0003-066X.61.4.305</a></li>
+      <li>Dittmar, H., Bond, R., Hurst, M., &amp; Kasser, T. (2014). The relationship between materialism and personal well-being: A meta-analysis. <em>Journal of Personality and Social Psychology, 107</em>(5), 879&ndash;924. <a href="https://doi.org/10.1037/a0037409" target="_blank" rel="noopener">https://doi.org/10.1037/a0037409</a></li>
+      <li>Easterlin, R. A. (2003). Explaining happiness. <em>Proceedings of the National Academy of Sciences, 100</em>(19), 11176&ndash;11183. <a href="https://doi.org/10.1073/pnas.1633144100" target="_blank" rel="noopener">https://doi.org/10.1073/pnas.1633144100</a></li>
+      <li>Hasenkamp, W., Wilson-Mendenhall, C. D., Duncan, E., &amp; Barsalou, L. W. (2012). Mind wandering and attention during focused meditation: A fine-grained temporal analysis of fluctuating cognitive states. <em>NeuroImage, 59</em>(1), 750&ndash;760. <a href="https://doi.org/10.1016/j.neuroimage.2011.07.008" target="_blank" rel="noopener">https://doi.org/10.1016/j.neuroimage.2011.07.008</a></li>
+      <li>Hoffmann, F., Banzhaf, C., Kanske, P., Bermpohl, F., &amp; Singer, T. (2016). Where the depressed mind wanders: Self-generated thought patterns as assessed through experience sampling as a state marker of depression. <em>Journal of Affective Disorders, 198</em>, 127&ndash;134. <a href="https://doi.org/10.1016/j.jad.2016.03.005" target="_blank" rel="noopener">https://doi.org/10.1016/j.jad.2016.03.005</a></li>
+      <li>Jackson, S. E., Brown, J., Norris, E., Livingstone-Banks, J., Hayes, E., &amp; Lindson, N. (2022). Mindfulness for smoking cessation. <em>Cochrane Database of Systematic Reviews, 2022</em>(4), CD013696. <a href="https://doi.org/10.1002/14651858.CD013696.pub2" target="_blank" rel="noopener">https://doi.org/10.1002/14651858.CD013696.pub2</a></li>
+      <li>Jha, A. P., Izaguirre, M. K., &amp; Adler, A. B. (2025). Mindfulness training in military settings: Emerging evidence and best-practice guidance. <em>Current Psychiatry Reports.</em></li>
+      <li>Killingsworth, M. A., &amp; Gilbert, D. T. (2010). A wandering mind is an unhappy mind. <em>Science, 330</em>(6006), 932. <a href="https://doi.org/10.1126/science.1192439" target="_blank" rel="noopener">https://doi.org/10.1126/science.1192439</a></li>
+      <li>Kim, H. (2012). A dual-subsystem model of the brain&rsquo;s default network: Self-referential processing, memory retrieval processes, and autobiographical memory retrieval. <em>NeuroImage, 61</em>(4), 966&ndash;977. <a href="https://doi.org/10.1016/j.neuroimage.2012.03.025" target="_blank" rel="noopener">https://doi.org/10.1016/j.neuroimage.2012.03.025</a></li>
+      <li>Macri, J. A., &amp; Rogge, R. D. (2024). Examining domains of psychological flexibility and inflexibility as treatment mechanisms in acceptance and commitment therapy: A comprehensive systematic and meta-analytic review. <em>Clinical Psychology Review, 110</em>, Article 102432. <a href="https://doi.org/10.1016/j.cpr.2024.102432" target="_blank" rel="noopener">https://doi.org/10.1016/j.cpr.2024.102432</a></li>
+      <li>Menon, V. (2023). 20 years of the default mode network: A review and synthesis. <em>Neuron, 111</em>(16), 2469&ndash;2487. <a href="https://doi.org/10.1016/j.neuron.2023.04.023" target="_blank" rel="noopener">https://doi.org/10.1016/j.neuron.2023.04.023</a></li>
+      <li>Sevinc, G., Hölzel, B. K., Hashmi, J., Greenberg, J., McCallister, A., Treadway, M., Schneider, M. L., Dusek, J. A., Carmody, J., &amp; Lazar, S. W. (2018). Common and dissociable neural activity after mindfulness-based stress reduction and relaxation response programs. <em>Psychosomatic Medicine, 80</em>(5), 439&ndash;451. <a href="https://doi.org/10.1097/PSY.0000000000000590" target="_blank" rel="noopener">https://doi.org/10.1097/PSY.0000000000000590</a></li>
+      <li>Sheldon, K. M., &amp; Lyubomirsky, S. (2012). The challenge of staying happier: Testing the hedonic adaptation prevention model. <em>Personality and Social Psychology Bulletin, 38</em>(5), 670&ndash;680. <a href="https://doi.org/10.1177/0146167212436400" target="_blank" rel="noopener">https://doi.org/10.1177/0146167212436400</a></li>
+      <li>Smallwood, J., &amp; O&rsquo;Connor, R. C. (2011). Imprisoned by the past: Unhappy moods lead to a retrospective bias to mind wandering. <em>Cognition and Emotion, 25</em>(8), 1481&ndash;1490. <a href="https://doi.org/10.1080/02699931.2010.545263" target="_blank" rel="noopener">https://doi.org/10.1080/02699931.2010.545263</a></li>
+      <li>Spreng, R. N., &amp; Grady, C. L. (2010). Patterns of brain activity supporting autobiographical memory, prospection, and theory of mind, and their relationship to the default mode network. <em>Journal of Cognitive Neuroscience, 22</em>(6), 1112&ndash;1123. <a href="https://doi.org/10.1162/jocn.2009.21282" target="_blank" rel="noopener">https://doi.org/10.1162/jocn.2009.21282</a></li>
+      <li>Su, H., Li, X., &amp; Born, S. (2025). Neural dynamics of spontaneous memory recall and future thinking in the continuous flow of thoughts. <em>Nature Communications.</em></li>
+      <li>Yakobi, O., Smilek, D., &amp; Danckert, J. (2021). The effects of mindfulness meditation on attention, executive control and working memory in healthy adults: A meta-analysis of randomized controlled trials. <em>Cognitive Therapy and Research, 45</em>(4), 543&ndash;560. <a href="https://doi.org/10.1007/s10608-020-10177-2" target="_blank" rel="noopener">https://doi.org/10.1007/s10608-020-10177-2</a></li>
+    </ul>
+
+  </div>
+</section>
+
+<div class="flourish-h"></div>
+
+<section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+  <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;max-width:560px;">Ready to stay in the cab?</h2>
+  <a href="book.html" class="btn btn-inverse">Book a free consult</a>
+</section>
+
+<footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
+  <div class="wordmark" style="color:var(--text-on-inverse);">Adaptations Denver</div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:right;">
+    <div>Denver, CO &middot; brian@adaptationsdenver.com &middot; (720) 515-2706</div>
+    <div style="opacity:0.6;font-size:12px;">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
+  </div>
+</footer>
+
+<a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
+</body></html>
