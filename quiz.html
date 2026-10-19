@@ -529,7 +529,7 @@ document.addEventListener('click', function(e) {
     } catch (err) {
       reportSubmit.disabled = false;
       reportSubmit.textContent = 'Send my report';
-      reportStatus.textContent = 'Something went wrong sending your report. Please try again, or email brian@adaptationsdenver.com.';
+      reportStatus.innerHTML = 'Something went wrong sending your report. Please try again, or email <a href="mailto:brian@adaptationsdenver.com" style="color:inherit;">brian@adaptationsdenver.com</a>.';
     }
   });
 

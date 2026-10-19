@@ -295,7 +295,7 @@
       .catch(function () {
         submit.disabled = false;
         submit.textContent = 'Send my report';
-        status.textContent = 'Something went wrong sending your report. Please try again, or email brian@adaptationsdenver.com.';
+        status.innerHTML = 'Something went wrong sending your report. Please try again, or email <a href="mailto:brian@adaptationsdenver.com" style="color:inherit;">brian@adaptationsdenver.com</a>.';
       });
   });
 
