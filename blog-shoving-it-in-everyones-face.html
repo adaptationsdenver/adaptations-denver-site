@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html><head>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yqh97plmcr");
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75XE9KFDSC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-75XE9KFDSC');
+</script>
+
+<!-- GA4: track mailto and tel link clicks -->
+<script>
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a');
+  if (!link) return;
+  const href = link.getAttribute('href') || '';
+  if (href.startsWith('mailto:')) {
+    gtag('event', 'mailto_click', { link_url: href });
+  } else if (href.startsWith('tel:')) {
+    gtag('event', 'tel_click', { link_url: href });
+  }
+});
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Useful Nonsense Part 4: Shoving It in Everyone’s Face — Adaptations Denver</title>
+<meta name="description" content="The fourth entry in the Useful Nonsense series: Michael Jordan, values in Acceptance and Commitment Therapy, and why a direction beats a destination.">
+<link rel="canonical" href="https://adaptationsdenver.com/blog-shoving-it-in-everyones-face.html">
+
+<style>:root {
+  /* Base neutrals — from brand hex */
+  --color-ink: #1A1C1E;
+  --color-paper: #F7F5F2;
+
+  /* Neutral ramp, mixed from the two bases */
+  --color-ink-90: color-mix(in oklch, var(--color-ink) 90%, var(--color-paper));
+  --color-ink-70: color-mix(in oklch, var(--color-ink) 70%, var(--color-paper));
+  --color-ink-50: color-mix(in oklch, var(--color-ink) 50%, var(--color-paper));
+  --color-ink-30: color-mix(in oklch, var(--color-ink) 30%, var(--color-paper));
+  --color-ink-15: color-mix(in oklch, var(--color-ink) 15%, var(--color-paper));
+  --color-paper-90: color-mix(in oklch, var(--color-paper) 92%, var(--color-ink));
+
+  /* Accent candidates — same L/C in oklch, hue varies. Pick one for --color-accent. */
+  --color-accent-red: #C4472A;
+  --color-accent-amber: oklch(58% 0.19 65);
+  --color-accent-cobalt: oklch(58% 0.19 255);
+
+  /* Active accent (default: red — Supreme/Vice-coded). Swap this one line to change brand-wide. */
+  --color-accent: var(--color-accent-red);
+  --color-accent-ink: #FFFFFF; /* text/icon color on top of accent */
+
+  /* Semantic aliases */
+  --surface-page: var(--color-paper);
+  --surface-inverse: var(--color-ink);
+  --surface-card: var(--color-paper-90);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-70);
+  --text-on-inverse: var(--color-paper);
+  --text-on-inverse-secondary: var(--color-paper-90);
+  --border-default: var(--color-ink-15);
+  --border-strong: var(--color-ink-30);
+  --link-color: var(--color-accent);
+  --link-color-hover: color-mix(in oklch, var(--color-accent) 85%, var(--color-ink));
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-Black.woff2") format('woff2'), url("fonts/PPMonumentExtended-Black.otf") format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url("fonts/PPMonumentExtended-BlackItalic.woff2") format('woff2'), url("fonts/PPMonumentExtended-BlackItalic.otf") format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Monument Wide';
+  src: url("fonts/PPMonumentWide-Regular.woff2") format('woff2'), url("fonts/PPMonumentWide-Regular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: url("fonts/PPNeueMachina-PlainRegular.woff2") format('woff2'), url("fonts/PPNeueMachina-PlainRegular.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --font-display: 'PP Monument Extended', 'Arial Black', sans-serif;
+  --font-wide: 'PP Monument Wide', 'Arial Narrow', sans-serif;
+  --font-body: 'PP Neue Machina', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Display scale — headlines, only weight available is 900/Black */
+  --text-display-xl: 900 clamp(48px, 7vw, 120px)/0.98 var(--font-display);
+  --text-display-lg: 900 clamp(36px, 5vw, 72px)/1.0 var(--font-display);
+  --text-display-md: 900 clamp(28px, 3.2vw, 44px)/1.05 var(--font-display);
+
+  /* Wide/eyebrow treatment — real PP Monument Wide cut */
+  --text-wide-label: 400 13px/1.2 var(--font-wide);
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.18em;
+
+  /* Body scale */
+  --text-body-lg: 500 20px/1.5 var(--font-body);
+  --text-body-md: 500 17px/1.55 var(--font-body);
+  --text-body-sm: 500 14px/1.5 var(--font-body);
+  --text-label: 600 13px/1.2 var(--font-body);
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 0 var(--border-default);
+  --container-max: 1240px;
+  --container-pad: clamp(24px, 5vw, 64px);
+}
+
+</style>
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--color-paper);}
+  a{color:var(--link-color);text-decoration:none;}
+  a:hover{color:var(--link-color-hover);}
+  .btn{font-family:var(--font-body);font-weight:600;letter-spacing:0.02em;text-transform:uppercase;border:1px solid transparent;border-radius:var(--radius-sm);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;font-size:15px;}
+  .btn-primary{background:var(--color-accent);color:var(--color-accent-ink);}
+  .btn-inverse{background:var(--color-paper);color:var(--color-ink);}
+  .eyebrow{font-family:var(--font-wide);font-weight:400;font-size:13px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);}
+  .placeholder{background:repeating-linear-gradient(45deg, var(--color-ink-15), var(--color-ink-15) 10px, transparent 10px, transparent 20px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-secondary);text-align:center;}
+  .card{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .card-paper{background:var(--surface-card);color:var(--text-primary);border:1px solid var(--border-default);}
+  .card-ink{background:var(--surface-inverse);color:var(--text-on-inverse);}
+  .card h3{font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;margin:0;line-height:1.1;}
+  .card p{font-family:var(--font-body);font-size:15px;line-height:1.5;margin:0;opacity:0.85;}
+  .tag{font-family:var(--font-wide);font-weight:400;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);display:inline-block;}
+  .tag-accent{background:var(--color-accent);color:var(--color-accent-ink);}
+  .tag-default{background:var(--color-ink-15);color:var(--text-primary);}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--container-pad);background:var(--color-paper);border-bottom:1px solid var(--border-default);}
+  .wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--tracking-wide);text-transform:uppercase;}
+  .navlinks{display:flex;align-items:center;gap:32px;}
+  .navlinks a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .navlinks-core{display:flex;align-items:center;gap:32px;}
+  .navlinks-core a{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .nav-core-dup{display:none;}
+  .navlinks button{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;background:var(--color-accent);color:var(--color-accent-ink);border:none;border-radius:var(--radius-sm);padding:10px 20px;cursor:pointer;}
+  section.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-width:0;}
+  @media (max-width:900px){section.grid3{grid-template-columns:1fr;} .navlinks{gap:16px;}}
+  .floating-cta{position:fixed;right:24px;bottom:24px;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3);padding:12px 22px !important;font-size:13px !important;border-radius:var(--radius-pill) !important;}
+
+  /* Flourish system rollout (from homepage refresh) — scoped to this page */
+  .btn{border-radius:0;}
+  .btn-outline{background:transparent;color:var(--color-paper);border:1px solid rgba(247,245,242,0.5);}
+  .flourish-c{border-top:2px solid var(--color-ink);position:relative;padding-top:16px;}
+  .flourish-c::before{content:"";position:absolute;top:-2px;left:0;width:24px;height:2px;background:var(--color-accent);}
+  .flourish-g{position:absolute;top:-14px;left:-14px;width:40px;height:40px;border:2px solid var(--color-ink);background:var(--color-paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--color-ink);}
+  .flourish-g.on-ink{background:var(--color-accent);color:#fff;border:none;}
+  .flourish-h{height:6px;width:100%;background:repeating-linear-gradient(45deg, var(--color-accent) 0 6px, transparent 6px 12px);}
+  .card-paper{background:var(--color-paper);border:2px solid var(--color-ink);}
+  .card-ink{background:var(--color-ink);border:none;}
+  .service-card{position:relative;padding:26px;}
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;}
+  .nav-toggle span{display:block;width:100%;height:2px;background:var(--color-ink);transition:transform 0.2s ease,opacity 0.2s ease;}
+  .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.active span:nth-child(2){opacity:0;}
+  .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (max-width:1400px){
+    nav{position:relative;}
+    .nav-toggle{display:flex;}
+    .navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--color-paper);border-bottom:1px solid var(--border-default);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;z-index:1000;box-shadow:0 8px 16px rgba(0,0,0,0.08);}
+    .navlinks.open{display:flex;}
+    .navlinks a{padding:14px var(--container-pad);border-bottom:1px solid var(--border-default);}
+    .navlinks a.btn{margin:12px var(--container-pad);text-align:center;}
+  }
+  @media (max-width:900px){
+    .navlinks-core{display:none;}
+    .nav-core-dup{display:block;}
+  }
+  @media (max-width:640px){
+    .nav-cta{display:none;}
+  }
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:28px;min-width:0;}
+  .blog-card{display:flex;flex-direction:column;border:2px solid var(--color-ink);background:var(--color-paper);text-decoration:none;color:inherit;min-width:0;}
+  .blog-card:hover{color:inherit;}
+  .blog-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;}
+</style>
+<style>
+  @media (max-width:640px){
+    .service-card, .card, .hero-copy, .blog-card{min-width:0 !important;}
+    .btn{white-space:normal !important;}
+    :root{
+      --text-body-lg: 500 22px/1.6 var(--font-body);
+      --text-body-md: 500 18px/1.6 var(--font-body);
+      --text-body-sm: 500 15px/1.5 var(--font-body);
+    }
+    .service-card, .card{padding:26px !important;min-width:0 !important;}
+    section.grid3 > *{min-width:0 !important;}
+    .service-card h3, .card h3{font-size:23px !important;line-height:1.2 !important;}
+    .service-card p, .card p{font-size:17px !important;line-height:1.55 !important;opacity:0.95 !important;}
+    .blog-card h3{font-size:21px !important;}
+    .blog-card p{font-size:16px !important;}
+    section.grid3{gap:24px !important;}
+    .blog-grid{gap:24px !important;}
+    .btn:not(.floating-cta){font-size:17px !important;padding:17px 26px !important;}
+    .floating-cta{font-size:15px !important;padding:14px 24px !important;}
+    .flourish-g{width:44px !important;height:44px !important;top:-16px !important;left:-16px !important;font-size:19px !important;}
+  }
+</style>
+<style>
+  .hero-diagonal-wedge{display:block;}
+  .hero-stacked{display:none;}
+  /* Keep the copy clear of the wedge's diagonal, which reaches 58% of the width at the bottom */
+  @media (min-width:701px){
+    .hero-wedge-copy{max-width:min(660px, calc(58vw - var(--container-pad) - 40px)) !important;}
+  }
+  @media (min-width:701px) and (max-width:1400px){
+    .hero-wedge-title{font-size:calc(6vw - 14px) !important;}
+    .hero-wedge-sub{font-size:clamp(16px, 1.6vw, 20px) !important;}
+  }
+  @media (max-width:700px){
+    .hero-diagonal-wedge{display:none;}
+    .hero-stacked{display:flex !important;}
+  }
+  .post-blockquote{margin:20px 0;padding:0 0 0 24px;border-left:4px solid var(--color-accent);font-family:var(--font-display);font-style:italic;font-size:24px;line-height:1.3;text-transform:none;color:var(--text-primary);}
+  .post-body a{text-decoration:underline;}
+  .reference-list{display:flex;flex-direction:column;gap:16px;margin:4px 0 0;padding:0;list-style:none;}
+  .reference-list li{font:var(--text-body-sm);color:var(--text-secondary);line-height:1.6;padding-left:28px;text-indent:-28px;overflow-wrap:anywhere;}
+</style>
+<style>
+  /* Services dropdown */
+  .nav-dd{position:relative;display:flex;align-items:center;}
+  .nav-dd-toggle,.navlinks .nav-dd-m-toggle{font-family:'PP Neue Machina','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:normal;text-transform:none;color:#1A1C1E;background:none;border:none;border-radius:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+  .nav-dd-caret{display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform 0.2s ease;}
+  .nav-dd.open .nav-dd-caret,.nav-dd-m.open .nav-dd-caret{transform:translateY(2px) rotate(-135deg);}
+  .nav-dd-menu{display:none;position:absolute;top:calc(100% + 24px);left:-22px;min-width:240px;background:#F7F5F2;border:2px solid #1A1C1E;box-shadow:0 8px 16px rgba(0,0,0,0.08);padding:8px 0;z-index:1001;}
+  .nav-dd-menu::before{content:"";position:absolute;left:-2px;right:-2px;top:-28px;height:28px;}
+  .nav-dd.open .nav-dd-menu{display:block;}
+  @media (hover:hover){
+    .nav-dd:hover .nav-dd-menu{display:block;}
+    .nav-dd:hover .nav-dd-caret{transform:translateY(2px) rotate(-135deg);}
+  }
+  .nav-dd-menu a{display:block;padding:10px 22px;font-size:14px;font-weight:600;color:#1A1C1E;white-space:nowrap;}
+  .nav-dd-menu a:hover,.nav-dd-menu a:focus-visible{background:rgba(26,28,30,0.06);color:#C4472A;}
+  .nav-dd-label{display:block;margin-top:8px;padding:14px 22px 6px;border-top:1px solid rgba(26,28,30,0.15);font-family:'PP Monument Wide','Arial Narrow',sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#C4472A;}
+  .navlinks .nav-dd-m-toggle{width:100%;justify-content:space-between;padding:14px var(--container-pad,24px);border-bottom:1px solid rgba(26,28,30,0.15);text-align:left;}
+  .nav-dd-m-menu{display:none;background:rgba(26,28,30,0.04);}
+  .nav-dd-m.open .nav-dd-m-menu{display:block;}
+  .navlinks .nav-dd-m-menu a{display:block;padding:12px var(--container-pad,24px) 12px calc(var(--container-pad,24px) + 18px);font-size:14px;}
+  .nav-dd-m-menu .nav-dd-label{margin-top:0;border-top:none;border-bottom:1px solid rgba(26,28,30,0.15);padding:14px var(--container-pad,24px) 8px calc(var(--container-pad,24px) + 18px);}
+</style>
+</head>
+
+<body>
+<nav>
+  <a href="index.html" style="display:inline-flex;align-items:center;"><img src="assets/graphics/logo.png" alt="Adaptations Denver" style="height:30px;width:auto;display:block;"></a>
+  <div class="navlinks-core" id="navlinks-core">
+    <a href="approach.html">Approach</a>
+    <div class="nav-dd">
+      <button type="button" class="nav-dd-toggle" aria-expanded="false" aria-controls="nav-dd-menu">Services<span class="nav-dd-caret" aria-hidden="true"></span></button>
+      <div class="nav-dd-menu" id="nav-dd-menu">
+        <a href="individual-therapy.html">Individual Therapy</a>
+        <a href="group-therapy.html">Group Therapy</a>
+        <span class="nav-dd-label">What we help with</span>
+        <a href="anger-therapy.html">Anger</a>
+        <a href="substance-use-therapy.html">Substance Use</a>
+        <a href="depression-therapy.html">Depression</a>
+        <a href="perfectionism-therapy.html">Perfectionism</a>
+        <a href="career-burnout-therapy.html">Career &amp; Burnout</a>
+        <a href="relationship-therapy.html">Relationships</a>
+        <a href="life-transitions-therapy.html">Life Transitions</a>
+      </div>
+    </div>
+  </div>
+  <div class="navlinks" id="navlinks">
+    <a class="nav-core-dup" href="approach.html">Approach</a>
+    <div class="nav-core-dup nav-dd-m">
+      <button type="button" class="nav-dd-m-toggle" aria-expanded="false" aria-controls="nav-dd-m-menu">Services<span class="nav-dd-caret" aria-hidden="true"></span></button>
+      <div class="nav-dd-m-menu" id="nav-dd-m-menu">
+        <a href="individual-therapy.html">Individual Therapy</a>
+        <a href="group-therapy.html">Group Therapy</a>
+        <span class="nav-dd-label">What we help with</span>
+        <a href="anger-therapy.html">Anger</a>
+        <a href="substance-use-therapy.html">Substance Use</a>
+        <a href="depression-therapy.html">Depression</a>
+        <a href="perfectionism-therapy.html">Perfectionism</a>
+        <a href="career-burnout-therapy.html">Career &amp; Burnout</a>
+        <a href="relationship-therapy.html">Relationships</a>
+        <a href="life-transitions-therapy.html">Life Transitions</a>
+      </div>
+    </div>
+    <a href="consultation-speaking.html">Consultation + Speaking</a>
+    <a href="about.html">About</a>
+    <a href="blog.html" style="opacity:1;font-weight:800;">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="book.html" class="nav-cta btn btn-primary" style="padding:10px 20px;font-size:13px;">Book a free consultation</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav>
+<script>
+(function(){
+  var toggle = document.getElementById('nav-toggle');
+  var links = document.getElementById('navlinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('active', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var dd = document.querySelector('.navlinks-core .nav-dd');
+  if (dd) {
+    var btn = dd.querySelector('.nav-dd-toggle');
+    var canHover = window.matchMedia('(hover:hover)');
+    var setOpen = function(open){
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(!dd.classList.contains('open'));
+    });
+    dd.addEventListener('mouseenter', function(){ if (canHover.matches) btn.setAttribute('aria-expanded', 'true'); });
+    dd.addEventListener('mouseleave', function(){ if (canHover.matches) setOpen(false); });
+    dd.addEventListener('focusout', function(e){ if (!dd.contains(e.relatedTarget)) setOpen(false); });
+    document.addEventListener('click', function(e){ if (!dd.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && dd.classList.contains('open')) { setOpen(false); btn.focus(); }
+    });
+  }
+  var m = document.querySelector('.nav-dd-m');
+  if (m) {
+    var mbtn = m.querySelector('.nav-dd-m-toggle');
+    mbtn.addEventListener('click', function(){
+      var open = m.classList.toggle('open');
+      mbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
+</script>
+
+<section style="position:relative;overflow:hidden;background:var(--color-ink);color:var(--text-on-inverse);padding:110px var(--container-pad) 60px;display:flex;">
+  <div class="hero-wedge-copy" style="position:relative;z-index:2;flex:1;min-width:280px;max-width:660px;display:flex;flex-direction:column;gap:20px;">
+    <a href="blog.html" class="eyebrow" style="display:inline-block;">&larr; Blog</a>
+    <h1 class="hero-wedge-title" style="font:var(--text-display-lg);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;">Useful Nonsense Part 4: Shoving It in Everyone&rsquo;s Face</h1>
+    <p class="hero-wedge-sub" style="font:var(--text-body-lg);font-style:italic;color:var(--text-on-inverse-secondary);margin:0;">On values, and why a direction beats a destination.</p>
+    <p style="font:var(--text-body-sm);color:var(--text-on-inverse-secondary);opacity:0.7;margin:0;">November 15, 2026 &middot; Brian Mulligan, LPCC, CAT</p>
+  </div>
+  <div class="hero-diagonal-wedge" style="position:absolute;top:0;right:0;bottom:0;width:42%;clip-path:polygon(30% 0, 100% 0, 100% 100%, 0 100%);z-index:1;">
+    <img src="assets/blog/blog-shoving-it-in-everyones-face-hero.webp" alt="Retro poster illustration of a basketball player in silhouette reaching for the ball against red and cream sunburst rays" style="width:100%;height:100%;object-fit:cover;display:block;">
+  </div>
+</section>
+
+<section class="hero-stacked" style="padding:40px var(--container-pad) 0;justify-content:center;">
+  <img src="assets/blog/blog-shoving-it-in-everyones-face-hero.webp" alt="Retro poster illustration of a basketball player in silhouette reaching for the ball against red and cream sunburst rays" style="width:100%;max-width:560px;height:auto;display:block;border:2px solid var(--color-ink);">
+</section>
+
+<section class="post-body" style="padding:36px var(--container-pad) 90px;display:flex;justify-content:center;">
+  <div style="max-width:720px;width:100%;display:flex;flex-direction:column;gap:20px;">
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">As I&rsquo;m writing this, Thanksgiving 2026 is just around the corner. I&rsquo;m looking out my kitchen window, watching the trees get more naked by the day. They are too suggestive, and I tell them to cover up.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Lewdness of the local foliage notwithstanding, fall is a beautiful time of year. The weather turns cold and everything dies. The days get shorter, the green becomes brown, the plants shrivel up, and people seek refuge indoors. This, somehow, is when most of us start to feel the &ldquo;holiday spirit.&rdquo;</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">How does a season that should inspire nothing but despair contain so much warmth? What is it about a natural process this objectively bleak that brings out compassion, kinship, and love? My theory is simple: when things get dark, we&rsquo;re reminded of what&rsquo;s actually important.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Which brings us, faithful reader, to values.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">All Too Soft and Fuzzy</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">It&rsquo;s hard to talk about values without sounding corny, or like a new-age huckster buttering you up before the pitch for locally-sourced artisanal kombucha and raw milk. The word arrives pre-laminated. It lives on the wall of a corporate lobby, next to a stock photo of a rowing team.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">So let&rsquo;s use a better example: a man nobody has ever accused of being soft.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">Nice Game, From a Not-So-Nice Guy</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Almost no one on Earth carries as much lore as Michael Jordan. The flu game. The gambling rumors. <em>The Last Dance</em> confirmed some of the myths and left others standing. What nobody disputes is the bloodthirsty competitiveness.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">In March of 1993, a Washington Bullets guard named LaBradford Smith had the night of his life against the Bulls and dropped 37 points. Afterward, Jordan told his teammates that Smith had thrown an arm around him on the way off the floor and said, &ldquo;Nice game, Mike.&rdquo;</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The two teams played again the very next night. Jordan had 36 by halftime.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Years later, he admitted that Smith never said it. He <a href="https://bleacherreport.com/articles/658735-michael-jordan-vs-labradford-smith-the-interesting-two-game-rivalry-of-1993" target="_blank" rel="noopener">made the whole thing up</a>.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The greatest basketball player alive invented an insult so that he could go avenge it. That is useful nonsense in its purest form, and it tells you exactly what MJ cared about most: <a href="https://www.youtube.com/watch?v=tsd1nJUETXQ&amp;t=4s" target="_blank" rel="noopener">shoving it in everyone&rsquo;s face</a>. In other words: what Michael Jordan valued, above all else, was conquering challenges and proving people wrong.</p>
+
+    <blockquote class="post-blockquote">The greatest basketball player alive invented an insult so that he could go avenge it. That is useful nonsense in its purest form.</blockquote>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">So, values need no halo. They require no sheen of &ldquo;do-goodery.&rdquo; They are not equivalent with religious platitudes or the &ldquo;Golden Rule.&rdquo; Mother Teresa had hers and Jordan had his. In Acceptance and Commitment Therapy, a value is a <a href="https://onlinelibrary.wiley.com/doi/10.1002/smi.2886" target="_blank" rel="noopener">quality of action that is <em>entirely up to you</em></a>: how you want to behave, on an ongoing basis, in the parts of life that matter to you personally. Yours might be competing, building, protecting, telling the truth, or being the guy who shows up. Nobody gets to decide what your values are &ndash; or even what constitutes a value &ndash; except for you.</p>
+
+    <blockquote class="post-blockquote">Values need no halo&hellip; Mother Teresa had hers and Jordan had his.</blockquote>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">A Direction Beats a Destination</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">A goal is a destination. You get there, you cross it off, and it&rsquo;s over. A value is a direction, like west. You can drive west for the rest of your life and never arrive at West.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Jordan&rsquo;s goal was a championship. He won it, and the wanting was still there, so he went and won five more. The goals kept getting crossed off. The direction never ran out.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">This is also the exit ramp from the <a href="blog-sitting-in-the-song.html">arrival fallacy in Part 3</a>. If the song is the point, your values are what you&rsquo;re listening for.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">Eating Your Vegetables</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Nobody wants to run wind sprints. Nobody wants the hard conversation, the 5 a.m. alarm, or the first therapy appointment. Motivation is a feeling, and you can&rsquo;t schedule a feeling. <a href="blog-puppet-master.html">Your puppet master</a>, meanwhile, has a prepared statement on why today is a bad day for it.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Values give you a <a href="https://pubmed.ncbi.nlm.nih.gov/27281353/" target="_blank" rel="noopener">reason that still works when the feeling is gone</a>. You do not feel like driving to your kid&rsquo;s 6 a.m. hockey practice in January. You go because being that kind of father matters more to you than a warm bed. And your kids don&rsquo;t feel like eating their vegetables &ndash; but, when you tell them their favorite athletes do, they are a little more likely to try those brussels sprouts. Because they value getting better in athletics.</p>
+
+    <blockquote class="post-blockquote">Motivation is a feeling, and you can&rsquo;t schedule a feeling.</blockquote>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The discomfort costs the same either way. What <a href="https://pubmed.ncbi.nlm.nih.gov/19398384/" target="_blank" rel="noopener">changes is what it buys</a>.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Jordan&rsquo;s invented slight didn&rsquo;t make game 2 any less &ldquo;hard&rdquo; in objective, physical measurement. It gave the effort somewhere to go.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">This is why ACT bothers with acceptance and defusion in the first place. Making room for a painful feeling (<a href="blog-bounce-house.html">Part 2</a>) is a <a href="https://pubmed.ncbi.nlm.nih.gov/32014692/" target="_blank" rel="noopener">strange hobby unless it&rsquo;s in service of something</a>. Values are that something.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">Feeling Good vs. Feeling Good About Yourself</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">These are two different projects, and they often point in opposite directions.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Feeling good is a full-time job with terrible management. The third drink, the scroll, and the skipped workout all feel good for about eleven minutes. There&rsquo;s a word for arranging your life around this: hedonism &ndash; from the old Greek <em>h&#275;don&#275;</em>, which literally translates to &ldquo;pleasure.&rdquo; Scientists sometimes refer to the brain mechanisms that promote short-term pleasure-seeking as the &ldquo;dopaminergic cascade.&rdquo; This is all a fancy way of saying you&rsquo;re <a href="https://pubmed.ncbi.nlm.nih.gov/27977239/" target="_blank" rel="noopener">chasing the next pleasant sensation like a dog after a tennis ball</a>.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Feeling good <em>about</em> yourself is built from evidence. A sense of self that lives only in your head is whatever story the puppet master happens to be telling that day, and he is constantly revising the script. A sense of self built on <em>what you did in the real world</em> this week is <a href="https://pubmed.ncbi.nlm.nih.gov/30359069/" target="_blank" rel="noopener">much harder to argue with</a>. You showed up. You said the true thing. You went to the practice.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Ordinary moments get &ldquo;heavier&rdquo; this way, in the good sense. A Tuesday spent moving toward something you care about carries more weight than a Saturday spent numbing out. There&rsquo;s more meat on the bone. When people invest in values, there&rsquo;s <a href="https://pubmed.ncbi.nlm.nih.gov/26619303/" target="_blank" rel="noopener">no guarantee they&rsquo;ll be rewarded with the same sense of <em>pleasure</em></a>, but they often find more of what&rsquo;s been missing in their lives &ndash; a sense of <em>fulfillment</em>.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">The Dumb Move</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Your smart brain wants to do this properly. It wants a ranked list, a framework, and certainty that you&rsquo;ve identified the correct values before you act on a single one. That project can run for years.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The dumb move is to skip the soul-searching and check the receipts. Think of the last miserable thing you did on purpose. You sat through the recital. You drove four hours to a funeral. You finished the thing you said you&rsquo;d finish. Now ask what it was for. Whatever you just answered is a value, already installed and running.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Then pick the thing you&rsquo;re dreading this week and say out loud, in one sentence, what it&rsquo;s for. It will sound dumb. Jordan&rsquo;s sentence was a lie and it worked fine. Yours has the advantage of being true.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">The Why and the How</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Viktor Frankl was a Viennese psychiatrist who spent three years in Nazi concentration camps, Auschwitz among them. He lost his wife, his parents, and his brother. In <a href="https://www.amazon.com/dp/B009U9S6FI" target="_blank" rel="noopener"><em>Man&rsquo;s Search for Meaning</em></a>, he keeps returning to a line from Nietzsche: &ldquo;He who has a why to live for can bear almost any how.&rdquo; He watched it play out around him. The prisoners who held onto a reason, a person to see again or a piece of work to finish, were the ones more likely to endure.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">It is unlikely your Tuesday is comparable to a concentration camp. But if meaning could bear weight there, it&rsquo;s a <a href="https://pubmed.ncbi.nlm.nih.gov/25646186/" target="_blank" rel="noopener">pretty good barometer</a> for what it can bear in the day-to-day &ldquo;trenches&rdquo; of contemporary American life.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">We can&rsquo;t get rid of suffering. This whole series has been one long list of things you can&rsquo;t do: you can&rsquo;t fire the puppet master, you can&rsquo;t make the floor foam, and you can&rsquo;t skip the song. Here&rsquo;s the one thing you can do: you can make it worth it.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:0;">&rsquo;Tis the Season (For Whatever Matters to You)</h2>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">The trees continue to undress outside my window. It&rsquo;s dark before five. Next week most of us will drive farther than we&rsquo;d like to sit at a crowded table and eat dry turkey with people we love. Somebody will bring up politics, and the whole table will brace hoping that Uncle Jeffrey doesn&rsquo;t say something racist. Yet, when we look back at these gatherings, we can appreciate why we went. As the sun starts to hide and the days get dark, what matters most gets easier to see.</p>
+
+    <p style="font:var(--text-body-md);color:var(--text-secondary);margin:0;">Next up in the series: committed action, or what to do once you know which way is west.</p>
+
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);text-transform:uppercase;color:var(--text-primary);margin:40px 0 0;">References</h2>
+    <ul class="reference-list">
+      <li>Berridge, K. C., &amp; Robinson, T. E. (2016). Liking, wanting, and the incentive-sensitization theory of addiction. <em>American Psychologist, 71</em>(8), 670&ndash;679. <a href="https://doi.org/10.1037/amp0000059" target="_blank" rel="noopener">https://doi.org/10.1037/amp0000059</a></li>
+      <li>Branstetter-Rost, A., Cushing, C., &amp; Douleh, T. (2009). Personal values and pain tolerance: Does a values intervention add to acceptance? <em>The Journal of Pain, 10</em>(8), 887&ndash;892. <a href="https://doi.org/10.1016/j.jpain.2009.01.001" target="_blank" rel="noopener">https://doi.org/10.1016/j.jpain.2009.01.001</a></li>
+      <li>Breitbart, W., Rosenfeld, B., Pessin, H., Applebaum, A., Kulikowski, J., &amp; Lichtenthal, W. G. (2015). Meaning-centered group psychotherapy: An effective intervention for improving psychological well-being in patients with advanced cancer. <em>Journal of Clinical Oncology, 33</em>(7), 749&ndash;754. <a href="https://doi.org/10.1200/JCO.2014.57.2198" target="_blank" rel="noopener">https://doi.org/10.1200/JCO.2014.57.2198</a></li>
+      <li>Ceary, C. D., Donahue, J. J., &amp; Shaffer, K. (2019). The strength of pursuing your values: Valued living as a path to resilience among college students. <em>Stress and Health, 35</em>(4), 532&ndash;541. <a href="https://doi.org/10.1002/smi.2886" target="_blank" rel="noopener">https://doi.org/10.1002/smi.2886</a></li>
+      <li>Critcher, C. R., &amp; Ferguson, M. J. (2016). &ldquo;Whether I like it or not, it&rsquo;s important&rdquo;: Implicit importance of means predicts self-regulatory persistence and success. <em>Journal of Personality and Social Psychology, 110</em>(6), 818&ndash;839. <a href="https://doi.org/10.1037/pspa0000053" target="_blank" rel="noopener">https://doi.org/10.1037/pspa0000053</a></li>
+      <li>Hudson, N. W., Briley, D. A., Chopik, W. J., &amp; Derringer, J. (2019). You have to follow through: Attaining behavioral change goals predicts volitional personality change. <em>Journal of Personality and Social Psychology, 117</em>(4), 839&ndash;857. <a href="https://doi.org/10.1037/pspp0000221" target="_blank" rel="noopener">https://doi.org/10.1037/pspp0000221</a></li>
+      <li>Levin, M. E., Krafft, J., Hicks, E. T., Pierce, B., &amp; Twohig, M. P. (2020). A randomized dismantling trial of the open and engaged components of acceptance and commitment therapy in an online intervention for distressed college students. <em>Behaviour Research and Therapy, 126</em>, Article 103557. <a href="https://doi.org/10.1016/j.brat.2020.103557" target="_blank" rel="noopener">https://doi.org/10.1016/j.brat.2020.103557</a></li>
+      <li>Tov, W., &amp; Lee, H. W. (2016). A closer look at the hedonics of everyday meaning and satisfaction. <em>Journal of Personality and Social Psychology, 111</em>(4), 585&ndash;609. <a href="https://doi.org/10.1037/pspp0000081" target="_blank" rel="noopener">https://doi.org/10.1037/pspp0000081</a></li>
+    </ul>
+
+  </div>
+</section>
+
+<div class="flourish-h"></div>
+
+<section style="background:var(--color-accent);color:#fff;padding:70px var(--container-pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+  <h2 style="font:var(--text-display-md);font-family:var(--font-display);text-transform:uppercase;margin:0;overflow-wrap:break-word;min-width:0;max-width:560px;">Ready to find your west?</h2>
+  <a href="book.html" class="btn btn-inverse">Book a free consult</a>
+</section>
+
+<footer style="background:var(--color-ink);color:var(--text-on-inverse-secondary);padding:48px var(--container-pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:14px;">
+  <div class="wordmark" style="color:var(--text-on-inverse);">Adaptations Denver</div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:right;">
+    <div>Denver, CO &middot; <a href="mailto:brian@adaptationsdenver.com" style="color:inherit;">brian@adaptationsdenver.com</a> &middot; <a href="tel:+17205152706" style="color:inherit;">(720) 515-2706</a></div>
+    <div style="opacity:0.6;font-size:12px;">Adaptations Denver is a DBA of Big Change Counseling, LLC</div>
+  </div>
+</footer>
+
+<a href="book.html" class="btn btn-primary floating-cta">Book a free consultation</a>
+</body></html>
